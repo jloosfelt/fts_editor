@@ -1,0 +1,17 @@
+name: Customers
+description: Customers list
+slug: customers
+label_field_name: :name
+fields:
+- name:
+    label: Name
+    type: string
+    hint: The customer name
+    required: true
+- logo:
+    hint: "The logo (614X264)"
+    type: file
+    label: Logo
+    required: true
+public_submission_enabled: false
+order_by: name

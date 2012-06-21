@@ -1,0 +1,55 @@
+site:
+  name: fts
+
+  locales: [fr, en]
+
+  seo_title: FTS
+  meta_keywords: "some meta keywords"
+  meta_description: "some meta description"
+
+  pages:
+  - "index": # page path (the template can edited here app/views/pages/index.liquid)
+      title: "Accueil"
+      published: true
+      seo_title: "Accueil"
+      translations:
+        en:
+          title: "Home page"
+          seo_title: "Accueil"
+  - "company":
+      meta_keywords: "Test fr"
+      meta_description: "La société"
+      published: true
+      seo_title: "Société"
+      title: Société
+      listed: true
+      translations:
+        en:
+          title: "Company"
+          seo_title: "Company"
+          meta_keywords: "Test en"
+          meta_description: "The company"
+  - "customers":
+      meta_keywords: "Client fr"
+      meta_description: "Clients"
+      published: true
+      seo_title: "Clients"
+      title: Clients
+      listed: true
+      translations:
+        en:
+          title: "Customers"
+          seo_title: "Customers"
+          meta_keywords: "Customers en"
+          meta_description: "Customers"
+  - customers/content_type_template:
+      published: true
+      title: Reference Template
+      listed: true
+      model: customers
+      templatized: true
+      translations:
+        en:
+          title: Reference Template
+  - "404":
+      title: "Page not found"
