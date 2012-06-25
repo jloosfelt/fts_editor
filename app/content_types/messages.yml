@@ -1,0 +1,20 @@
+name: messages
+slug: messages
+fields:
+- title:
+    label: Objet
+    required: true
+    type: string
+    hint: Fill the text here
+- description:
+    label: Message
+    type: text
+    hint: Fill the text here
+- attachment:
+    label: Pièce jointe
+    type: file
+    hint: "efezf"
+label_field_name: :title
+description: Fill the text here
+public_submission_enabled: true
+order_by: manually

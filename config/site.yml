@@ -16,20 +16,21 @@ site:
         en:
           title: "Home page"
           seo_title: "Accueil"
-  - "company":
+  - "societe":
+      title: "La société"
       meta_keywords: "Test fr"
       meta_description: "La société"
       published: true
       seo_title: "Société"
-      title: Société
       listed: true
       translations:
         en:
-          title: "Company"
-          seo_title: "Company"
+          slug: "urldelacompany"
+          title: "Companyrr"
+          seo_title: "Companyee"
           meta_keywords: "Test en"
           meta_description: "The company"
-  - "customers":
+  - "clients":
       meta_keywords: "Client fr"
       meta_description: "Clients"
       published: true
@@ -42,7 +43,7 @@ site:
           seo_title: "Customers"
           meta_keywords: "Customers en"
           meta_description: "Customers"
-  - customers/content_type_template:
+  - clients/content_type_template:
       published: true
       title: Reference Template
       listed: true
@@ -51,5 +52,18 @@ site:
       translations:
         en:
           title: Reference Template
+  - "equipe":
+      meta_keywords: "L'équipe"
+      meta_description: "L'équipe"
+      published: true
+      seo_title: "L'équipe"
+      title: "L'équipe"
+      listed: true
+      translations:
+        en:
+          title: "The team"
+          seo_title: "team"
+          meta_keywords: "Team"
+          meta_description: "The team"
   - "404":
       title: "Page not found"

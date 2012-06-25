@@ -1,0 +1,22 @@
+name: testimonials
+slug: testimonials
+fields:
+- title:
+    label: Title
+    required: true
+    type: string
+    hint: Fill the text here
+- description:
+    label: Description
+    type: text
+    hint: Fill the text here
+- customer:
+    label: "Client"
+    type: belongs_to
+    class_name: customers
+    target: customers
+    inverse_of: testimonials
+label_field_name: :title
+description: Fill the text here
+public_submission_enabled: false
+order_by: manually

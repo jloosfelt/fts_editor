@@ -1,0 +1,7 @@
+{% extends 'parent' %}
+{% block 'main' %}
+  <h3>{{ customer.name }}</h3>
+  {% for testimony in customer.testimonials %}
+    <p>{{testimony.title}}</p>
+  {% endfor %}
+{% endblock %}

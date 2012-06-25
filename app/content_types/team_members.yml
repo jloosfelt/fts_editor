@@ -1,0 +1,28 @@
+name: "Team Members"
+description: Team members list
+slug: team_members
+label_field_name: :name
+fields:
+- name:
+    label: Nom
+    type: string
+    hint: "Prénom Nom"
+    required: true
+- photo:
+    hint: "The photo (614X264)"
+    type: file
+    label: Photo
+    required: false
+- description:
+    hint: ""
+    type: text
+    label: "Texte de présentation"
+    required: true
+- linked_in_url:
+    hint: "URL de linked in"
+    type: string
+    label: "Linked In"
+    required: false
+
+public_submission_enabled: false
+order_by: name

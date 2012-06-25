@@ -13,5 +13,16 @@ fields:
     type: file
     label: Logo
     required: true
+- category:
+    type: select
+    label: "Catégorie"
+    required: true
+    select_options: ["client", "partenaire"]
+- testimonials:
+    label: "Témoignages"
+    type: has_many
+    class_name: testimonials
+    target: testimonials
+    inverse_of: customer
 public_submission_enabled: false
 order_by: name

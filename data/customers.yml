@@ -1,6 +1,13 @@
 - ! 'Bonduelle':
     _permalink: bonduelle
-    file: /samples/customers_logos/bonduelle.png
+    logo: /samples/customers_logos/bonduelle.jpg
+    category: client
+    translations:
+      en:
+        name: "Bonduelle EN"
+    testimonials: ["item-4", "item-3"]
 - ! 'Adictiz':
     _permalink: adictiz
-    file: /samples/customers_logos/adictiz.png
+    logo: /samples/customers_logos/adictiz.jpg
+    category: partenaire
+    testimonials: ["item-1", "item-2"]

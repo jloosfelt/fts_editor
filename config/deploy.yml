@@ -1,7 +1,7 @@
 development:
-  host: dev.example.com
-  email: john@doe.net
-  password: easyone
+  host: fts.locomotive.dev
+  email: jloosfelt@gmail.com
+  password: tagada1
 staging:
   host: staging.example.com
   email: john@doe.net
