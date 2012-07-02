@@ -1,38 +1,412 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.seo_title }} | {{ site.name }}</title>
-    {{ 'application.css' | stylesheet_tag }}
-    {% seo_metadata %}
-    {% inline_editor %}
-  </head>
-  <body>
-    <a href="/en">Version EN</a>
-    
-    <h1>VERSION FR</h1>
-    
-    <ul id="main-nav">
-      <li id='home' class="{% if page.fullpath == 'index' %} active {% endif %} link"><a href="/">Home</a></li>
-      {% nav 'site', depth: 1, no_wrapper: true, exclude: nil, icon: true, active_class: active %}
-    </ul>
-    <div id="rails-container">
-      {% block 'main' %}
-        {% with_scope category:partenaire %}
-         {% for customer in contents.customers limit:3 %}
-          {{customer.name}}
-         {% endfor %}
-        {% endwith_scope %}
-        <p>Lorem ipsum....</p>
-        {% block 'company' %}
-          <img src="{% editable_file "photo", hint: "photo", priority: 1 %}{% endeditable_file %}" />
-          {% editable_long_text "description", hint: "La société", priority: 1 %}
-            Lorem ipsum (default content)
-          {% endeditable_long_text %}
-        {% endblock %}
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
 
-      {% endblock %}
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+ More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Follow the sun</title>
+  <meta name="description" content="">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  {{ 'application.css' | stylesheet_tag }}
+  <link href='http://fonts.googleapis.com/css?family=Pontano+Sans&subset=latin,latin-ext' rel='stylesheet'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+Modernizr enables HTML5 elements & feature detects for optimal performance.
+Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  {{ 'libs/modernizr-2.5.3.min.js' | javascript_tag }}
+</head>
+<body>
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a
+  different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
+  to experience this site.</p><![endif]-->
+<header id="header">
+  <div class="topHead">
+    <div class="center">
+      <div class="clearfix">
+        <span class="followTheSunDesc">Follow the Sun - Solution business et CRM en mode SAAS</span>
+
+        <div class="dropdownMenu languages">
+          <a class="current" href="#"><img src="{{ 'icons/flag/france.png' | theme_image_url }}" class="flag">Français</a>
+          <ul class="dataList">
+            <li><a href="http://www.google.fr" title="English"><img class="flag" src="{{ 'icons/flag/england.png' | theme_image_url }}">English</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <a href="/contact?type=toto">Contactez-nous</a>
-  </body>
+  </div>
+  <div class="bottomHead">
+    <div class="center">
+      <div class="row-fluid">
+        <div class="span5">
+          <h1><a class="logo" href="/FR/index.html">Follow the sun</a></h1>
+        </div>
+        <nav class="span7">
+          <div class="xtraPaddingL">
+            <ul id="navigation" class="clearfix">
+              <li class="home active"><a href="/"><span class="icon"></span><span
+                  class="text">follow the sun</span></a></li>
+              <li class="team"><a href="/equipe"><span class="icon"></span><span
+                  class="text">Equipe</span></a>
+              </li>
+              <li class="products"><a href="/FR/page-crm360.html"><span class="icon"></span><span
+                  class="text">Produits</span></a></li>
+              <li class="partners"><a href="/FR/page-partenaire.html"><span class="icon"></span><span
+                  class="text">Partenaires</span></a>
+              </li>
+              <li class="customers"><a href="/clients"><span class="icon"></span><span
+                  class="text">Clients</span></a></li>
+              <li class="contact"><a href="/contact"><span class="icon"></span><span
+                  class="text">Contact</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+{% block 'main' %}
+  <div id="content" role="main">
+    <div id="banner">
+      <div class="inner">
+        <div class="center bannerInside">
+          <div class="bannerExtend bannerLeft"></div>
+          <div class="bannerExtend bannerRight"></div>
+
+          <div id="bannerCarousel" class="carousel slide">
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div class="active item">
+                <div class="row-fluid bannerContent">
+
+                  <article class="span5 bannerText">
+                    <p class="intro">Prenez les commandes de votre business</p>
+
+                    <h2 class="title"><img src="{{ 'images/banner/fr/simplement.png' | theme_image_url }}"
+                       alt="cloud"/></h2>
+
+                    <p class="desc">Augmentez vos scores<br/>
+                      avec des outils marketing<br/>
+                      simples d’utilisation, efficaces<br/>
+                      et surtout, performants.</p>
+                  </article>
+                  <div class="span7">
+                    <img style="position: relative;left:-57px;top:-69px" src="{{ 'images/banner/increase-scores.png' | theme_image_url }}" alt="Increase Scores" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="row-fluid bannerContent">
+
+                  <article class="span5 bannerText">
+                    <p class="intro">Prenez les commandes de votre business</p>
+
+                    <h2 class="title"><img src="{{ 'images/banner/en/24-7.png' | theme_image_url }}"
+                       alt="24/7"/></h2>
+
+                    <p class="desc">Gardez le contact<br/>
+                      avec tous vos clients<br/>
+                      24h / 24 et 7j / 7.<br/>
+                      Business non stop !</p>
+                  </article>
+                  <div class="span7">
+                    <img style="position: relative;left:-115px" src="{{ 'images/banner/keep-contact.png' | theme_image_url }}"alt="Keep Contact" />
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="row-fluid bannerContent">
+
+                  <article class="span5 bannerText">
+                    <p class="intro">Prenez les commandes de votre business</p>
+
+                    <h2 class="title"><img src="{{ 'images/banner/en/in-the-cloud.png' | theme_image_url }}" alt="In the Cloud" /> </h2>
+
+                    <p class="desc">Connectez-vous partout.<br/>
+                      Des solutions en ligne<br/>
+                      disponibles tout le temps,<br/>
+                      où que vous soyez.</p>
+                  </article>
+                  <div class="span7">
+                    <img style="left: -76px;position: relative;" src="{{ 'images/banner/cloud.png' | theme_image_url }}"
+                       alt="cloud"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Carousel nav -->
+            <ul class="paginationBullet">
+              <li><a data-to="1" href="#">1</a></li>
+              <li><a data-to="2" href="#">2</a></li>
+              <li><a data-to="3" href="#">3</a></li>
+            </ul>
+            <!--<a class="carousel-control left" href="#bannerCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#bannerCarousel" data-slide="next">&rsaquo;</a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mainContent" class="center">
+      <div class="row-fluid">
+        <article class="span5 aboutFollowSun">
+          <div class="box boxOutsetShadow">
+            <div class="hd">
+              <h2 class="title02">follow the sun</h2>
+
+              <p class="subTitle01">play live business</p>
+            </div>
+            <div class="bd">
+              <figure>
+                <img src="{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}" alt="" />
+                <figcaption>Créé en 2011 à Lille-Métropole, Follow The Sun
+                  est un éditeur qui transforme des savoir-faire métier
+                  en offres de services en ligne simples, fiables, sécurisées et interconnectables.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="ft">
+              <div class="more">
+                <a class="btn btn03" href="#" title=""><span>Voir l'équipe</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="ourCustomers span7">
+          <div class="xtraPaddingL">
+            <article>
+              <header>
+                <h2 class="title02">Ils se sont pris au jeu</h2>
+              </header>
+              <ul class="customersList row-fluid">
+                <li class="span3"><img src="{{ 'images/clients/bonduelle.png' | theme_image_url }}" alt="bonduelle" /></li>
+                <li class="span3"><img src="{{ 'images/clients/adictiz.png' | theme_image_url }}" alt="adictiz"/></li>
+                <li class="span3"><img src="{{ 'images/clients/hubToYou.png' | theme_image_url }}" alt="Hub to you" /></li>
+                <li class="span3"><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo" /></li>
+              </ul>
+              <div class="more">
+                <a class="btn btn02" href="#" title=""><span>Voir tous nos clients</span></a>
+              </div>
+            </article>
+            <article class="customerExperience">
+              <header>
+                <h3 class="title02">Et sont ravis de l'expérience</h3>
+              </header>
+              <div class="bd">
+                <blockquote>
+                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
+                  conatibus,
+                  Luscus quidam curator urbis subito visus, eosque ut heiulans baiolorum praecentor ad
+                  expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus
+                  exustus est. Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis
+                  egere
+                  ».
+                </blockquote>
+                <p>
+                  <strong>Isabelle Dupon</strong><br/>
+                  <span class="job">Directrice Marketing Okaïdi</span>
+                </p>
+              </div>
+            </article>
+            <div class="more">
+              <a class="btn btn02" href="#" title=""><span>Lire les témoignages</span></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div id="bottomContent">
+      <div class="center">
+        <div class="row-fluid">
+          <div class="span7">
+            <article>
+              <header>
+                <h3 class="title02">Réseau</h3>
+
+                <p class="subTitle02">Des partenaires de talent</p>
+              </header>
+              <div class="bd txtC">
+                <div class="crm360">
+                  <span class="txtR item1 color01">Techniques</span>
+                  <span class="txtC item2">Clients</span>
+                  <span class="txtC item3 color01">Commerciaux</span>
+                  <span class="txtC item4">Clients</span>
+                  <span class="txtL item5 color01">Intégrateurs</span>
+                </div>
+                <p class="txtL">
+                  Afin d’enrichir votre expérience et de vous proposer une offre CRM complète<br/>
+                  et adaptée à vos besoins, Follow The Sun s’entoure d’un écosystème de partenaires<br/>
+                  diversifiés.
+                </p>
+              </div>
+              <div class="more">
+                <a class="btn btn03" href="#" title=""><span>Devenir partenaire</span></a>
+              </div>
+            </article>
+          </div>
+          <article class="span5">
+            <div class="xtraPaddingL">
+              <div class="box boxIntsetShadow boxPush">
+                <header class="hd">
+                  <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°" /></h3>
+
+                  <p class="subTitle02">Une solution GRC simple et efficace</p>
+                </header>
+                <div class="bd">
+                  <figure>
+                    <img src="{{ 'images/crm360Ipad.png' | theme_image_url }}" alt="" />
+                    <figcaption>
+                      CRM360° est une nouvelle offre commerciale
+                      de Gestion de Données de la Relation Client (GDRC)
+                      en mode SaaS couvrant les fonctions suivantes : Intégration de flux, Data
+                      Quality Management,
+                      Campaign Management, Business Intelligence.
+                    </figcaption>
+                  </figure>
+                </div>
+                <footer class="ft more">
+                  <a class="btn btn02" href="#" title=""><span>En savoir plus</span></a>
+                </footer>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<footer id="footer">
+  <div class="inner">
+    <div class="center">
+      <div class="row-fluid">
+        <div class="span4">
+          <div class="hd">
+            <span class="logo-small">follow the sun play live business</span>
+          </div>
+          <ul class="bd col-footer row-fluid">
+            <li class="span6">
+              <ul class="footer-items">
+                <li><a href="/FR/page-societe.html">La société</a></li>
+                <li><a href="/FR/page-equipe.html">L'équipe</a></li>
+                <li><a href="/FR/page-crm360.html">Les produits</a></li>
+                <li><a href="/FR/page-partenaire.html">Les partenaire</a></li>
+                <li><a href="/FR/page-clients.html">Les clients</a></li>
+                <li class="last"><a href="/FR/page-contact.html">Contact</a></li>
+              </ul>
+            </li>
+            <li class="span6">
+              <ul class="footer-items">
+                <li><a href="/FR/page-crm360.html">CRM360°</a></li>
+                <li><a href="/FR/page-recrutement.html">Recrutement</a></li>
+                <li><a href="#">Nos bureaux</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Crédits</a></li>
+                <li class="last"><a href="#">Nous suivre sur <img class="twitter"
+                                          src="{{ 'icons/twitter.png' | theme_image_url }}"
+                                          alt="twitter"/></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="span3">
+          <div class="hd">
+            <h4 class="title">Ils sont avec nous</h4>
+          </div>
+
+          <ul class="row-fluid bd">
+            <li class="span12">
+              <ul class="footer-items partnersList">
+                <li><a href="#"><img src="{{ 'images/partners/republiqueFrancaise.png' | theme_image_url }}" alt="République Française" /></a></li>
+                <li><a href="#"><img src="{{ 'images/partners/nordpasdecalais.png' | theme_image_url }}" alt="Nord-Pas-De-Calais" /></a></li>
+                <li class="lastItem"><a href="#"><img src="{{ 'images/partners/eto.png' | theme_image_url }}" alt="ETO" /></a></li>
+
+                <li class="lastLine"><a href="#"><img src="{{ 'images/partners/runiso.png' | theme_image_url }}" alt="Runiso" /></a></li>
+                <li class="lastItem lastLine"><a href="#"><img src="{{ 'images/partners/microsoft.png' | theme_image_url }}" alt="Microsoft" /></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="span5">
+          <div class="xtraPaddingL">
+            <div class="hd">
+              <h4 class="title">Notre aire de jeux</h4>
+            </div>
+            <ul class="col-footer row-fluid bd">
+              <li class="span6 contactInfo">
+                <div class="footer-items">
+                  <p class="address">
+                    4, rue Nationale<br/>
+                    59100 Roubaix
+                  </p>
+
+                  <p class="contact">
+                    Tel +33 3 20 69 17 17<br/>
+                    Fax +33 3 20 69 17 18<br/>
+                  </p>
+                  <span>Contact@fts-services.com</span>
+                </div>
+              </li>
+              <li class="span6 contactMap">
+                <img src="{{ 'images/map-small.png' | theme_image_url }}" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- JavaScript at the bottom for fast page loading -->
+
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+{{ 'libs/bootstrap.min.js' | javascript_tag }}
+
+<!-- scripts concatenated and minified via build script -->
+{{ 'plugins.js' | javascript_tag }}
+{{ 'script.js' | javascript_tag }}
+<!-- end scripts -->
+
+
+<script>
+  var _gaq = [
+    ['_setAccount','UA-XXXXX-X'],
+    ['_trackPageview']
+  ];
+  (function(d, t) {
+    var g = d.createElement(t),s = d.getElementsByTagName(t)[0];
+    g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s)
+  }(document, 'script'));
+</script>
+
+</body>
 </html>

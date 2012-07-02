@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.seo_title }} | {{ site.name }}</title>
+    {{ 'application.css' | stylesheet_tag }}
+    {% seo_metadata %}
+    {% inline_editor %}
+  </head>
+  <body>
+    <a href="/en">Version EN</a>
+    
+    <h1>VERSION FR</h1>
+    
+    <ul id="main-nav">
+      <li id='home' class="{% if page.fullpath == 'index' %} active {% endif %} link"><a href="/">Home</a></li>
+      {% nav 'site', depth: 1, no_wrapper: true, exclude: nil, icon: true, active_class: active %}
+    </ul>
+    <div id="rails-container">
+      {% block 'main' %}
+        {% with_scope category:partenaire %}
+         {% for customer in contents.customers limit:3 %}
+          {{customer.name}}
+         {% endfor %}
+        {% endwith_scope %}
+        <p>Lorem ipsum....</p>
+        {% block 'company' %}
+          <img src="{% editable_file "photo", hint: "photo", priority: 1 %}{% endeditable_file %}" />
+          {% editable_long_text "description", hint: "La société", priority: 1 %}
+            Lorem ipsum (default content)
+          {% endeditable_long_text %}
+        {% endblock %}
+
+      {% endblock %}
+    </div>
+    <a href="/contact?type=toto">Contactez-nous</a>
+  </body>
+</html>

@@ -1,0 +1,624 @@
+body {
+    background: #f5f5f5;
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 15px;
+    color: #5b5c5e;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+a:hover,
+a:focus {
+    outline: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+ul li:last-child,
+ul > li > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+.center {
+    width: 955px;
+    margin: 0 auto;
+}
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+#header .topHead {
+    background: #2a2e30;
+    padding: 11px 0;
+    color: #fff;
+    font-size: 12px;
+}
+
+#header .followTheSunDesc {
+    float: left;
+}
+
+#header .languages {
+    float: right;
+    width: 85px;
+}
+
+#header .languages .flag {
+    margin-right: 6px;
+}
+
+#header .languages > a {
+    color: #fff;
+    display: block;
+    white-space: nowrap;
+}
+
+#header .languages .current {
+    background: url(/images/icons/icons-arrowWhite-bottom.png) no-repeat right 6px;
+    padding-right: 16px;
+}
+
+#header .languages img {
+    position: relative;
+    top: -1px;
+}
+
+#header .bottomHead {
+    background: #fff url(/images/backgrounds/bkg-shadowTop.png) repeat-x 0 0;
+    padding: 18px 0 28px;
+}
+
+#header .logo {
+    display: block;
+    background: url(/images/logo.png) no-repeat 0 0;
+    width: 270px;
+    height: 78px;
+    text-indent: -9999px;
+}
+
+/* Navigation */
+
+#navigation {
+    margin-top: 18px;
+    float: right;
+}
+
+#navigation li {
+    float: left;
+    width: 87px;
+    font-size: 14px;
+}
+
+#navigation li.home {
+    width: 94px;
+}
+
+#navigation li a {
+    color: #5b5c5e;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+#navigation li .icon {
+    background: url(/images/icons/icons-nav.png) no-repeat 0 0;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 40px;
+    height: 40px;
+}
+
+#navigation li.team .icon {
+    background-position: -94px 0;
+}
+
+#navigation li.products .icon {
+    background-position: -189px 0;
+}
+
+#navigation li.partners .icon {
+    background-position: -285px 0;
+}
+
+#navigation li.customers .icon {
+    background-position: -379px 0;
+}
+
+#navigation li.contact .icon {
+    background-position: -475px 0;
+}
+
+#navigation li.home a:hover .icon,
+#navigation li.home.active .icon {
+    background-position: 0 -45px;
+}
+
+#navigation li.team a:hover .icon,
+#navigation li.team.active .icon {
+    background-position: -94px -45px;
+}
+
+#navigation li.products a:hover .icon,
+#navigation li.products.active .icon {
+    background-position: -189px -45px;
+}
+
+#navigation li.partners a:hover .icon,
+#navigation li.partners.active .icon {
+    background-position: -285px -45px;
+}
+
+#navigation li.customers a:hover .icon,
+#navigation li.customers.active .icon {
+    background-position: -379px -45px;
+}
+
+#navigation li.contact a:hover .icon,
+#navigation li.contact.active .icon {
+    background-position: -475px -45px;
+}
+
+#navigation li a .text {
+    display: block;
+}
+
+/* =============================================================================
+   Content
+   ========================================================================== */
+
+#content {
+
+}
+
+/** Banner **/
+#banner {
+    background: url(/images/backgrounds/bkg-banner.png) no-repeat center 0;
+    height: 365px;
+    overflow: hidden;
+}
+
+#banner p {
+    margin-bottom: 20px;
+}
+
+#banner .inner {
+    background: url(/images/backgrounds/bkg-shadowTop.png) repeat-x 0 0;
+}
+
+#banner .bannerInside {
+    position: relative;
+}
+
+#banner .bannerExtend {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    display: none;
+}
+
+#banner .bannerContent {
+    overflow: hidden;
+}
+
+#banner .bannerText {
+    padding-top: 40px;
+}
+
+#banner .bannerText .intro {
+    font-size: 20px;
+    color: #fc6204;
+}
+
+#banner .bannerText .title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#banner .bannerText .desc {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+#banner .bannerLeft {
+    background: url(/images/backgrounds/bkg-banner-left.png) repeat-x right 0;
+}
+
+#banner .bannerRight {
+    background: url(/images/backgrounds/bkg-banner-right.png) repeat-x left 0;
+}
+
+#bannerCarousel {
+    height: 366px;
+}
+
+#banner .imageContent,
+#banner .textContent {
+    height: 100%;
+}
+
+#banner .imageContent {
+    text-align: center;
+    padding-top: 26px;
+    *height: 339px;
+    *overflow: hidden;
+}
+
+#banner .text {
+    display: table-cell;
+    vertical-align: middle;
+    height: 365px;
+}
+
+#banner .text li {
+    margin-bottom: 8px;
+}
+
+/** end banner **/
+
+.bd {
+    padding-bottom: 19px;
+}
+
+#mainContent {
+    padding: 20px 0;
+    min-height: 300px;
+}
+
+#mainContent .ourCustomers .customersList {
+    background: url(/images/backgrounds/bkg-shadowBottom.png) no-repeat center bottom;
+    padding-bottom: 28px;
+    margin-bottom: 0;
+}
+
+#mainContent .ourCustomers .customersList li {
+    vertical-align: middle
+}
+
+#mainContent .customerExperience .bd {
+    background: url(/images/backgrounds/bkg-arrowBubble.png) no-repeat right bottom;
+}
+
+/** bottomContent **/
+
+#bottomContent {
+    background: #fff;
+    padding: 20px 0 40px;
+}
+
+
+/** PAGE EQUIPE **/
+
+.page-team #banner .imageContent {
+    padding-top: 7px;
+}
+
+/** CRM SHEMA **/
+.crm360 {
+    position: relative;
+    background: url(/images/backgrounds/crm-schema.png) no-repeat top center;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 424px;
+    height: 239px;
+    margin-bottom: 20px;
+    margin-top: 26px;
+}
+
+.crm360 > span {
+    position: absolute;
+    width: 140px;
+}
+
+.crm360 .item1 {
+    right: 365px;
+    bottom: 40px;
+}
+
+.crm360 .item2 {
+    left: -1px;
+    bottom: 191px;
+}
+
+.crm360 .item3 {
+    bottom: 178px;
+    left: 142px;
+}
+
+.crm360 .item4 {
+    bottom: 191px;
+    right: 0px;
+}
+
+.crm360 .item5 {
+    bottom: 39px;
+    right: -80px;
+}
+
+.enterprisePhilosophy ul li {
+    margin-bottom: 24px;
+}
+
+/** Scores **/
+.ourScores .score {
+    font-size: 42px;
+    color: #28BDBD;
+    height: 100%;
+    width: 106px;
+    float: left;
+}
+
+.ourScores .desc {
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+}
+
+/** CRM Solution **/
+.crm360Solution .icon {
+    background: url(/images/icons/icons-crm360Solutions.png) no-repeat 0 0;
+    display: inline-block;
+    width: 120px;
+    height: 122px;
+    margin-bottom: 20px;
+}
+
+.crm360Solution .clickNPlay .icon {
+    background-position: -198px 0
+}
+
+.crm360Solution .payPerUse .icon {
+    background-position: -393px 0
+}
+
+/** Customers **/
+
+.customersBloc li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+.customersQuotation blockquote {
+    text-align: justify;
+}
+
+.customersQuotation p {
+    margin-bottom: 19px;
+}
+
+.customersQuotation .quotationList {
+    margin-bottom: 0;
+}
+
+.customersQuotation .bd {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* CRM 360° */
+
+.crm360Tools {
+    margin-top: 30px;
+}
+
+.crm360Tools .tool .inner {
+    padding-right: 28px;
+}
+
+.crm360Tools .tool .icon {
+    position: relative;
+    background: url(/images/icons/icons-crm360.png) no-repeat 0 0;
+    width: 90px;
+    height: 95px;
+    margin-bottom: 20px;
+}
+
+.crm360Tools .sortDatas .icon {
+    background-position: -90px -100px;
+}
+
+.crm360Tools .targetConsumer .icon {
+    background-position: -180px -200px;
+}
+
+.crm360Tools .campaignManagement .icon {
+    background-position: -272px -302px;
+}
+
+.crm360Tools .trackingConsumer .icon {
+    background-position: -357px -404px;
+}
+
+.crm360Tools .icon .nb {
+    background: url(/images/backgrounds/bkg-nb.png) no-repeat 0 0;
+    position: absolute;
+    width: 25px;
+    height: 26px;
+    line-height: 26px;
+    bottom: -6px;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+}
+
+.CRM360Push .btn {
+    font-size: 14px;
+}
+
+.CRM360Push figure {
+    margin-top: 20px;
+}
+
+.CRM360Push .title02 {
+    margin-bottom: 4px;
+}
+
+.CRM360Push .subTitle03 {
+    margin-bottom: 15px;
+}
+
+.CRM360PushPrice .hd {
+    background: url(/images/backgrounds/bkg-border.png) repeat-x left bottom;
+    padding-bottom: 2px;
+    text-align: center;
+}
+
+.CRM360PushPrice .hd .inner {
+    background: url(/images/backgrounds/bkg-sphere.png) no-repeat center bottom;
+    padding-bottom: 10px;
+}
+
+.CRM360PushPrice .logoCRM360 {
+    position: relative;
+    vertical-align: bottom;
+    top: -8px;
+    *left: 15px;
+    *top: 0;
+}
+
+.CRM360PushPrice .price {
+    font-size: 30px;
+}
+
+.CRM360PushPrice .price strong {
+    font-size: 40px;
+}
+
+/* Contact */
+
+.contact .contactInfo {
+    background: url(/images/icons/icons-marker.png) no-repeat 0 0;
+    padding-left: 70px;
+    margin-bottom: 40px;
+}
+
+.contact .contactInfo p {
+    margin-bottom: 25px;
+}
+
+.contact .contactInfo .tel {
+    margin-bottom: 10px;
+}
+
+#banner .marker {
+    background: url(/images/icons/icons-marker.png) no-repeat 0 0;
+    position: absolute;
+    top: 147px;
+    left: 458px;
+    width: 57px;
+    height: 57px;
+
+}
+
+/* =============================================================================
+Footer
+========================================================================== */
+
+#footer {
+    color: #fff;
+    font-size: 13px;
+}
+
+#footer .inner {
+    padding: 18px 0 40px;
+    background-color: #2a2e30;
+}
+
+#footer .logo-small {
+    background: url(/images/logo-small.png) no-repeat 0 0;
+    display: block;
+    width: 140px;
+    height: 41px;
+    text-indent: -9999px;
+}
+
+#footer .hd {
+    margin-bottom: 20px;
+}
+
+#footer .hd .title {
+    color: #45c4c9;
+    vertical-align: bottom;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#footer .hd .title:after {
+    overflow: hidden;
+    height: 100%;
+    width: 0;
+    font-size: 0;
+    content: ".";
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#footer .hd {
+    height: 40px;
+}
+
+#footer a {
+    color: #fff;
+}
+
+#footer .twitter {
+    position: relative;
+    top: -2px;
+    left: 3px;
+}
+
+#footer .footer-items {
+    margin: 0;
+    background: url(/images/backgrounds/bkg-footerSeparator.png) repeat-y top left;
+    padding-left: 13px;
+}
+
+#footer .footer-items.partnersList li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: bottom;
+    margin-right: 16px;
+    margin-bottom: 40px;
+}
+
+#footer .footer-items.partnersList li.lastLine {
+    margin-bottom: 0;
+}
+
+#footer .footer-items.partnersList li.lastItem {
+    margin-right: 0;
+}
+
+#footer .footer-items > li {
+    margin-bottom: 5px;
+}
+
+#footer .footer-items > li.last {
+    margin-bottom: 0;
+}
+
+#footer .contactInfo .address {
+    margin-bottom: 26px;
+}
+
+#footer .contactInfo .contact {
+    margin-bottom: 15px;
+}

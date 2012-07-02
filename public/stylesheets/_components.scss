@@ -1,0 +1,829 @@
+/* =============================================================================
+   Block
+   ========================================================================== */
+.box {
+    padding: 7px 13px 15px;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.box figure img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.box.boxOutsetShadow {
+    -webkit-box-shadow: 0 1px 6px #878888;
+    -moz-box-shadow: 0 1px 6px #878888;
+    box-shadow: 0 1px 6px #878888;
+}
+
+.box.boxIntsetShadow {
+    -webkit-box-shadow: inset 0 0 6px #878888;
+    -moz-box-shadow: inset 0 0 6px #878888;
+    box-shadow: inset 0 0 6px #878888;
+    position: relative;
+}
+
+.lt-ie9 .boxOutsetShadow,
+.lt-ie9 .boxIntsetShadow {
+    filter: progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 0, strength = 5), progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 45, strength = 2), progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 90, strength = 5), progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 135, strength = 5), progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 180, strength = 10), progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 225, strength = 5), progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 270, strength = 5), progid:DXImageTransform.Microsoft.Shadow(color = #cccccc, direction = 315, strength = 2);
+    zoom: 1;
+}
+
+.lt-ie9 .boxForm.boxOutsetShadow,
+.lt-ie9 .boxForm.boxIntsetShadow {
+    filter: none;
+    zoom: 0;
+}
+
+.lt-ie9 .boxForm  .boxInsetWrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 7px 13px 15px;
+    left: -15px;
+    height: 100%;
+}
+
+.lt-ie8 .boxForm .boxShadowIE,
+.lt-ie9 .boxForm .boxShadowIE {
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius = '8', MakeShadow = 'true', ShadowOpacity = '0.40');
+    zoom: 1;
+    position: absolute;
+    background: #ccc;
+    width: 100%;
+    z-index: -1;
+}
+
+.lt-ie8 .boxForm .boxShadowIE {
+    top: -2px;
+    left: -10px;
+    height: 97%;
+}
+
+.lt-ie9 .boxForm .boxShadowIE {
+    top: -7px;
+    left: -8px;
+    height: 100%;
+}
+
+.boxPush {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f4f4f4 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f4f4f4)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%, #f4f4f4 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%, #f4f4f4 100%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%, #f4f4f4 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#f4f4f4', GradientType = 0); /* IE6-9 */
+    *zoom: 1;
+    padding: 10px 16px 15px;
+}
+
+.boxArrow {
+    background: #fff url(/images/backgrounds/bkg-arrowBubbleGrey.png) no-repeat bottom right;
+}
+
+.blockArticle {
+    background: url(/images/backgrounds/bkg-border.png) repeat-x left bottom;
+    padding: 16px 0 20px;
+}
+
+.blockArticle.last {
+    padding-bottom: 0;
+    background: none;
+}
+
+.box .title02 {
+    padding-top: 0;
+}
+
+.more {
+    background: url(/images/backgrounds/bkg-border.png) repeat-x 0 0;
+    padding-top: 16px;
+    text-align: right;
+}
+
+/* =============================================================================
+Columns
+========================================================================== */
+.col2 .col {
+    float: left;
+    width: 50%;
+}
+
+.col3 .col {
+    float: left;
+    width: 33.333333334%;
+}
+
+.col4 .col {
+    float: left;
+    width: 25%;
+}
+
+.col5 .col {
+    float: left;
+    width: 20%;
+}
+
+/* =============================================================================
+Title
+========================================================================== */
+.title01 {
+    font-size: 18px;
+    color: #fc6204;
+    margin-bottom: 20px;
+}
+
+.title02 {
+    color: #5b5c5e;
+    font-size: 24px;
+    padding-top: 7px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.title03 {
+    color: #5b5c5e;
+    font-weight: bold;
+    font-size: 33px;
+}
+
+.subTitle01, .subTitle02 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.subTitle01 {
+    color: #61c3be;
+}
+
+.subTitle02 {
+    color: #46859e;
+    font-weight: bold;
+}
+
+.subTitle03 {
+    color: #fc6204;
+    font-weight: bold;
+}
+
+/* =============================================================================
+Buttons
+========================================================================== */
+
+.btn, .btn span, .btn input[type="submit"] {
+    display: inline-block;
+    background: url(/images/buttons/icons-sprite-btn.png) no-repeat 0 0;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.btn input[type="submit"] {
+    border: 0;
+}
+
+.btn {
+    padding-left: 30px;
+}
+
+.btn span,
+.btn input[type="submit"] {
+    padding-right: 10px;
+}
+
+.btn01 {
+    background-position: 0 0;
+}
+
+.btn01:hover {
+    background-position: 0 -160px;
+}
+
+.btn01 span,
+.btn01 input[type="submit"] {
+    background-position: right 0;
+    color: #fff;
+}
+
+.btn01:hover span,
+.btn01:hover input[type="submit"] {
+    background-position: right -160px;
+}
+
+.btn02 {
+    background-position: left -40px;
+}
+
+.btn02 span,
+.btn02 input[type="submit"] {
+    background-position: right -40px;
+    color: #528da4;
+}
+
+.btn03 {
+    background-position: left -80px;
+}
+
+.btn03 span,
+.btn03 input[type="submit"] {
+    background-position: right -80px;
+    color: #528da4;
+}
+
+.btn02:hover,
+.btn03:hover {
+    background-position: left -120px;
+}
+
+.btn02:hover span,
+.btn03:hover span,
+.btn02:hover input[type="submit"],
+.btn03:hover input[type="submit"] {
+    background-position: right -120px;
+}
+
+/* =============================================================================
+List
+========================================================================== */
+.list01 {
+    margin-bottom: 0;
+}
+
+.list01 > li {
+    background: url(/images/lists/lists-bullet-orange.png) no-repeat left 7px;
+    padding-left: 20px;
+    margin-bottom: 3px;
+}
+
+.list01 > li > ul {
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.list01 > li > ul > li {
+    margin-bottom: 10px;
+}
+
+.blockList li {
+    padding: 30px 0;
+    background: url(/images/backgrounds/bkg-border.png) repeat-x 0 bottom;
+}
+
+.blockList li:first-child {
+    padding-top: 20px;
+}
+
+.blockList li:last-child {
+    background: none;
+    padding-bottom: 0;
+}
+
+.titleColList .colTitle01 {
+    background: url(/images/backgrounds/bkg-border.png) repeat-x left bottom;
+    color: #46859e;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.titleColList .title {
+    background: url(/images/backgrounds/bkg-border.png) repeat-x left bottom;
+    color: #fc6204;
+    padding-bottom: 15px;
+}
+
+.titleColList > li ul > li {
+    list-style: disc inside;
+    margin-bottom: 5px;
+}
+
+/* =============================================================================
+Forms
+========================================================================== */
+.form p:before, .form p:after {
+    display: table;
+    content: "";
+}
+
+.form p:after {
+    clear: both;
+}
+
+.form p {
+    *zoom: 1;
+    margin-bottom: 9px;
+}
+
+.form label {
+    width: 82px;
+    color: #000;
+    float: left;
+}
+
+.form .inputText,
+.form .inputSelect {
+    height: 22px;
+    line-height: 22px;
+}
+
+.form .fieldInputText,
+.form .fieldInputSelect {
+    border: 1px solid #e1e1e1;
+    background: #f5f5f5;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+/* Special Tip permettant au champs de prendre toute la largeur restante*/
+
+.form .field {
+    display: table-cell;
+    float: none;
+    width: auto;
+    *padding: 0 5px;
+    *zoom: 1;
+}
+
+.form .field.fieldInputSelect {
+    *padding: 0;
+}
+
+.form .field:after {
+    content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    visibility: hidden;
+    clear: both;
+    height: 0 !important;
+    display: block;
+    line-height: 0;
+}
+
+.form .largeInput {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form .largeInput textarea {
+    height: 145px;
+}
+
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 0;
+    background: none;
+    padding: 0 5px;
+    color: #5B5C5E;
+}
+
+.lt-ie9 .form input,
+.lt-ie9 .form textarea,
+.lt-ie9 .form select {
+    width: 100%;
+    padding: 0;
+}
+
+/* Custom SelectBox */
+.cxqDropdown {
+    position: relative;
+    height: 22px;
+    line-height: 22px;
+}
+
+.cxqDropdown .cxqArrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 100%;
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top, #f5f5f5 0%, #fefefe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #fefefe));
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #fefefe 100%);
+    background: -o-linear-gradient(top, #f5f5f5 0%, #fefefe 100%);
+    background: -ms-linear-gradient(top, #f5f5f5 0%, #fefefe 100%);
+    background: linear-gradient(top, #f5f5f5 0%, #fefefe 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#f5f5f5', endColorstr = '#fefefe', GradientType = 0);
+    border-left: 1px solid #e3e3e3;
+}
+
+.cxqDropdown .cxqArrow > span {
+    background: url(/images/icons/icons-arrow-bottom.png) no-repeat center center;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cxqDropdown .cxqText {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: block;
+    padding: 0 27px 0 5px;
+
+}
+
+.cxqDropdown select {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    z-index: 1;
+    *zoom: 1;
+}
+
+/** form Error **/
+.form .errorField label {
+    color: #f92900;
+}
+
+.form .errorField .fieldInputText,
+.form .errorField .cxqDropdown {
+    border: 1px solid #f92900;
+    background: #f9b6b6;
+}
+
+.form .errorMessage {
+    display: none;
+}
+
+.form.errorForm .errorMessage {
+    display: block;
+    font-size: 13px;
+    color: #f92900;
+}
+
+/* =============================================================================
+Dropdown menu
+========================================================================== */
+.dropdownMenu {
+    position: relative;
+}
+
+.dropdownMenu .dataList {
+    display: none;
+    position: absolute;
+    background: #2A2E30;
+    margin: 0 0 0 -10px;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.dropdownMenu .dataList li a {
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.dropdownMenu .dataList li a:hover {
+    background: #373d40;
+}
+
+/* =============================================================================
+Tabs
+========================================================================== */
+
+.tabsBlock {
+    position: relative;
+    *margin-bottom: -10px;
+    margin-bottom: 0;
+    border: 0;
+    z-index: 2;
+}
+
+.tabsBlock:after, .tabsBlock:before {
+    display: table;
+    content: "";
+}
+
+.tabsBlock:after {
+    clear: both;
+}
+
+.tabsBlock li {
+    float: left;
+    margin-right: 4px;
+    bottom: 0;
+}
+
+.tabsBlock li.active {
+    -webkit-box-shadow: 0 1px 6px #878888;
+    -moz-box-shadow: 0 1px 6px #878888;
+    box-shadow: 0 1px 6px #878888;
+    -webkit-transition: all .6s ease-in;
+    -moz-transition: all .6s ease-in;
+    -o-transition: all .6s ease-in;
+    transition: all .6s ease-in;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    background: #fff;
+    position: relative;
+}
+
+.tabsBlock li.active .after {
+    display: block;
+    position: absolute;
+    left: -2px;
+    bottom: -9px;
+    height: 9px;
+    width: 105%;
+    background: #fff;
+}
+
+.tabsBlock li.active.first .after {
+    left: 0;
+}
+
+.tabsBlock li.active.last .after {
+    right: 0;
+    left: inherit;
+}
+
+.tabsBlock li.last {
+    margin-right: 0;
+}
+
+.tabsBlock li.last a {
+    padding-right: 11px;
+    padding-left: 11px;
+}
+
+.tabsBlock li a {
+    opacity: 0.5;
+    padding: 0  13px;
+    position: relative;
+    display: block;
+    height: 175px;
+}
+
+.tabsBlock li a img{
+    margin-top: 15px;
+}
+
+.tabsBlock li a:hover,
+.tabsBlock li.active a {
+    opacity: 1;
+
+}
+
+.lt-ie9 .tabsBlock li.active .after {
+    bottom: -10px;
+    height: 10px;
+}
+
+.lt-ie9 .tabsBlock li.active.first .after {
+    left:5px;
+}
+
+.lt-ie9 .tabsBlock li.active .after {
+    left:0;
+}
+
+.lt-ie9 .tabsBlock li a {
+    filter: alpha(opacity = 50);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.lt-ie9 .tabsBlock {
+    margin-left: 8px;
+}
+
+.lt-ie8 .tabsBlock {
+    margin-left: -20px;
+}
+
+.lt-ie9 .tabsBlock li a:hover,
+.lt-ie9 .tabsBlock li.active a {
+    filter: alpha(opacity = 100);
+}
+
+.lt-ie9 .tabsBlock li {
+    margin-bottom: -10px;
+}
+
+.lt-ie8 .tabsBlock li {
+    margin-left: -4px;
+    margin-bottom: -10px;
+}
+
+.lt-ie9 .tabsBlock li.active {
+    filter:progid:DXImageTransform.Microsoft.Shadow(Color = #cccccc, Strength = 5, Direction = 0), progid:DXImageTransform.Microsoft.Shadow(Color = #cccccc, Strength = 5, Direction = 90), progid:DXImageTransform.Microsoft.Shadow(Color = #cccccc, Strength = 5, Direction = 180), progid:DXImageTransform.Microsoft.Shadow(Color = #cccccc, Strength = 5, Direction = 270);
+    zoom:1;
+}
+
+.teamProfil .tab-content {
+    padding: 20px 15px;
+    *margin-left: -10px;
+    *margin-top: 0px;
+    *zoom: 1;
+}
+
+.teamProfil .tab-content article header {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
+}
+
+.teamProfil .tab-content article .bd {
+    padding: 20px 0 70px;
+}
+
+.teamProfil .tab-content .title {
+    font-size: 16px;
+    color: #ff4e00;
+    float: left;
+}
+
+.teamProfil .linkedin {
+    float: right;
+}
+
+.tabsBlock01 {
+    padding-bottom: 2px;
+    background: url(/images/backgrounds/bkg-border.png) repeat-x 0 bottom;
+    *zoom: 1;
+}
+
+.tabsBlock01:after, .tabsBlock01:before {
+    display: table;
+    content: "";
+}
+
+.tabsBlock01:after {
+    clear: both;
+}
+
+.tabsBlock01>li {
+    float: left;
+    margin-right: 2px;
+}
+
+.tabsBlock01>li>a {
+    background-color: #fff;
+    line-height: 10px;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 0;
+    color: #5b5c5e;
+}
+
+.tabsBlock01>.active>a,
+.tabsBlock01>.active>a:hover {
+    color: #fff;
+    background-color: #46859e;
+    border: 1px solid #e1e1e1;
+    cursor: default;
+    border-bottom: none;
+}
+
+/* =============================================================================
+Color
+========================================================================== */
+.job {
+    color: #46859e;
+}
+
+.color01 {
+    color: #fc6204;
+}
+
+/* =============================================================================
+Helpers
+========================================================================== */
+.xtraPaddingL {
+    padding-left: 15px;
+}
+
+.txtC {
+    text-align: center;
+}
+
+.txtR {
+    text-align: right;
+}
+
+.txtL {
+    text-align: left;
+}
+
+/* =============================================================================
+ slideShow One Image
+========================================================================== */
+
+.slideShowWrapper {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.slideShowWrapper .slideShowOneImage {
+    height: 100%;
+}
+
+.slideShowWrapper .arrowSlide {
+    position: absolute;
+    background: url(/images/icons/icons-slideshowArrow.png) no-repeat 0 0;
+    width: 26px;
+    height: 51px;
+    top: 50%;
+    margin-top: -51px;
+    display: block;
+    z-index: 1080;
+}
+
+.slideShowWrapper .arrowSlideLeft {
+    background-position: right top;
+    left: 0;
+}
+
+.slideShowWrapper .arrowSlideRight {
+    background-position: left top;
+    right: 0;
+}
+
+/* =============================================================================
+ Carousel
+========================================================================== */
+.carousel .item {
+    *zoom: 1;
+}
+
+.carousel .paginationBullet {
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+}
+
+.carousel .paginationBullet li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 10px;
+    margin-right: 10px;
+}
+
+.carousel .paginationBullet li a {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: url("/images/icons/icons-carousel-bullets.png") no-repeat 0 0;
+    text-indent: -9999px;
+}
+
+.carousel .paginationBullet li a.active {
+    background-position: right top;
+}
+
+/* =============================================================================
+ Toogle
+========================================================================== */
+.toggle {
+    margin-bottom: 25px;
+}
+
+.toggle .toggleHead {
+    font-size: 18px;
+    background: url(/images/backgrounds/bkg-border.png) repeat-x left bottom;
+    padding-bottom: 13px;
+    cursor: pointer;
+}
+
+.toggle .toggleHead .inner {
+    background: url(/images/icons/icons-toggle.png) no-repeat right 0;
+}
+
+.toggle.active .toggleHead .inner {
+    background-position: right -67px;
+}
+
+.toggle .toggleBody {
+    display: none;
+    padding: 10px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.toggle .toggleBody h3 {
+    color: #46859e;
+}
+
+.toggle .toggleBody p {
+    margin-bottom: 20px;
+}
+
