@@ -1,29 +1,152 @@
 {% extends 'index' %}
 {% block 'main' %}
-  {% assign title = message.title %}
-  {% assign description = message.description %}
+<div id="content" role="main">
+  <div id="banner">
+    <div class="inner">
+      <div class="center bannerInside">
+        <div class="bannerExtend bannerLeft"></div>
+        <div class="bannerExtend bannerRight"></div>
+        <div class="row-fluid bannerContent">
+          <img src="{{ 'images/banner/map.jpg' | theme_image_url }}"/>
+          <a target="_blank" href="https://maps.google.fr/maps?f=q&source=s_q&hl=fr&geocode=&q=4,+rue+Nationale+59100+Roubaix&aq=&sll=46.75984,1.738281&sspn=11.968876,33.815918&vpsrc=6&t=h&ie=UTF8&hq=&hnear=4+Rue+Nationale,+59100+Roubaix,+Nord,+Nord-Pas-de-Calais&ll=50.696485,3.169277&spn=0.010806,0.033023&z=16&iwloc=A" class="marker"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mainContent" class="center contact">
+    <div class="row-fluid">
+      <div class="span5">
+        <article class="box boxIntsetShadow boxArrow boxForm">
+          <header>
+            <h3 class="title02">Contactez-nous</h3>
 
-  {% if params["type"] == "toto" %}
-    {% assign title = "Le titre" %}
-    {% assign description = "La description" %}
-  {% endif %}
-  {% if message.errors %}
-    Messag d'erreur
-  {% endif %}
+            <p class="subTitle02">Vous désirez nous poser une question ou
+              nous faire part de vos remarques alors
+              contactez l’équipe Follow The Sun.</p>
+          </header>
+          <form class="form errorForm" action="{{contents.messages.api.create}}.html" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="success_callback" value="/contact?action=success" />
+            <input type="hidden" name="error_callback" value="/contact?action=failure" />
+            {% assign title = message.title %}
+            {% if params["title"] %}
+              {% assign title = params["title"] %}
+            {% endif %}
+            <input type="hidden" name="content[title]" value="{{title}}" />
+            <div class="bd">
+              <p class="errorField">
+                <label for="firstName">Prénom*</label>
+                  <span class="field fieldInputText"><input id="firstName" class="inputText"
+                        type="text" value="" name="content[firstname]" /></span>
+              </p>
 
-  <form action="{{contents.messages.api.create}}.html" method="post" ENCTYPE="multipart/form-data">
-    <input type="hidden" name="success_callback" value="/contact/success" />
-    <input type="hidden" name="error_callback" value="/contact" />
-    
-    <label for="title">Objet</label>
-    <input type="text" id="title" name="content[title]" value="{{title}}" />
-    <label for="description">Message</label>
-    <textarea type="text" id="description" name="content[description]">{{description}}</textarea>
+              <p>
+                <label for="lastName">Nom*</label>
+                  <span class="field fieldInputText"><input id="lastName" class="inputText"
+                                        type="text" value="" name="content[lastname]" /></span>
+              </p>
 
-    <label for="attachment">Pièce jointe</label>
-    <input type="file" id="attachment" name="content[attachment]" />
+              <p>
+                <label for="company">Société*</label>
+                  <span class="field fieldInputText"><input id="company" class="inputText"
+                                        type="text" value="" name="content[company]" /></span>
+              </p>
 
-    <input type="submit" value="Envoyer" />
+              <p>
+                <label for="job">Fonction*</label>
+                  <span class="field fieldInputText"><input id="job" class="inputText"
+                                        type="text" value="" name="content[job]" /></span>
+              </p>
 
-  </form>
+              <p>
+                <label>Pays*</label>
+                  <span class="field fieldInputSelect">
+                    <select class="inputSelect" name="content[country]" >
+                      <option>France</option>
+                      <option>Belgique</option>
+                      <option>Angleterre</option>
+                    </select>
+                  </span>
+              </p>
+
+              <p>
+                <label for="email">Email</label>
+                  <span class="field fieldInputText"><input id="email" class="inputText" type="email"
+                                        value="" name="content[email]" /></span>
+              </p>
+
+              <p>
+                <label for="phoneNumber">Téléphone</label>
+                  <span class="field fieldInputText">
+                    <input id="phoneNumber" class="inputText" type="tel" value="" name="content[phone]" />
+                  </span>
+              </p>
+
+              <p>
+                <label for="message">Message</label>
+                <span class="largeInput fieldInputText">
+                  <textarea id="message" value="" name="content[description]"></textarea>
+                </span>
+              </p>
+            </div>
+            {% if message.errors %}
+              <p class="errorMessage">Message d'erreur*</p>
+              {{ message.errors }}
+            {% endif %}
+
+            <div class="ft more">
+              <span href="#" class="btn btn03"><input type="submit" value="Envoyer"/></span>
+            </div>
+          </form>
+        </article>
+      </div>
+      <div class="span7">
+        <div class="xtraPaddingL">
+          <h2 class="title02">Ou rendez-nous visite !</h2>
+
+          <p class="subTitle02">Notre aire de jeu</p>
+
+          <div class="contactInfo">
+            <p>4, rue Nationale<br/>59100 Roubaix</p>
+
+            <p class="tel">Tel +33 3 20 69 17 17<br/>
+              Fax +33 3 20 69 17 18</p>
+
+            <p>Contact@fts-services.com</p>
+          </div>
+          <div class="itinerary">
+            <p class="subTitle02">Comment venir ?</p>
+            <ul id="itineraryTabs" class="nav tabsBlock01">
+              <li><a href="#byTrain">En train</a></li>
+              <li><a href="#byMetro">En métro</a></li>
+              <li><a href="#byTram">En tramway</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="byTrain">
+                <ul class="list01">
+                  <li>Arrêt Gare Jean Lebas</li>
+                  <li>Descendez l'avenue Jean-Baptiste Lebas en direction de la mairie, la rue Nationale sera à 450 m sur votre droite. Vous y serez en 6 minutes à pieds !</li>
+                </ul>
+              </div>
+              <div class="tab-pane active" id="byMetro">
+                <ul class="list01">
+                  <li>Arrêt Roubaix Grand Place</li>
+                  <li>L'arrêt de métro Grand Place se trouve sur la ligne 2. Remontez l'avenue Jean-Baptiste Lebas en direction de la gare, la rue Nationale sera à 400 m sur votre gauche. Vous y serez en 5 minutes à pieds !</li>
+                </ul>
+
+              </div>
+              <div class="tab-pane active" id="byTram">
+                <ul class="list01">
+                  <li>Arrêt Roubaix Eurotéléport</li>
+                  <li>L'arrêt de tramway Eurotéléport se trouve sur la ligne R. Rejoignez la Grand Place par la rue Pierre Motte puis remontez l'avenue Jean-Baptiste Lebas en direction de la gare. La rue Nationale se trouvera à 400 m de la Grand Place et vous accèderez à nos en locaux en 15 minutes à pieds !</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}

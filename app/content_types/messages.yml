@@ -2,7 +2,7 @@ name: messages
 slug: messages
 fields:
 - title:
-    label: Objet
+    label: Sujet
     required: true
     type: string
     hint: Fill the text here
@@ -10,10 +10,35 @@ fields:
     label: Message
     type: text
     hint: Fill the text here
-- attachment:
-    label: Pièce jointe
-    type: file
-    hint: "efezf"
+- firstname:
+    label: Prénom
+    required: true
+    type: string
+- lastname:
+    label: Nom
+    required: true
+    type: string
+- company:
+    label: Société
+    required: true
+    type: string
+- job:
+    label: Fonction
+    required: true
+    type: string
+- country:
+    label: Pays
+    required: true
+    type: string
+- email:
+    label: Email
+    required: true
+    type: string
+- phone:
+    label: Téléphone
+    required: false
+    type: string
+
 label_field_name: :title
 description: Fill the text here
 public_submission_enabled: true

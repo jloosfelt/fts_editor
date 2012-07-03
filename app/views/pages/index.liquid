@@ -34,6 +34,7 @@
 Modernizr enables HTML5 elements & feature detects for optimal performance.
 Create your own custom Modernizr build: www.modernizr.com/download/ -->
   {{ 'libs/modernizr-2.5.3.min.js' | javascript_tag }}
+  {% inline_editor %}
 </head>
 <body>
 <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -65,14 +66,14 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
         <nav class="span7">
           <div class="xtraPaddingL">
             <ul id="navigation" class="clearfix">
-              <li class="home active"><a href="/"><span class="icon"></span><span
+              <li class="home active"><a href="/societe"><span class="icon"></span><span
                   class="text">follow the sun</span></a></li>
               <li class="team"><a href="/equipe"><span class="icon"></span><span
                   class="text">Equipe</span></a>
               </li>
-              <li class="products"><a href="/FR/page-crm360.html"><span class="icon"></span><span
+              <li class="products"><a href="/crm360"><span class="icon"></span><span
                   class="text">Produits</span></a></li>
-              <li class="partners"><a href="/FR/page-partenaire.html"><span class="icon"></span><span
+              <li class="partners"><a href="/partenaires"><span class="icon"></span><span
                   class="text">Partenaires</span></a>
               </li>
               <li class="customers"><a href="/clients"><span class="icon"></span><span
@@ -94,9 +95,8 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
         <div class="center bannerInside">
           <div class="bannerExtend bannerLeft"></div>
           <div class="bannerExtend bannerRight"></div>
-
+          {% block 'carousel' %}
           <div id="bannerCarousel" class="carousel slide">
-
             <!-- Carousel items -->
             <div class="carousel-inner">
               <div class="active item">
@@ -108,10 +108,14 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                     <h2 class="title"><img src="{{ 'images/banner/fr/simplement.png' | theme_image_url }}"
                        alt="cloud"/></h2>
 
-                    <p class="desc">Augmentez vos scores<br/>
-                      avec des outils marketing<br/>
-                      simples d’utilisation, efficaces<br/>
-                      et surtout, performants.</p>
+                    <p class="desc">
+                      {% editable_long_text "volet_1", hint: "volet 1", priority: 1 %}
+                        Augmentez vos scores<br/>
+                        avec des outils marketing<br/>
+                        simples d’utilisation, efficaces<br/>
+                        et surtout, performants.
+                      {% endeditable_long_text %}
+                    </p>
                   </article>
                   <div class="span7">
                     <img style="position: relative;left:-57px;top:-69px" src="{{ 'images/banner/increase-scores.png' | theme_image_url }}" alt="Increase Scores" />
@@ -128,10 +132,14 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                     <h2 class="title"><img src="{{ 'images/banner/en/24-7.png' | theme_image_url }}"
                        alt="24/7"/></h2>
 
-                    <p class="desc">Gardez le contact<br/>
-                      avec tous vos clients<br/>
-                      24h / 24 et 7j / 7.<br/>
-                      Business non stop !</p>
+                      {% editable_long_text "volet_2", hint: "volet 2", priority: 1 %}
+                    <p class="desc">
+                        Gardez le contact<br/>
+                        avec tous vos clients<br/>
+                        24h / 24 et 7j / 7.<br/>
+                        Business non stop !
+                    </p>
+                      {% endeditable_long_text %}
                   </article>
                   <div class="span7">
                     <img style="position: relative;left:-115px" src="{{ 'images/banner/keep-contact.png' | theme_image_url }}"alt="Keep Contact" />
@@ -146,10 +154,14 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
 
                     <h2 class="title"><img src="{{ 'images/banner/en/in-the-cloud.png' | theme_image_url }}" alt="In the Cloud" /> </h2>
 
-                    <p class="desc">Connectez-vous partout.<br/>
-                      Des solutions en ligne<br/>
-                      disponibles tout le temps,<br/>
-                      où que vous soyez.</p>
+                    <p class="desc">
+                      {% editable_long_text "volet_3", hint: "volet 3", priority: 1 %}
+                        Connectez-vous partout.<br/>
+                        Des solutions en ligne<br/>
+                        disponibles tout le temps,<br/>
+                        où que vous soyez.
+                      {% endeditable_long_text %}
+                    </p>
                   </article>
                   <div class="span7">
                     <img style="left: -76px;position: relative;" src="{{ 'images/banner/cloud.png' | theme_image_url }}"
@@ -168,6 +180,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
             <!--<a class="carousel-control left" href="#bannerCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#bannerCarousel" data-slide="next">&rsaquo;</a>-->
           </div>
+          {% endblock %}
         </div>
       </div>
     </div>
@@ -214,23 +227,19 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
             </article>
             <article class="customerExperience">
               <header>
-                <h3 class="title02">Et sont ravis de l'expérience</h3>
+                <h3 class="title02">... et sont ravis de l'expérience</h3>
               </header>
+              {% for testimony in contents.testimonials limit:1 %}
               <div class="bd">
                 <blockquote>
-                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-                  conatibus,
-                  Luscus quidam curator urbis subito visus, eosque ut heiulans baiolorum praecentor ad
-                  expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus
-                  exustus est. Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis
-                  egere
-                  ».
+                  « {{testimony.description}} »
                 </blockquote>
                 <p>
-                  <strong>Isabelle Dupon</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
+                  <strong>{{ testimony.author }}</strong><br/>
+                  <span class="job">{{ testimony.company }}</span>
                 </p>
               </div>
+              {% endfor %}
             </article>
             <div class="more">
               <a class="btn btn02" href="#" title=""><span>Lire les témoignages</span></a>

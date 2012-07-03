@@ -9,7 +9,7 @@ fields:
     hint: "Prénom Nom"
     required: true
 - photo:
-    hint: "The photo (614X264)"
+    hint: "The photo (162x148)"
     type: file
     label: Photo
     required: false

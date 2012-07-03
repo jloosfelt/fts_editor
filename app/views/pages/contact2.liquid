@@ -1,0 +1,29 @@
+{% extends 'index' %}
+{% block 'main' %}
+  {% assign title = message.title %}
+  {% assign description = message.description %}
+
+  {% if params["type"] == "toto" %}
+    {% assign title = "Le titre" %}
+    {% assign description = "La description" %}
+  {% endif %}
+  {% if message.errors %}
+    Messag d'erreur
+  {% endif %}
+
+  <form action="{{contents.messages.api.create}}.html" method="post" ENCTYPE="multipart/form-data">
+    <input type="hidden" name="success_callback" value="/contact/success" />
+    <input type="hidden" name="error_callback" value="/contact" />
+    
+    <label for="title">Objet</label>
+    <input type="text" id="title" name="content[title]" value="{{title}}" />
+    <label for="description">Message</label>
+    <textarea type="text" id="description" name="content[description]">{{description}}</textarea>
+
+    <label for="attachment">Pièce jointe</label>
+    <input type="file" id="attachment" name="content[attachment]" />
+
+    <input type="submit" value="Envoyer" />
+
+  </form>
+{% endblock %}
