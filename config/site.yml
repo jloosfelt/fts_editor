@@ -16,6 +16,10 @@ site:
         en:
           title: "Home page"
           seo_title: "Accueil"
+  - "index2": # page path (the template can edited here app/views/pages/index.liquid)
+      title: "Accueil"
+      published: true
+      seo_title: "Accueil"
   - "societe":
       title: "La société"
       meta_keywords: "Test fr"
