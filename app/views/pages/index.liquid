@@ -15,10 +15,12 @@
   <!-- Use the .htaccess and remove these lines to avoid edge case issues.
  More info: h5bp.com/i/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
 
+  <title>{{ page.seo_title }} | {{ site.name }}</title>
+  {% seo_metadata %}
   <title>Follow the sun</title>
-  <meta name="description" content="">
-
+  
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
@@ -47,7 +49,6 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
     <div class="center">
       <div class="clearfix">
         <span class="followTheSunDesc">Follow the Sun - Solution business et CRM en mode SAAS</span>
-
         <div class="dropdownMenu languages">
           <a class="current" href="#"><img src="{{ 'icons/flag/france.png' | theme_image_url }}" class="flag">Français</a>
           <ul class="dataList">
@@ -66,21 +67,17 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
         <nav class="span7">
           <div class="xtraPaddingL">
             <ul id="navigation" class="clearfix">
-              <li class="home active"><a href="/societe"><span class="icon"></span><span
+              <li class="home {% if page.fullpath == 'societe' %}active{% endif %}"><a href="/societe"><span class="icon"></span><span
                   class="text">follow the sun</span></a></li>
-              <li class="team"><a href="/equipe"><span class="icon"></span><span
-                  class="text">Equipe</span></a>
-              </li>
-              <li class="products"><a href="/crm360"><span class="icon"></span><span
+              <li class="team {% if page.fullpath == 'equipe' %}active{% endif %}"><a href="/equipe"><span class="icon"></span><span class="text">Equipe</span></a></li>
+              <li class="products {% if page.fullpath == 'crm360' %}active{% endif %}"><a href="/crm360"><span class="icon"></span><span
                   class="text">Produits</span></a></li>
-              <li class="partners"><a href="/partenaires"><span class="icon"></span><span
-                  class="text">Partenaires</span></a>
-              </li>
-              <li class="customers"><a href="/clients"><span class="icon"></span><span
+              <li class="partners {% if page.fullpath == 'index' %}partenaires{% endif %}"><a href="/partenaires"><span class="icon"></span><span
+                  class="text">Partenaires</span></a></li>
+              <li class="customers {% if page.fullpath == 'clients' %}active{% endif %}"><a href="/clients"><span class="icon"></span><span
                   class="text">Clients</span></a></li>
-              <li class="contact"><a href="/contact"><span class="icon"></span><span
-                  class="text">Contact</span></a>
-              </li>
+              <li class="contact {% if page.fullpath == 'contact' %}active{% endif %}"><a href="/contact"><span class="icon"></span><span
+                  class="text">Contact</span></a></li>
             </ul>
           </div>
         </nav>
@@ -95,7 +92,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
         <div class="center bannerInside">
           <div class="bannerExtend bannerLeft"></div>
           <div class="bannerExtend bannerRight"></div>
-          {% block 'carousel' %}
+          {% block 'Slider' %}
           <div id="bannerCarousel" class="carousel slide">
             <!-- Carousel items -->
             <div class="carousel-inner">
@@ -103,19 +100,19 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                 <div class="row-fluid bannerContent">
 
                   <article class="span5 bannerText">
-                    <p class="intro">Prenez les commandes de votre business</p>
+                    <p class="intro">{% editable_short_text 'Volet 1 titre', priority: 11 %}Prenez les commandes de votre business{% endeditable_short_text %}</p>
 
                     <h2 class="title"><img src="{{ 'images/banner/fr/simplement.png' | theme_image_url }}"
                        alt="cloud"/></h2>
 
+                      {% editable_long_text 'Volet n°1 texte', hint: 'Encadrer le texte par la balise <p class="desc">', priority: 10 %}
                     <p class="desc">
-                      {% editable_long_text "volet_1", hint: "volet 1", priority: 1 %}
                         Augmentez vos scores<br/>
                         avec des outils marketing<br/>
                         simples d’utilisation, efficaces<br/>
                         et surtout, performants.
-                      {% endeditable_long_text %}
                     </p>
+                      {% endeditable_long_text %}
                   </article>
                   <div class="span7">
                     <img style="position: relative;left:-57px;top:-69px" src="{{ 'images/banner/increase-scores.png' | theme_image_url }}" alt="Increase Scores" />
@@ -127,12 +124,12 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                 <div class="row-fluid bannerContent">
 
                   <article class="span5 bannerText">
-                    <p class="intro">Prenez les commandes de votre business</p>
+                    <p class="intro">{% editable_short_text 'Volet 2 titre', priority: 9 %}Prenez les commandes de votre business{% endeditable_short_text %}</p>
 
                     <h2 class="title"><img src="{{ 'images/banner/en/24-7.png' | theme_image_url }}"
                        alt="24/7"/></h2>
 
-                      {% editable_long_text "volet_2", hint: "volet 2", priority: 1 %}
+                      {% editable_long_text 'Volet n°2', hint: 'Encadrer le texte par la balise <p class="desc">', priority: 8 %}
                     <p class="desc">
                         Gardez le contact<br/>
                         avec tous vos clients<br/>
@@ -150,18 +147,18 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                 <div class="row-fluid bannerContent">
 
                   <article class="span5 bannerText">
-                    <p class="intro">Prenez les commandes de votre business</p>
+                    <p class="intro">{% editable_short_text 'Volet 3 titre', priority: 7 %}Prenez les commandes de votre business{% endeditable_short_text %}</p>
 
                     <h2 class="title"><img src="{{ 'images/banner/en/in-the-cloud.png' | theme_image_url }}" alt="In the Cloud" /> </h2>
 
+                      {% editable_long_text 'Volet n°3', hint: 'Encadrer le texte par la balise <p class="desc">', priority: 6 %}
                     <p class="desc">
-                      {% editable_long_text "volet_3", hint: "volet 3", priority: 1 %}
                         Connectez-vous partout.<br/>
                         Des solutions en ligne<br/>
                         disponibles tout le temps,<br/>
                         où que vous soyez.
-                      {% endeditable_long_text %}
                     </p>
+                      {% endeditable_long_text %}
                   </article>
                   <div class="span7">
                     <img style="left: -76px;position: relative;" src="{{ 'images/banner/cloud.png' | theme_image_url }}"
@@ -186,34 +183,35 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
     </div>
     <div id="mainContent" class="center">
       <div class="row-fluid">
+        {% block 'block_societe' %}
         <article class="span5 aboutFollowSun">
           <div class="box boxOutsetShadow">
             <div class="hd">
-              <h2 class="title02">follow the sun</h2>
-
-              <p class="subTitle01">play live business</p>
+              <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}follow the sun{% endeditable_short_text %}</h2>
+              <p class="subTitle01">{% editable_short_text 'Sous-titre', priority: 9 %}play live business{% endeditable_short_text %}</p>
             </div>
             <div class="bd">
               <figure>
-                <img src="{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}" alt="" />
-                <figcaption>Créé en 2011 à Lille-Métropole, Follow The Sun
+                <img src="{% editable_file 'photo', hint: 'Photo au format 325x236', priority: 8 %}{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}{% endeditable_file %}" alt="" />
+                <figcaption>{% editable_short_text 'Texte sous la photo', hint: 'Texte sous la photo', priority: 8 %}Créé en 2011 à Lille-Métropole, Follow The Sun
                   est un éditeur qui transforme des savoir-faire métier
-                  en offres de services en ligne simples, fiables, sécurisées et interconnectables.
+                  en offres de services en ligne simples, fiables, sécurisées et interconnectables.{% endeditable_short_text %}
                 </figcaption>
               </figure>
             </div>
             <div class="ft">
               <div class="more">
-                <a class="btn btn03" href="#" title=""><span>Voir l'équipe</span></a>
+                <a class="btn btn03" href="/equipe" title=""><span>Voir l'équipe</span></a>
               </div>
             </div>
           </div>
         </article>
+        {% endblock %}
         <section class="ourCustomers span7">
           <div class="xtraPaddingL">
             <article>
               <header>
-                <h2 class="title02">Ils se sont pris au jeu</h2>
+                <h2 class="title02">{% editable_short_text 'Titre du block liste logos' %}Ils se sont pris au jeu{% endeditable_short_text %}</h2>
               </header>
               <ul class="customersList row-fluid">
                 <li class="span3"><img src="{{ 'images/clients/bonduelle.png' | theme_image_url }}" alt="bonduelle" /></li>
@@ -222,12 +220,12 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                 <li class="span3"><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo" /></li>
               </ul>
               <div class="more">
-                <a class="btn btn02" href="#" title=""><span>Voir tous nos clients</span></a>
+                <a class="btn btn02" href="/clients" title=""><span>Voir tous nos clients</span></a>
               </div>
             </article>
             <article class="customerExperience">
               <header>
-                <h3 class="title02">... et sont ravis de l'expérience</h3>
+                <h3 class="title02">{% editable_short_text 'Titre du block témoignage client' %}... et sont ravis de l'expérience{% endeditable_short_text %}</h3>
               </header>
               {% for testimony in contents.testimonials limit:1 %}
               <div class="bd">
@@ -242,7 +240,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
               {% endfor %}
             </article>
             <div class="more">
-              <a class="btn btn02" href="#" title=""><span>Lire les témoignages</span></a>
+              <a class="btn btn02" href="/clients" title=""><span>Lire les témoignages</span></a>
             </div>
           </div>
         </section>
@@ -252,56 +250,64 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
       <div class="center">
         <div class="row-fluid">
           <div class="span7">
+            {% block 'block_reseau' %}
             <article>
               <header>
-                <h3 class="title02">Réseau</h3>
+                <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Réseau{% endeditable_short_text %}</h3>
 
-                <p class="subTitle02">Des partenaires de talent</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Des partenaires de talent{% endeditable_short_text %}</p>
               </header>
               <div class="bd txtC">
+                {% editable_long_text 'Texte', hint: 'Respecter la syntaxe html', priority: 8 %}
                 <div class="crm360">
-                  <span class="txtR item1 color01">Techniques</span>
-                  <span class="txtC item2">Clients</span>
-                  <span class="txtC item3 color01">Commerciaux</span>
-                  <span class="txtC item4">Clients</span>
-                  <span class="txtL item5 color01">Intégrateurs</span>
+                  <a class="item1 color01 txtR" href="/equipe">Techniques</a>
+                  <a class="item2 txtC" href="/clients">Clients</a>
+                  <a class="txtC item3 color01" href="/equipe">Commerciaux</a>
+                  <a class="txtC item4" href="/clients">Clients</a>
+                  <a class="txtL item5 color01" href="/equipe">Intégrateurs</a>
                 </div>
                 <p class="txtL">
                   Afin d’enrichir votre expérience et de vous proposer une offre CRM complète<br/>
                   et adaptée à vos besoins, Follow The Sun s’entoure d’un écosystème de partenaires<br/>
                   diversifiés.
                 </p>
+                {% endeditable_long_text %}
               </div>
               <div class="more">
-                <a class="btn btn03" href="#" title=""><span>Devenir partenaire</span></a>
+                <a class="btn btn03" href="/contact?title=Devenir partenaire" title=""><span>Devenir partenaire</span></a>
               </div>
             </article>
+            {% endblock %}
           </div>
           <article class="span5">
+            {% block "block_reseau" %}
             <div class="xtraPaddingL">
               <div class="box boxIntsetShadow boxPush">
                 <header class="hd">
-                  <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°" /></h3>
+                  <h3 class="title02"><img src="{% editable_file 'Logo du produit', priority: 11 %}{{ 'images/crm360.png' | theme_image_url }}{% endeditable_file %}" alt="CRM360°" /></h3>
 
-                  <p class="subTitle02">Une solution GRC simple et efficace</p>
+                  <p class="subTitle02">{% editable_short_text 'Titre', priority: 10 %}Une solution GRC simple et efficace{% endeditable_short_text %}</p>
                 </header>
                 <div class="bd">
                   <figure>
-                    <img src="{{ 'images/crm360Ipad.png' | theme_image_url }}" alt="" />
+                    <img src="{{ 'images/crm360Ipad.png' | theme_image_url }}" alt="Interface de CRM360" />
                     <figcaption>
+                      {% editable_short_text 'Texte', priority: 8 %}
                       CRM360° est une nouvelle offre commerciale
                       de Gestion de Données de la Relation Client (GDRC)
                       en mode SaaS couvrant les fonctions suivantes : Intégration de flux, Data
                       Quality Management,
                       Campaign Management, Business Intelligence.
+                      {% endeditable_short_text %}
                     </figcaption>
                   </figure>
                 </div>
                 <footer class="ft more">
-                  <a class="btn btn02" href="#" title=""><span>En savoir plus</span></a>
+                  <a class="btn btn02" href="/crm360" title=""><span>En savoir plus</span></a>
                 </footer>
               </div>
             </div>
+            {% endblock %}
           </article>
         </div>
       </div>
@@ -319,22 +325,22 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
           <ul class="bd col-footer row-fluid">
             <li class="span6">
               <ul class="footer-items">
-                <li><a href="/FR/page-societe.html">La société</a></li>
-                <li><a href="/FR/page-equipe.html">L'équipe</a></li>
-                <li><a href="/FR/page-crm360.html">Les produits</a></li>
-                <li><a href="/FR/page-partenaire.html">Les partenaire</a></li>
-                <li><a href="/FR/page-clients.html">Les clients</a></li>
-                <li class="last"><a href="/FR/page-contact.html">Contact</a></li>
+                <li><a href="/societe">La société</a></li>
+                <li><a href="/equipe">L'équipe</a></li>
+                <li><a href="/crm360">Les produits</a></li>
+                <li><a href="/partenaires">Les partenaire</a></li>
+                <li><a href="/clients">Les clients</a></li>
+                <li class="last"><a href="/contact">Contact</a></li>
               </ul>
             </li>
             <li class="span6">
               <ul class="footer-items">
-                <li><a href="/FR/page-crm360.html">CRM360°</a></li>
-                <li><a href="/FR/page-recrutement.html">Recrutement</a></li>
-                <li><a href="#">Nos bureaux</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Crédits</a></li>
-                <li class="last"><a href="#">Nous suivre sur <img class="twitter"
+                <li><a href="/crm360">CRM360°</a></li>
+                <li><a href="/recrutement">Recrutement</a></li>
+                <li><a href="/societe">Nos bureaux</a></li>
+                <li><a href="/mentions-legales">Mentions légales</a></li>
+                <li><a href="/credits">Crédits</a></li>
+                <li class="last"><a href="http://twitter.com/followthesun">Nous suivre sur <img class="twitter"
                                           src="{{ 'icons/twitter.png' | theme_image_url }}"
                                           alt="twitter"/></a></li>
               </ul>
@@ -367,16 +373,17 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
             <ul class="col-footer row-fluid bd">
               <li class="span6 contactInfo">
                 <div class="footer-items">
+                  {% editable_long_text 'Footer - coordonnées', hint: 'Adresse : <p class="address"> ; Téléphone : <p class="contact">' %}
                   <p class="address">
                     4, rue Nationale<br/>
                     59100 Roubaix
                   </p>
-
                   <p class="contact">
                     Tel +33 3 20 69 17 17<br/>
                     Fax +33 3 20 69 17 18<br/>
                   </p>
                   <span>contact@fts-services.com</span>
+                  {% endeditable_long_text %}
                 </div>
               </li>
               <li class="span6 contactMap">
