@@ -31,30 +31,33 @@
             {% if params["title"] %}
               {% assign title = params["title"] %}
             {% endif %}
+            {% if title == "" %}
+              {% assign title = "Contact depuis le site" %}
+            {% endif %}
             <input type="hidden" name="content[title]" value="{{title}}" />
             <div class="bd">
-              <p class="errorField">
+              <p {% if message.errors["firstname"] %}class="errorField"{% endif %}>
                 <label for="firstName">Prénom*</label>
                   <span class="field fieldInputText"><input id="firstName" class="inputText"
-                        type="text" value="" name="content[firstname]" /></span>
+                        type="text" value="{{message.firstname}}" name="content[firstname]" /></span>
               </p>
 
-              <p>
+              <p {% if message.errors["lastname"] %}class="errorField"{% endif %}>
                 <label for="lastName">Nom*</label>
                   <span class="field fieldInputText"><input id="lastName" class="inputText"
-                                        type="text" value="" name="content[lastname]" /></span>
+                                        type="text" value="{{message.lastname}}" name="content[lastname]" /></span>
               </p>
 
-              <p>
+              <p {% if message.errors["company"] %}class="errorField"{% endif %}>
                 <label for="company">Société*</label>
                   <span class="field fieldInputText"><input id="company" class="inputText"
-                                        type="text" value="" name="content[company]" /></span>
+                                        type="text" value="{{message.company}}" name="content[company]" /></span>
               </p>
 
-              <p>
+              <p {% if message.errors["job"] %}class="errorField"{% endif %}>
                 <label for="job">Fonction*</label>
                   <span class="field fieldInputText"><input id="job" class="inputText"
-                                        type="text" value="" name="content[job]" /></span>
+                                        type="text" value="{{message.job}}" name="content[job]" /></span>
               </p>
 
               <p>
@@ -68,29 +71,28 @@
                   </span>
               </p>
 
-              <p>
+              <p {% if message.errors["email"] %}class="errorField"{% endif %}>
                 <label for="email">Email</label>
                   <span class="field fieldInputText"><input id="email" class="inputText" type="email"
-                                        value="" name="content[email]" /></span>
+                                        value="{{message.email}}" name="content[email]" /></span>
               </p>
 
-              <p>
+              <p  {% if message.errors["phone"] %}class="errorField"{% endif %}>
                 <label for="phoneNumber">Téléphone</label>
                   <span class="field fieldInputText">
-                    <input id="phoneNumber" class="inputText" type="tel" value="" name="content[phone]" />
+                    <input id="phoneNumber" class="inputText" type="tel" value="{{message.phone}}" name="content[phone]" />
                   </span>
               </p>
 
-              <p>
+              <p {% if message.errors["description"] %}class="errorField"{% endif %}>
                 <label for="message">Message</label>
                 <span class="largeInput fieldInputText">
-                  <textarea id="message" value="" name="content[description]"></textarea>
+                  <textarea id="message" value="{{message.description}}" name="content[description]"></textarea>
                 </span>
               </p>
             </div>
             {% if message.errors %}
-              <p class="errorMessage">Message d'erreur*</p>
-              {{ message.errors }}
+              <p class="errorMessage">Veuillez corriger les champs en rouge</p>
             {% endif %}
 
             <div class="ft more">
@@ -111,7 +113,7 @@
             <p class="tel">Tel +33 3 20 69 17 17<br/>
               Fax +33 3 20 69 17 18</p>
 
-            <p>Contact@fts-services.com</p>
+            <p>contact@fts-services.com</p>
           </div>
           <div class="itinerary">
             <p class="subTitle02">Comment venir ?</p>
