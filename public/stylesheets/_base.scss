@@ -315,14 +315,22 @@ ul > li > ul > li:last-child {
     margin-top: 26px;
 }
 
-.crm360 > span {
+.crm360 > a {
     position: absolute;
     width: 140px;
 }
 
+.crm360 a {
+  color: #5B5C5E;
+}
+
+.crm360 a:hover {
+  text-decoration: underline;
+}
+
 .crm360 .item1 {
     right: 365px;
-    bottom: 40px;
+    bottom: 42px;
 }
 
 .crm360 .item2 {
@@ -341,7 +349,7 @@ ul > li > ul > li:last-child {
 }
 
 .crm360 .item5 {
-    bottom: 39px;
+    bottom: 41px;
     right: -80px;
 }
 
