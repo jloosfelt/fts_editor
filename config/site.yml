@@ -16,6 +16,10 @@ site:
         en:
           title: "Home page"
           seo_title: "Accueil"
+  - "index2": # page path (the template can edited here app/views/pages/index.liquid)
+      title: "Accueil"
+      published: true
+      seo_title: "Accueil"
   - "societe":
       title: "La société"
       meta_keywords: "Test fr"
@@ -30,6 +34,34 @@ site:
           seo_title: "Companyee"
           meta_keywords: "Test en"
           meta_description: "The company"
+  - "recrutement":
+      title: "Recrutement"
+      meta_keywords: "Recrutement"
+      meta_description: "Recrutement"
+      published: true
+      seo_title: "Recrutement"
+      listed: true
+      translations:
+        en:
+          slug: "recruitment"
+          title: "Recruitment"
+          seo_title: "Recruitment"
+          meta_keywords: "Recruitment"
+          meta_description: "Recruitment"
+  - "crm360":
+      title: "crm360"
+      meta_keywords: "crm360"
+      meta_description: "crm360"
+      published: true
+      seo_title: "crm360"
+      listed: true
+      translations:
+        en:
+          slug: "crm360"
+          title: "crm360"
+          seo_title: "crm360"
+          meta_keywords: "crm360"
+          meta_description: "crm360"
   - "clients":
       meta_keywords: "Client fr"
       meta_description: "Clients"
@@ -52,6 +84,19 @@ site:
       translations:
         en:
           title: Reference Template
+  - "partenaires":
+      meta_keywords: "partenaires"
+      meta_description: "Partenaires"
+      published: true
+      seo_title: "Partenaires"
+      title: "Partenaires"
+      listed: true
+      translations:
+        en:
+          title: "Partners"
+          seo_title: "Partners"
+          meta_keywords: "Partners"
+          meta_description: "Partners"
   - "equipe":
       meta_keywords: "L'équipe"
       meta_description: "L'équipe"

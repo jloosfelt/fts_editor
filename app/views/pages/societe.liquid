@@ -1,4 +1,199 @@
 {% extends 'index' %}
 {% block 'main' %}
-  <p>La société....</p>
+<div id="content" role="main">
+  <div id="banner">
+    <div class="inner">
+      <div class="center bannerInside">
+        <div class="bannerExtend bannerLeft"></div>
+        <div class="bannerExtend bannerRight"></div>
+        <div class="row-fluid bannerContent">
+          <div class="span5 imageContent">
+            <img src="/images/images/banner/fr/thecompagny.png" alt=""/>
+          </div>
+          <div class="span7 textContent">
+            <article class="text">
+              {% editable_long_text 'Block header', :hint => 'Respecter le html !', priority: 100 %}
+              <header class="hd">
+                <h2 class="title02">Des experts métiers se prennent au jeu <br/>du service online !</h2>
+
+                <p class="subTitle02">Professionnels sans se prendre la tête !</p>
+              </header>
+              <div class="bd">
+                <p>
+                  Créé en 2011 à Lille-Métropole, Follow The Sun est un éditeur qui transforme des
+                  savoir-faire métier en offres de services en ligne simples, fiables, sécurisées et
+                  interconnectables.
+                </p>
+
+                <p>
+                  Follow The Sun est un spin-off d’<a href="http://www.eto.fr"><span class="color01">ETO</span></a>, premier groupe
+                  européen indépendant de
+                  marketing services. A ce titre, Follow The Sun bénéficie de son savoir-faire
+                  largement reconnu dans les métiers de la relation consommateur, au travers de très
+                  grands clients nationaux et internationaux ; et également d’un hébergement de haute
+                  qualité pour ses services online, au travers de la société <a href="http://www.runiso.com"><span class="color01">RUNISO</span></a>.
+                </p>
+              </div>
+              {% endeditable_long_text %}
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mainContent" class="center">
+    <div class="row-fluid">
+      {% block 'Colonne gauche' %}
+      <section class="span7 enterprisePhilosophy">
+        <header>
+          <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Les règles du jeu{% endeditable_short_text %}</h2>
+
+          <p class="subTitle02">{% editable_short_text 'Sous-titre', priority: 9 %}Valeurs et philosophie de l'entreprise{% endeditable_short_text %}</p>
+        </header>
+        <div class="bd">
+          {% editable_long_text 'Texte', hint: 'Utiliser <ul class="list01"> pour les listes à puces' %}
+          <ul class="list01">
+            <li>
+              Follow The Sun commercialise ses offres en équipe avec son écosystème
+              de partenaires.
+            </li>
+            <li>
+              Follow The Sun s’engage sur la qualité et la disponibilité de ses services hébergés
+              en s’appuyant sur Runiso certifié PCI/DSS.
+            </li>
+            <li>
+              Follow The Sun a une stratégie de forte croissance sur le terrain national et international
+              favorisée par un rapport qualité/prix optimum.
+            </li>
+            <li>
+              Follow The Sun conduit ses affaires dans le respect de ses valeurs :
+              <ul>
+                <li>- Transparence et honnêteté dans sa promesse</li>
+                <li>- Innovations technologique et économique</li>
+                <li>- Implication des équipes envers les partenaires et les clients</li>
+                <li>- Autonomie de ses collaborateurs et responsabilité vis-à-vis de son environnement
+                </li>
+                <li>- Recherche de l’excellence</li>
+              </ul>
+            </li>
+          </ul>
+          {% endeditable_long_text %}
+        </div>
+        <div class="ft more">
+          <a href="/clients" class="btn btn03"><span>Lire les témoignages</span></a>
+        </div>
+      </section>
+      {% endblock %}
+      <div class="span5">
+        <div class="xtraPaddingL">
+          <aside class="ourScores">
+            <header>
+              <h3 class="title02">Nos scores</h3>
+            </header>
+            <div class="bd">
+              <p class="subTitle02">En quelques chiffres</p>
+              <ul class="blockList">
+                <li class="clearfix">
+                  <div class="score">{% editable_short_text 'Ligne 1 chiffre', priority: 8 %}68{% endeditable_short_text %}</div>
+                  <p class="desc">
+                    {% editable_short_text 'Ligne 1 texte', priority: 7 %}
+                    Nombre de partenaires talentueux avec lesquels l’entreprise Follow The Sun a tissé des liens.{% endeditable_short_text %}
+                  </p>
+                </li>
+                <li class="clearfix">
+                  <div class="score">{% editable_short_text 'Ligne 2 chiffre', priority: 6 %}3{% endeditable_short_text %}</div>
+                  <p class="desc">
+                    {% editable_short_text 'Ligne 1 texte', priority: 5 %}
+                    Nombre d’années de développement de la solution CRM 360°{% endeditable_short_text %}
+                  </p>
+                </li>
+                <li class="clearfix">
+                  <div class="score">{% editable_short_text 'Ligne 3 chiffre', priority: 4 %}100{% endeditable_short_text %}</div>
+                  <p class="desc">
+                    {% editable_short_text 'Ligne 1 texte', priority: 3 %}
+                    Nombre d’années d’expériences cumulées{% endeditable_short_text %}
+                  </p>
+                </li>
+                <li class="clearfix">
+                  <div class="score">{% editable_short_text 'Ligne 4 chiffre', priority: 2 %}12{% endeditable_short_text %}</div>
+                  <p class="desc">
+                    {% editable_short_text 'Ligne 1 texte', priority: 1 %}
+                    Nombre de claviers usés pour développer CRM 360°{% endeditable_short_text %}
+                  </p>
+                </li>
+
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bottomContent">
+    <div class="center">
+      <div class="row-fluid">
+        <div class="span7">
+          <section class="crm360Solution">
+            <header class="hd">
+              <h3 class="title02"><img src="/images/images/crm360.png" alt="CRM360°"/></h3>
+
+              <p class="subTitle02">Une solution GRC simple et efficace</p>
+            </header>
+            <div class="bd">
+              <ul class="row-fluid solutionItems">
+                <li class="span4 easy">
+                  <span class="icon"></span>
+                  <h4 class="title01">Simple</h4>
+
+                  <p>Profitez de nos 25 années d’expérience du CRM et découvrez un outil conçu pour
+                    être simple à utiliser.</p>
+                </li>
+                <li class="span4 clickNPlay">
+                  <span class="icon"></span>
+
+                  <h4 class="title01">Click 'n Play</h4>
+
+                  <p>Pas d’installation, tout est dans le "cloud" !<br/>
+                    Vous vous connectez et ça fonctionne !</p>
+                </li>
+                <li class="span4 payPerUse">
+                  <span class="icon"></span>
+                  <h4 class="title01">Pay per Use</h4>
+
+                  <p>Pas d’acquisition de licence ! Vous ne payez qu’à la consommation, sans
+                    engagement et<br/>
+                    à partir de <strong>35€ par mois</strong></p>
+                </li>
+              </ul>
+            </div>
+            <div class="ft more">
+              <a href="#" class="btn btn01"><span>Découvrir CRM360°</span></a>
+              </footer>
+            </div>
+          </section>
+        </div>
+        <div class="span5">
+          <article class="box boxIntsetShadow">
+            <header>
+              <h3 class="title02">Notre salle de jeu</h3>
+
+              <p class="subTitle02">Un lieu de travail et de détente</p>
+            </header>
+            <div class="bd">
+              <div class="slideShowOneImage">
+                <img src="/images/images/desk.jpg" alt=""/>
+              </div>
+              <p>C'est ici que l'on vous recevra !</p>
+            </div>
+            <div class="ft more">
+              <a href="#" title="" class="btn btn02"><span>Où nous trouver ?</span></a>
+            </div>
+
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

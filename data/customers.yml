@@ -5,9 +5,9 @@
     translations:
       en:
         name: "Bonduelle EN"
-    testimonials: ["item-4", "item-3"]
+    # testimonials: ["item-4", "item-3"]
 - ! 'Adictiz':
     _permalink: adictiz
     logo: /samples/customers_logos/adictiz.jpg
     category: partenaire
-    testimonials: ["item-1", "item-2"]
+    # testimonials: ["item-1", "item-2"]

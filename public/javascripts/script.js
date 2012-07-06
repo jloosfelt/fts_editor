@@ -122,7 +122,7 @@ $(document).ready(function() {
      */
 
     if ($('.slideShowOneImage').length > 0) {
-        $.getScript('/js/utils/cxqCarousel.js', function() {
+        $.getScript('/javascripts/utils/cxqCarousel.js', function() {
             $('.slideShowOneImage').cxqCarousel();
         }, true);
     }
@@ -132,7 +132,7 @@ $(document).ready(function() {
      */
 
     if ($('.toggle').length > 0) {
-        $.getScript('/js/utils/cxqToggle.js', function() {
+        $.getScript('/javascripts/utils/cxqToggle.js', function() {
             $(".toggle").cxqToggle({
                 oneToggle : true,
                 defaultOpen: '',

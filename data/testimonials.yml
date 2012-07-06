@@ -1,7 +1,13 @@
-- "Item #1":
-    _permalink: item-1
-    :description: Fuga commodi similique mollitia modi illum. Fuga quos quia voluptatibus ratione nobis. Ut neque modi harum vel voluptas voluptas.
-    customer: "adictiz"
+- "Hub To You":
+    _permalink: hub-to-you
+    description: |-
+        A l’heure où le contexte marketing est à la relation client, CRM360° nous permet de passer du marketing de masse au marketing ciblé interactif et collaboratif.<br />
+        CRM360°, la solution CRM B2C de Follow The Sun, est une solution ouverte que l’on peut facilement interfacer avec des services complémentaires de gestion de programmes de fidélité, d’offres commerciales, de géolocalisation… <br />
+        Elle nous permet par exemple d’accompagner nos clients dans la réalisation et l’animation de leur application mobile CRM. La solution CRM360° couplée à nos services Hub To You va au-delà de la simple gestion de campagne, elle gère aussi l’ensemble des sources de données clients en amont pour donner accès à une fiche client unique et dynamique très appréciée des commerçants. Cette fiche client peut-être alors exposée sur tout support digital tel qu'une tablette ou un smartphone pour un vendeur. Ayant accès à l’historique d’achat, de fidélité et de contact de leurs clients, les enseignes peuvent désormais apporter plus facilement à leur client de la reconnaissance tout en étant force de proposition directement sur le point de vente. 
+        Ne nécessitant pas de projet informatique, pas plus que de coûteuses licences, CRM360° est néanmoins adaptable à l’immense majorité des besoins clients.
+    author: Mathieu Beseme
+    company: Gérant Hub To You
+# customer: "hub-to-you"
 - "Item #2":
     _permalink: item-2
     :description: Expedita nulla aspernatur rem consequatur. Ex repellat autem rerum et. Quasi saepe laboriosam dolorem recusandae rem sit et.

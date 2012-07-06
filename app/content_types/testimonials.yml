@@ -10,12 +10,21 @@ fields:
     label: Description
     type: text
     hint: Fill the text here
-- customer:
-    label: "Client"
-    type: belongs_to
-    class_name: customers
-    target: customers
-    inverse_of: testimonials
+- author:
+    label: Auteur
+    type: string
+    hint: Nom de la personne
+- company:
+    label: Fonction
+    type: string
+    hint: Société ou Fonction de la personne
+
+# - customer:
+#     label: "Client"
+#     type: belongs_to
+#     class_name: customers
+#     target: customers
+#     inverse_of: testimonials
 label_field_name: :title
 description: Fill the text here
 public_submission_enabled: false

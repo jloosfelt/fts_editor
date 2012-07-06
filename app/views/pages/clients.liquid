@@ -1,9 +1,115 @@
 {% extends 'index' %}
 {% block 'main' %}
-  {% for customer in contents.customers %}
-    <li class="">
-      <h2>{{ customer.name }}</h2>
-      <a href="/clients/{{ customer._permalink }}"><img src="{{ customer.logo["url"] }}" width="134" height="74" alt="{{customer.name}}"></a>
-    </li>
-  {% endfor %}
+<div id="content" role="main">
+  <div id="banner">
+    <div class="inner">
+      <div class="center bannerInside">
+        <div class="bannerExtend bannerLeft"></div>
+        <div class="bannerExtend bannerRight"></div>
+        <div class="row-fluid bannerContent">
+          <div class="span5 imageContent">
+            <img src="{{ 'images/banner/customer.png' | theme_image_url }}" alt=""/>
+          </div>
+          <div class="span7 textContent">
+            <article class="text">
+              <header class="hd">
+                <h2 class="title02">Ils se sont pris au jeu</h2>
+
+                <p class="subTitle02">Les participants</p>
+              </header>
+              <div class="bd">
+                <p>
+                  Follow The Sun s’adresse aux entreprises enseignes ou marques désireuses de
+                  développer une stratégie de Gestion de la Relation Client et s’accompagnant de la
+                  création d’une base de données multi source provenant des différents systèmes
+                  existant au sein des entreprises concernées.
+                </p>
+
+                <p>
+                  L’entreprise Follow The Sun entretient des relations suivies et dynamiques avec ses
+                  clients par l’intermédiaire de son écosystème de partenaires.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mainContent" class="center">
+    <h2 class="title02">Nos Clients</h2>
+
+    <p class="subTitle02">Les joueurs</p>
+    <ul class="customersBloc">
+      <li><img src="{{ 'images/clients/cabesto.png' | theme_image_url }}" alt="cabesto"/></li>
+      <li><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo"/></li>
+
+    </ul>
+
+  </div>
+  <div id="bottomContent">
+    <div class="center">
+      <div class="customersQuotation">
+        <div class="hd">
+          <h3 class="title02">Ils en parlent mieux que nous</h3>
+
+          <p class="subTitle02">Expériences</p>
+        </div>
+        <div class="bd">
+          <ul class="row-fluid quotationList">
+            <li class="span4 boxArrow">
+              <div class="xtraPaddingL">
+                <blockquote>
+                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
+                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
+                  ad
+                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
+                  subito visus ».
+                </blockquote>
+                <p>
+                  <strong>Isabelle Dupont</strong><br/>
+                  <span class="job">Directrice Marketing Okaïdi</span>
+                </p>
+              </div>
+            </li>
+            <li class="span4">
+              <div class="xtraPaddingL">
+                <blockquote>
+                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
+                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
+                  ad
+                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
+                  subito visus ».
+                </blockquote>
+                <p>
+                  <strong>Isabelle Dupont</strong><br/>
+                  <span class="job">Directrice Marketing Okaïdi</span>
+                </p>
+              </div>
+            </li>
+            <li class="span4">
+              <div class="xtraPaddingL">
+                <blockquote>
+                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
+                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
+                  ad
+                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
+                  subito visus ».
+                </blockquote>
+                <p>
+                  <strong>Isabelle Dupont</strong><br/>
+                  <span class="job">Directrice Marketing Okaïdi</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ft more">
+          <a href="#" class="btn btn03"><span>Nous contacter</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

@@ -7,6 +7,6 @@ staging:
   email: john@doe.net
   password: easyone
 production:
-  host: www.example.com
-  email: john@doe.net
-  password: easyone
+  host: followthesun.followthesun.loosfelt.com
+  email: jloosfelt@gmail.com
+  password: tagada
