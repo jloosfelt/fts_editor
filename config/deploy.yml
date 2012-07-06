@@ -1,5 +1,5 @@
 development:
-  host: fts.locomotive.dev
+  host: fts.fts.dev
   email: jloosfelt@gmail.com
   password: tagada1
 staging:
