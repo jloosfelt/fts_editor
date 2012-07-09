@@ -1,4 +1,4 @@
-{% extends 'index' %}
+{% extends 'layout' %}
 {% block 'main' %}
 <div id="content" role="main" class="page-team">
   <div id="banner">
@@ -11,13 +11,15 @@
             <img src="{{ 'images/banner/team.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
+            {% block 'Bandeau' %}
             <article class="text">
               <header class="hd">
-                <h2 class="title02">Une équipe, des savoir-faire</h2>
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}Une équipe, des savoir-faire{% endeditable_short_text %}</h2>
 
-                <p class="subTitle02">100 ans d'expérience</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}100 ans d'expérience{% endeditable_short_text %}</p>
               </header>
               <div class="bd">
+                {% editable_long_text 'Texte bandeau', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
                 <p>
                   L’entreprise Follow The Sun est composée de talents ayant vécu des expériences
                   différentes mais partageant une même passion : celle de la technologie, du marketing
@@ -43,156 +45,70 @@
                     tous.
                   </li>
                 </ul>
+                {% endeditable_long_text %}
               </div>
 
             </article>
+            {% endblock %}
           </div>
         </div>
       </div>
     </div>
   </div>
   <div id="mainContent" class="center">
-    <h2 class="title02">Vous les croiserez sûrement</h2>
+    <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Vous les croiserez sûrement{% endeditable_short_text %}</h2>
 
-    <p class="subTitle02">Sur le devant de la scène.</p>
+    <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Sur le devant de la scène.{% endeditable_short_text %}</p>
     <section class="teamProfil">
       <ul id="teamTabs" class="tabsBlock">
-        <li class="first"><a href="#item1"><img src="{{ 'images/team/olivier-piettre.jpg' | theme_image_url }}" alt="Olivier Piettre"/></a><span class="after"></span></li>
-        <li><a href="#item2"><img src="{{ 'images/team/nicolas-destroye.jpg' | theme_image_url }}" alt="Nicolas Destroye"/></a><span class="after"></span></li>
-        <li><a href="#item3"><img src="{{ 'images/team/olivier-guillouzouic.jpg' | theme_image_url }}"
-                      alt="Olivier Guillouzouic"/></a><span class="after"></span></li>
-        <li><a href="#item4"><img src="{{ 'images/team/francois-xavier-ousselin.jpg' | theme_image_url }}"
-                      alt="François-Xavier Ousselin"/></a><span class="after"></span></li>
-        <li class="last"><a href="#item5"><img src="{{ 'images/team/francois-delattre.jpg' | theme_image_url }}" alt="François Delattre"/><span class="after"></span></a>
-        </li>
+        {% for team_member in contents.team_members %}
+          <li class="{% if forloop.first %}first{% elsif forloop.last %}last{% endif %}">
+            <a href="#item{{forloop.index}}"><img src="{{ team_member.photo["url"] }}" alt="{{team_member.name}}"/></a>
+            <span class="after"></span>
+          </li>
+        {% endfor %}
       </ul>
       <div class="tab-content box boxOutsetShadow">
-        <article class="tab-pane active" id="item1">
+        {% for team_member in contents.team_members %}
+        <article class="tab-pane" id="item{{forloop.index}}">
           <header class="hd clearfix">
-            <h4 class="title">Olivier Piettre</h4>
-            <a class="linkedin" href="#"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
+            <h4 class="title">{{team_member.name}}</h4>
+            {% if team_member.linked_in_url %}
+            <a class="linkedin" href="{{team_member.linked_in_url}}"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
+            {% endif %}
           </header>
           <div class="bd">
-            <p>Olivier Piettre, ingénieur de formation, profite de nombreuses années d’expériences de
-              direction dans de grandes entreprises telles que Hewlett-Packard et Microsoft pendant plus
-              de 20 ans. Riche de ces aventures, Olivier a su mettre ses compétences technologiques,
-              informatiques et économiques
-              ainsi que ses capacités de management au profit de Follow The Sun dont il est depuis 2011,
-              le Directeur Général.<br/>
-              Vous le croiserez certainement en rendez-vous professionnel, en conférence, sur les salons
-              et bien sûr lors de la signature de vos prochains contrats !</p>
+            {{team_member.description}}
           </div>
           <div class="more ft">
-            <a href="#" class="btn btn02"><span>Contacter Olivier</span></a>
+            <a href="/contact?title=Message pour {{team_member.name}}" class="btn btn02"><span>Contacter {{team_member.shortname}}</span></a>
           </div>
         </article>
-        <article class="tab-pane" id="item2">
-          <header class="hd clearfix">
-            <h4 class="title">Nicolas Destroye</h4>
-            <a class="linkedin" href="#"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
-          </header>
-          <div class="bd">
-            <p>Nicolas Destroye, son diplôme d’ingénieur en génie informatique en poche, a débuté en tant
-              que
-              chef de projet et a ensuite occupé le poste de directeur du service développement
-              informatique
-              chez ETO.<br/>
-              Passionné de marketing, bien sûr, mais également d’informatique et de technologies, Nicolas
-              a
-              effectué de nombreuses études pour réaliser la première base de l’ensemble des plateformes
-              de
-              gestion de la donnée client ETO. Habitué au management et à la direction de projets grands
-              comptes tels que LVMH, Clarins ou Azzaro, il est aujourd’hui et depuis 2010, l’Architecte en
-              Chef des solutions Follow The Sun.<br/>
-              Vous le croiserez sûrement en réunions commerciales ou lors de formations plus techniques !
-            </p>
-          </div>
-          <div class="more ft">
-            <a href="#" class="btn btn02"><span>Contacter Nicolas</span></a>
-          </div>
-        </article>
-        <article class="tab-pane" id="item3">
-          <header class="hd clearfix">
-            <h4 class="title">Olivier Guillouzouic</h4>
-            <a class="linkedin" href="#"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
-          </header>
-          <div class="bd">
-            <p>Issu d’une formation commerciale, Olivier est depuis 2011, l’ingénieur d’Affaires Partenaires
-              Follow The Sun. Bilingue Allemand, Olivier a vécu pendant plusieurs années en Allemagne où
-              il a
-              acquis d’inéluctables compétences commerciales, stratégiques et de gestion de la relation
-              client.<br/>
-              A son retour en France en 2005, Olivier est nommé responsable de projets Carrefour puis Key
-              Account Manager chez ETO. Ce professionnel
-              de la relation clients manie avec expertise le développement des portefeuilles clients ainsi
-              que
-              la mise en place de stratégies commerciale et marketing.<br/>
-              Vous le croiserez sûrement en rendez-vous commercial, sur les salons et sur le terrain !</p>
-          </div>
-          <div class="more ft">
-            <a href="#" class="btn btn02"><span>Contacter Olivier</span></a>
-          </div>
-        </article>
-        <article class="tab-pane" id="item4">
-          <header class="hd clearfix">
-            <h4 class="title">François-Xavier Ousselin</h4>
-            <a class="linkedin" href="#"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
-          </header>
-          <div class="bd">
-            <p>Diplômé d’une école de commerce et de l’université de droit, François-Xavier devient en 1992,
-              le
-              co-fondateur et le directeur des systèmes d’informations chez ETO. Il crée ensuite en 2007,
-              l’hébergeur de Follow The Sun : Runiso. Lancé dans un élan prometteur et ambitieux, cet
-              entrepreneur ne s’arrête pas là et lance avec Nicolas et Olivier P. en 2010, l’entreprise
-              Follow
-              The Sun.<br/>
-              François-Xavier est souvent présent sur les salons et les conférences, vous le croiserez
-              sûrement un jour, pour le plus grand plaisir de votre business </p>
-          </div>
-          <div class="more ft">
-            <a href="#" class="btn btn02"><span>Contacter François-Xavier</span></a>
-            </footer>
-          </div>
-        </article>
-        <article class="tab-pane" id="item5">
-          <header class="hd clearfix">
-            <h4 class="title">François Delattre</h4>
-          </header>
-          <div class="bd">
-            <p>François Delattre a rejoint l’équipe Follow The Sun en 2012 et occupe désormais le poste de
-              Responsable Service Management. Ingénieur de formation, François a débuté sa carrière en
-              Arabie
-              Saoudite dans le secteur technologique et informatique, où il a mené une mission
-              d’intégration
-              de logiciel de supervision. A son retour en France, il est nommé chef de projets chez
-              Scotler
-              France en 2007 et chez ETO en 2009.
-              Vous le croiserez sûrement en rendez-vous client, il vous accompagnera tout au long de votre expérience Follow The Sun.</p>
-          </div>
-          <div class="more ft">
-            <a href="#" class="btn btn02"><span>Contacter François</span></a>
-          </div>
-        </article>
+        {% endfor %}
       </div>
     </section>
   </div>
   <div id="bottomContent">
+    {% block 'Block nous rejoindre' %}
     <div class="center">
       <div class="joinUs">
         <div class="hd">
-          <h3 class="title02">Rejoignez-nous</h3>
+          <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Rejoignez-nous{% endeditable_short_text %}</h3>
 
-          <p class="subTitle02">Venez vivre une expérience exceptionnelle !</p>
+          <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Venez vivre une expérience exceptionnelle !{% endeditable_short_text %}</p>
         </div>
         <div class="bd">
+          {% editable_long_text 'Description', priority: 8 %}
           <p>Follow the Sun est une aventure qui se partage. Vous avez des talents, de l’envie et des choses à
             partager, rejoignez l’équipe !</p>
+          {% endeditable_long_text %}
         </div>
         <div class="ft more">
-          <a href="#" class="btn btn02"><span>Consulter les offres</span></a>
+          <a href="/recrutement" class="btn btn02"><span>Consulter les offres</span></a>
         </div>
       </div>
     </div>
+    {% endblock %}
   </div>
 </div>
 {% endblock %}

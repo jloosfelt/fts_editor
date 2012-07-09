@@ -12,14 +12,22 @@ site:
       title: "Accueil"
       published: true
       seo_title: "Accueil"
+      listed: false
       translations:
         en:
           title: "Home page"
-          seo_title: "Accueil"
+          seo_title: "Welcome"
+  - "layout":
+      title: "Layout"
+      published: false
+      listed: false
+      translations:
+        en:
+          title: "Layout"
   - "index2": # page path (the template can edited here app/views/pages/index.liquid)
-      title: "Accueil"
+      title: "index 2"
       published: true
-      seo_title: "Accueil"
+      seo_title: "Page index 2"
   - "societe":
       title: "La société"
       meta_keywords: "Test fr"
@@ -29,9 +37,10 @@ site:
       listed: true
       translations:
         en:
-          slug: "urldelacompany"
-          title: "Companyrr"
-          seo_title: "Companyee"
+          slug: "company"
+          title: "company"
+          url: "company"
+          seo_title: "company"
           meta_keywords: "Test en"
           meta_description: "The company"
   - "recrutement":
@@ -110,5 +119,44 @@ site:
           seo_title: "team"
           meta_keywords: "Team"
           meta_description: "The team"
+  - "contact":
+      meta_keywords: "Contact"
+      meta_description: "Contact"
+      published: true
+      seo_title: "Contact"
+      title: "Contact"
+      listed: false
+      translations:
+        en:
+          title: "Contact"
+          seo_title: "Contact"
+          meta_keywords: "Contact"
+          meta_description: "Contact"
+  - "mentionslegales":
+      meta_keywords: "Mentions légales"
+      meta_description: "Mentions légales"
+      published: true
+      seo_title: "Mentions Légales"
+      title: "Mentions légales"
+      listed: false
+      translations:
+        en:
+          title: "Legal"
+          seo_title: "Legal"
+          meta_keywords: "Legal"
+          meta_description: "Legal"
+  - "credits":
+      meta_keywords: "Crédits"
+      meta_description: "Crédits"
+      published: true
+      seo_title: "Crédits"
+      title: "Crédits"
+      listed: false
+      translations:
+        en:
+          title: "credits"
+          seo_title: "credits"
+          meta_keywords: "credits"
+          meta_description: "credits"
   - "404":
       title: "Page not found"

@@ -1,0 +1,14 @@
+{% extends 'index2' %}
+{% block 'main' %}
+  <p>The team</p>
+  <ul>
+  {% for team_member in contents.team_members %}
+    <li class="">
+      <h2>{{ team_member.name }}</h2>
+      <img src="{{ team_member.photo["url"] }}" width="134" height="74" alt="{{team_member.name}}">
+      <p>{{team_member.description}}</p>
+      <a href="{{team_member.linked_in_url}}">Linked in</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}

@@ -8,6 +8,11 @@ fields:
     type: string
     hint: "Prénom Nom"
     required: true
+- shortname:
+    label: Prénom
+    type: string
+    hint: "Pour le bouton 'contacter xxx'"
+    required: true
 - photo:
     hint: "The photo (162x148)"
     type: file

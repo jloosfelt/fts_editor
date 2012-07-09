@@ -18,55 +18,60 @@
       <div class="span5">
         <article class="box boxIntsetShadow boxArrow boxForm">
           <header>
-            <h3 class="title02">Contactez-nous</h3>
+            <h3 class="title02">Contact us!</h3>
 
-            <p class="subTitle02">Vous désirez nous poser une question ou
-              nous faire part de vos remarques alors
-              contactez l’équipe Follow The Sun.</p>
+            <p class="subTitle02">If you want to contact us for any question or comment you may have: write
+              to the Follow The Sun team!</p>
           </header>
+          {% if params['action'] == "success" %}
+            {% assign message=nil %}
+            <p>
+              Votre message a bien été envoyé.
+            </p>
+          {% endif %}
           <form class="form errorForm" action="{{contents.messages.api.create}}.html" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="success_callback" value="/contact?action=success" />
-            <input type="hidden" name="error_callback" value="/contact?action=failure" />
+            <input type="hidden" name="success_callback" value="/en/contact?action=success" />
+            <input type="hidden" name="error_callback" value="/en/contact?action=failure" />
             {% assign title = message.title %}
             {% if params["title"] %}
               {% assign title = params["title"] %}
             {% endif %}
-            {% if title %}
-              {% assign title = "Contact depuis le site" %}
+            {% if title == "" %}
+              {% assign title = "Contact from the site" %}
             {% endif %}
             <input type="hidden" name="content[title]" value="{{title}}" />
             <div class="bd">
               <p {% if message.errors["firstname"] %}class="errorField"{% endif %}>
-                <label for="firstName">Prénom*</label>
+                <label for="firstName">Firstname*</label>
                   <span class="field fieldInputText"><input id="firstName" class="inputText"
                         type="text" value="{{message.firstname}}" name="content[firstname]" /></span>
               </p>
 
               <p {% if message.errors["lastname"] %}class="errorField"{% endif %}>
-                <label for="lastName">Nom*</label>
+                <label for="lastName">Lastname*</label>
                   <span class="field fieldInputText"><input id="lastName" class="inputText"
                                         type="text" value="{{message.lastname}}" name="content[lastname]" /></span>
               </p>
 
               <p {% if message.errors["company"] %}class="errorField"{% endif %}>
-                <label for="company">Société*</label>
+                <label for="company">Company*</label>
                   <span class="field fieldInputText"><input id="company" class="inputText"
                                         type="text" value="{{message.company}}" name="content[company]" /></span>
               </p>
 
               <p {% if message.errors["job"] %}class="errorField"{% endif %}>
-                <label for="job">Fonction*</label>
+                <label for="job">Job*</label>
                   <span class="field fieldInputText"><input id="job" class="inputText"
                                         type="text" value="{{message.job}}" name="content[job]" /></span>
               </p>
 
               <p>
-                <label>Pays*</label>
+                <label>Country*</label>
                   <span class="field fieldInputSelect">
                     <select class="inputSelect" name="content[country]" >
                       <option>France</option>
-                      <option>Belgique</option>
-                      <option>Angleterre</option>
+                      <option>Belgium</option>
+                      <option>England</option>
                     </select>
                   </span>
               </p>
@@ -78,7 +83,7 @@
               </p>
 
               <p  {% if message.errors["phone"] %}class="errorField"{% endif %}>
-                <label for="phoneNumber">Téléphone</label>
+                <label for="phoneNumber">Phone</label>
                   <span class="field fieldInputText">
                     <input id="phoneNumber" class="inputText" type="tel" value="{{message.phone}}" name="content[phone]" />
                   </span>
@@ -92,20 +97,20 @@
               </p>
             </div>
             {% if message.errors %}
-              <p class="errorMessage">Veuillez corriger les champs en rouge</p>
+              <p class="errorMessage">Please correct the red fields !</p>
             {% endif %}
 
             <div class="ft more">
-              <span href="#" class="btn btn03"><input type="submit" value="Envoyer"/></span>
+              <span href="#" class="btn btn03"><input type="submit" value="Send"/></span>
             </div>
           </form>
         </article>
       </div>
       <div class="span7">
         <div class="xtraPaddingL">
-          <h2 class="title02">Ou rendez-nous visite !</h2>
+          <h2 class="title02">Pay us a visit !</h2>
 
-          <p class="subTitle02">Notre aire de jeu</p>
+          <p class="subTitle02">Our playground</p>
 
           <div class="contactInfo">
             <p>4, rue Nationale<br/>59100 Roubaix</p>
@@ -116,29 +121,29 @@
             <p>contact@fts-services.com</p>
           </div>
           <div class="itinerary">
-            <p class="subTitle02">Comment venir ?</p>
+            <p class="subTitle02">How to come ?</p>
             <ul id="itineraryTabs" class="nav tabsBlock01">
-              <li><a href="#byTrain">En train</a></li>
-              <li><a href="#byMetro">En métro</a></li>
-              <li><a href="#byTram">En tramway</a></li>
+              <li><a href="#byTrain">By train</a></li>
+              <li><a href="#byMetro">By subway</a></li>
+              <li><a href="#byTram">By tramway</a></li>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="byTrain">
                 <ul class="list01">
-                  <li>Arrêt Gare Jean Lebas</li>
+                  <li>Train Station Roubaix</li>
                   <li>Descendez l'avenue Jean-Baptiste Lebas en direction de la mairie, la rue Nationale sera à 450 m sur votre droite. Vous y serez en 6 minutes à pieds !</li>
                 </ul>
               </div>
               <div class="tab-pane active" id="byMetro">
                 <ul class="list01">
-                  <li>Arrêt Roubaix Grand Place</li>
+                  <li>Metro station Roubaix Grand Place</li>
                   <li>L'arrêt de métro Grand Place se trouve sur la ligne 2. Remontez l'avenue Jean-Baptiste Lebas en direction de la gare, la rue Nationale sera à 400 m sur votre gauche. Vous y serez en 5 minutes à pieds !</li>
                 </ul>
 
               </div>
               <div class="tab-pane active" id="byTram">
                 <ul class="list01">
-                  <li>Arrêt Roubaix Eurotéléport</li>
+                  <li>Tram stop Roubaix Eurotéléport</li>
                   <li>L'arrêt de tramway Eurotéléport se trouve sur la ligne R. Rejoignez la Grand Place par la rue Pierre Motte puis remontez l'avenue Jean-Baptiste Lebas en direction de la gare. La rue Nationale se trouvera à 400 m de la Grand Place et vous accèderez à nos en locaux en 15 minutes à pieds !</li>
                 </ul>
               </div>
@@ -149,6 +154,4 @@
     </div>
   </div>
 </div>
-
-
 {% endblock %}

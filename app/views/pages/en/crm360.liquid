@@ -14,21 +14,17 @@
           <div class="span7 textContent">
             <article class="text">
               <header class="hd">
-                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}Une stratégie, vous simplifier le business{% endeditable_short_text %}</h2>
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}One strategy: simplify your business{% endeditable_short_text %}</h2>
 
-                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}Un jeu d'enfant !{% endeditable_short_text %}</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}It’s as easy as pie{% endeditable_short_text %}</p>
               </header>
               <div class="bd">
                 {% editable_long_text 'Texte bandeau', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
                 <p>
-                  S’appuyant une expertise forte des métiers de la relation client, dans un contexte
-                  où
-                  le Master Data Management et le Big Data sont de vrais challenges pour les
-                  entreprises, Follow The Sun a réalisé une suite de services online complète, simple,
-                  innovante, permettant de centraliser et d’exploiter toutes les données de la
-                  connaissance client-consommateur.<br/>
-                  Tout a été pensé pour que vous puissiez agir rapidement, librement, facilement et
-                  bien sûr efficacement !
+                  Based on a strong CRM marketing expertise, in a Master Data Management and Big Data
+                  context, Follow The Sun created new online, reliable and secure services. You will
+                  be able to centralize your customer data and to make the most of your hub.
+                  Simple, quick and effective!
                 </p>
                 {% endeditable_long_text %}
               </div>
@@ -42,18 +38,16 @@
   <div id="mainContent" class="center">
     <h2 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h2>
 
-    <p class="subTitle02">{% editable_short_text 'Titre', priority: 10 %}Restez en connexion 24/7 avec tous vos clients{% endeditable_short_text %}</p>
+    <p class="subTitle02">{% editable_short_text 'Titre', priority: 10 %}Stay connected to all your consumers 24/7!{% endeditable_short_text %}</p>
 
     {% editable_long_text 'Description', priority: 9 %}
-    <p>Le service en ligne CRM 360° est un tout nouveau service de Gestion de Données de la Relation Client (GRC ou
-      GDRC).
-      L’objectif de la plateforme logicielle CRM 360° est de mettre à votre disposition, en ligne et à la demande,
-      les données de vos clients issues des multiples canaux disponibles, afin de les suivre et de gérer vos
-      relations.
+    <p>CRM360° is an exclusive CRM service offer.<br/>
+      The objective of CRM360° is to put your consumer data, coming from many available channels, at your disposal
+      in order to manage relationships.
     </p>
-    {% endeditable_long_text%}
+    {% endeditable_long_text %}
 
-    {% block 'CRM360 Steps' %}
+    {% block 'CRM360 Steps-en' %}
     <section class="crm360Tools titleColList row-fluid col5">
       <section class="tool getDatas col">
         <div class="inner">
@@ -61,12 +55,12 @@
             <div class="icon">
               <span class="nb">1</span>
             </div>
-            <h3 class="colTitle01">{% editable_short_text '1-Titre', priority: 10 %}Récolte des données{% endeditable_short_text %}</h3>
+            <h3 class="colTitle01">{% editable_short_text '1-Titre', priority: 10 %}Collect your consumer data{% endeditable_short_text %}</h3>
           </header>
           <div class="bd">
             {% editable_long_text '1-Description', priority: 9 %}
-            <p>La gestion des flux d’import est automatisée, le schéma de données optimisé, quel que soit
-              votre canal source.</p>
+            <p>The imported data flows management is automated and the data scheme is optimized, whatever
+              the channel source is.</p>
             {% endeditable_long_text %}
           </div>
         </div>
@@ -77,13 +71,12 @@
             <div class="icon">
               <span class="nb">2</span>
             </div>
-            <h3 class="colTitle01">{% editable_short_text '2-Titre', priority: 8 %}Correction et qualification des données{% endeditable_short_text %}</h3>
+            <h3 class="colTitle01">{% editable_short_text '2-Titre', priority: 8 %}Clean, correct and qualify data{% endeditable_short_text %}</h3>
           </header>
           <div class="bd">
             {% editable_long_text '2-Description', priority: 7 %}
-            <p>Redressez vos adresses, numéros de téléphones et la validation de vos e-mails grâce à nos
-              nombreux
-              référentiels d’adresses et d’algorithmes éprouvés.</p>
+            <p>Correct your addresses, phone numbers and e-mails thanks to our various worldwide contacts
+              expertise.</p>
             {% endeditable_long_text %}
           </div>
         </div>
@@ -94,12 +87,12 @@
             <div class="icon">
               <span class="nb">3</span>
             </div>
-            <h3 class="colTitle01">{% editable_short_text '3-Titre', priority: 6 %}Comptage et ciblage{% endeditable_short_text %}</h3>
+            <h3 class="colTitle01">{% editable_short_text '3-Titre', priority: 6 %}Count and target your consumers{% endeditable_short_text %}</h3>
           </header>
           <div class="bd">
             {% editable_long_text '3-Description', priority: 5 %}
-            <p>Préparez vos campagnes et choisissez vos canaux de communication grâce à des actions simples,
-              multi critère et intuitives.</p>
+            <p>Plan your campaigns and choose your communication channels with multi criteria and easy
+              actions.</p>
             {% endeditable_long_text %}
           </div>
         </div>
@@ -110,12 +103,11 @@
             <div class="icon">
               <span class="nb">4</span>
             </div>
-            <h3 class="colTitle01">{% editable_short_text '4-Titre', priority: 4 %}Gestion des campagnes{% endeditable_short_text %}</h3>
+            <h3 class="colTitle01">{% editable_short_text '4-Titre', priority: 4 %}Manage your campaigns{% endeditable_short_text %}</h3>
           </header>
           <div class="bd">
             {% editable_long_text '4-Description', priority: 3 %}
-            <p>Gérez vos campagnes en mode SaaS de façon simple, multicanal, multi enseigne, intuitive et
-              automatisable.</p>
+            <p>Manage your multi-channel and multi-source campaigns easily in SaaS mode.</p>
             {% endeditable_long_text %}
           </div>
         </div>
@@ -126,13 +118,11 @@
             <div class="icon">
               <span class="nb">5</span>
             </div>
-            <h3 class="colTitle01">{% editable_short_text '5-Titre', priority: 2 %}Suivi et analyse{% endeditable_short_text %}</h3>
+            <h3 class="colTitle01">{% editable_short_text '5-Titre', priority: 2 %}Check your ROI{% endeditable_short_text %}</h3>
           </header>
           <div class="bd">
             {% editable_long_text '5-Description', priority: 1 %}
-            <p>Suivez vos clients et analyser vos résultats grâce à des tableaux, des taux de remplissage et
-              des
-              rapports préconstruits.</p>
+            <p>Follow your consumers and analyze your ROI thanks to our dashboards.</p>
             {% endeditable_long_text %}
           </div>
         </div>
@@ -150,32 +140,33 @@
             <div class="box boxIntsetShadow boxPush row">
               <header class="hd">
                 <div class="inner">
-                  <h3 class="title03">L'accès à <img class="logoCRM360" src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h3>
+                  <h3 class="title03">Access to <img class="logoCRM360"
+                                     src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/>
+                  </h3>
 
-                  
-                  <p class="color01">à partir de</p>
+                  <p class="color01">from</p>
 
                   <div class="price color01">
                     {% editable_short_text 'prix', priority: 10 %}
-                    <strong>35€</strong> / mois !
+                    <strong>35€</strong> a month
                     {% endeditable_short_text %}
                   </div>
-                  
                 </div>
               </header>
               <div class="bd">
                 {% editable_long_text 'Description', priority: 9, hint: 'Utiliser <ul class="list01">' %}
                 <ul class="list01">
-                  <li>Paiement à la consommation</li>
-                  <li>Solution adapté à tous les budgets</li>
-                  <li>Sans engagement</li>
+                  <li>Payment on demand</li>
+                  <li>A solution for every budget</li>
+                  <li>No enlistment required</li>
                 </ul>
                 {% endeditable_long_text %}
               </div>
               <footer class="ft more">
-                <a class="btn btn01" href="/contact?title=Simuler un tarif&type=estimate"
-                   title=""><span>Simuler un tarif</span></a>
+                <a class="btn btn01" href="/en/contact?title=Simulate a price list&type=estimate"
+                   title=""><span>Simulate a price list</span></a>
               </footer>
+
             </div>
           </div>
         </article>
@@ -192,21 +183,21 @@
                   <header class="hd">
                     <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h3>
 
-                    <p class="subTitle03">{% editable_short_text 'Titre', priority: 10 %}Comment ça marche ?{% endeditable_short_text %}</p>
+                    <p class="subTitle03">{% editable_short_text 'Titre', priority: 10 %}CRM360° how does it work?{% endeditable_short_text %}</p>
                   </header>
                   <div class="bd">
                     {% editable_long_text 'Description', priority: 9 %}
                     <p>
-                    Vue unique des clients, correction et dédoublonnage automatique, Customer Data
-                    Hub multicanal et<br/>
-                    multi source, gestion<br/>
-                    de campagnes, gestion multi enseigne…
+                    Only one customer data hub, automated correction and cleaning, multichannel and
+                    <br/>
+                    multi-source customer data hub<br/>
+                    campaign management…
                     </p>
                     {% endeditable_long_text %}
                   </div>
                   <footer class="ft more">
                     <a class="btn btn01" href="#TODO"
-                       title=""><span>Découvrir <strong>CRM360°</strong></span></a>
+                       title=""><span>Discover <strong>CRM360°</strong></span></a>
                   </footer>
                 </div>
               </div>

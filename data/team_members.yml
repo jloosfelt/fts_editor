@@ -1,6 +1,126 @@
+- ! 'Olivier Piettre':
+    _permalink: olivier-piettre
+    shortname: Olivier
+    description: |-
+        <p>Olivier Piettre, ingénieur de formation, profite de nombreuses années d’expériences de
+        direction dans de grandes entreprises telles que Hewlett-Packard et Microsoft pendant plus
+        de 20 ans. Riche de ces aventures, Olivier a su mettre ses compétences technologiques,
+        informatiques et économiques
+        ainsi que ses capacités de management au profit de Follow The Sun dont il est depuis 2011,
+        le Directeur Général.<br/>
+        Vous le croiserez certainement en rendez-vous professionnel, en conférence, sur les salons
+        et bien sûr lors de la signature de vos prochains contrats !</p>
+    linked_in_url: "http://fr.linkedin.com/in/opiettre"
+    photo: /samples/team_members_photos/olivier-piettre.jpg
+    translations:
+        en:
+            description: |-
+                <p>Olivier Piettre, holds an engineering degree and has worked as a General Manager in some
+                world-renowned companies such as Hewlett-Packard and Microsoft for more than 20 years.<br/>
+                Today General Manager of Follow The Sun, Olivier puts his technological, computer, economic
+                and management abilities to the best of the company.<br/>
+                You will certainly come across him over meetings, conferences, business shows and of course
+                during your future agreement signature!
+                </p>
+
 - ! 'Nicolas Destroye':
     _permalink: nicolas-destroye
+    shortname: Nicolas
     description: |-
-      Nicolas Destroye, son diplôme d’ingénieur en génie informatique en poche, a débuté en tant que chef de projet et a ensuite occupé le poste de directeur du service développement informatique chez ETO. Passionné de marketing, bien sûr, mais également d’informatique et de technologies, Nicolas a effectué de nombreuses études pour réaliser la première base de l’ensemble des plateformes de gestion de la donnée client ETO. Habitué au management et à la direction de projets grands comptes tels que LVMH, Clarins ou Azzaro, il est aujourd’hui et depuis 2010, l’Architecte en Chef des solutions Follow The Sun.
-      Vous le croiserez sûrement en réunions commerciales ou lors de formations plus techniques !
-    linked_in_url: "http://www.linkedin.com/profile/view?id=37292607&authType=NAME_SEARCH&authToken=S_Cn&locale=fr_FR&srchid=5b0b8f34-ec88-44fe-8bf1-d4b1f978f3cc-0&srchindex=1&srchtotal=1&goback=%2Efps_PBCK_nicolas+destroye_*1_*1_*1_*1_*1_*1_*2_*1_Y_*1_*1_*1_false_1_R_*1_*51_*1_*51_true_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2&pvs=ps&trk=pp_profile_name_link"
+        <p>Nicolas Destroye, son diplôme d’ingénieur en génie informatique en poche, a débuté en tant
+        que chef de projet et a ensuite occupé le poste de directeur du service développement
+        informatique chez ETO.<br/>
+        Passionné de marketing, bien sûr, mais également d’informatique et de technologies, Nicolas
+        a effectué de nombreuses études pour réaliser la première base de l’ensemble des plateformes
+        de gestion de la donnée client ETO. Habitué au management et à la direction de projets grands
+        comptes tels que LVMH, Clarins ou Azzaro, il est aujourd’hui et depuis 2010, l’Architecte en
+        Chef des solutions Follow The Sun.<br/>
+        Vous le croiserez sûrement en réunions commerciales ou lors de formations plus techniques !
+        </p>
+    linked_in_url: "http://fr.linkedin.com/pub/nicolas-destroye/10/5a5/453"
+    photo: /samples/team_members_photos/nicolas-destroye.jpg
+    translations:
+        en:
+            description: |-
+                <p>Nicolas holds an engineering degree. He first worked as an ETO project manager and then, was
+                promoted to Computer Development Service Manager. With his work team, he created the first
+                data base managing all the ETO customer relationships data platforms.<br/>
+                Nicolas used to manage strategic accounts such as LVMH, Clarins and Azzaro.<br/>
+                From 2012 on, he’s been the Follow The Sun solutions Chief Architect.<br/>
+                You will certainly come across him over business meetings or during technical trainings!
+                </p>
+
+- ! 'Olivier Guillouzouic':
+    _permalink: olifier-guillouzouic
+    shortname: Olivier
+    description: |-
+        <p>Issu d’une formation commerciale, Olivier est depuis 2011, l’ingénieur d’Affaires Partenaires
+        Follow The Sun. Bilingue Allemand, Olivier a vécu pendant plusieurs années en Allemagne où
+        il a acquis d’inéluctables compétences commerciales, stratégiques et de gestion de la relation
+        client.<br/>
+        A son retour en France en 2005, Olivier est nommé responsable de projets Carrefour puis Key
+        Account Manager chez ETO. Ce professionnel de la relation clients manie avec expertise le développement des portefeuilles clients ainsi
+        que la mise en place de stratégies commerciale et marketing.<br/>
+        Vous le croiserez sûrement en rendez-vous commercial, sur les salons et sur le terrain !</p>
+    linked_in_url: http://fr.linkedin.com/pub/olivier-guillouzouic/3/764/695
+    photo: /samples/team_members_photos/olivier-guillouzouic.jpg
+    translations:
+        en:
+            description: |-
+                <p>Graduated from a prestigious Business School, Olivier has been the Follow The Sun Partner
+                Account Manager since 2011.<br/>
+                Fluent in German, Olivier lived in Germany for several years and gained knowledge of
+                business and marketing strategy and of customer relationship management (CRM). In 2005, when
+                he came back to France, he was promoted to Project Account Manager in Carrefour and then,
+                Key Account Manager in ETO. Olivier is a CRM expert and is able to develop your customer
+                portfolio and establish strategies.<br/>
+                You will certainly come across him in meetings or business shows!
+                </p>
+
+- ! 'François-Xavier Ousselin':
+    _permalink: francois-xavier-ousselin
+    shortname: François-Xavier
+    description: |-
+        <p>Diplômé d’une école de commerce et de l’université de droit, François-Xavier devient en 1992,
+        le co-fondateur et le directeur des systèmes d’informations chez ETO. Il crée ensuite en 2007,
+        l’hébergeur de Follow The Sun : Runiso. Lancé dans un élan prometteur et ambitieux, cet
+        entrepreneur ne s’arrête pas là et lance avec Nicolas et Olivier P. en 2010, l’entreprise
+        Follow The Sun.<br/>
+        François-Xavier est souvent présent sur les salons et les conférences, vous le croiserez
+        sûrement un jour, pour le plus grand plaisir de votre business </p>
+    linked_in_url: http://fr.linkedin.com/pub/francois-xavier-ousselin/1/750/357
+    photo: /samples/team_members_photos/francois-xavier-ousselin.jpg
+    translations:
+        en:
+            description: |-
+                <p>Graduated from a business school and has a degree in law, François-Xavier was promoted to
+                Information System Manager in 1992 in ETO. Afterwards, in 2007, he created the Follow The
+                Sun host company: Runiso. Ambitious, he kept going and created Follow The Sun in 2010 with
+                Nicolas and Olivier P.<br/>
+                François-Xavier often takes part in business shows and conferences, you will certainly come
+                across him one day, for the great benefit of your business!
+                </p>
+
+- ! 'François Delattre':
+    _permalink: francois-delattre
+    shortname: François
+    description: |-
+        <p>François Delattre a rejoint l’équipe Follow The Sun en 2012 et occupe désormais le poste de
+        Responsable Service Management. Ingénieur de formation, François a débuté sa carrière en
+        Arabie Saoudite dans le secteur technologique et informatique, où il a mené une mission
+        d’intégration de logiciel de supervision. A son retour en France, il est nommé chef de projets chez
+        Scotler France en 2007 et chez ETO en 2009.<br />
+        Vous le croiserez sûrement en rendez-vous client, il vous accompagnera tout au long de votre expérience Follow The Sun.</p>
+    linked_in_url: 
+    photo: /samples/team_members_photos/francois-delattre.jpg
+    translations:
+        en:
+            description: |-
+                <p>François joined the Follow The Sun team in 2012. Today, he is the Service Management Manager.
+                Holding an engineering degree, François started out his career in Saudi Arabia, and more
+                precisely in the technological and computer sector, where he had to integrate a supervisory
+                software. When he came back to France, he was promoted to project manager at Scotler in 2007
+                and at ETO in 2009.<br/>
+                You will certainly come across him over business meeting. He will back you up all along your
+                Follow The Sun experience.
+                </p>

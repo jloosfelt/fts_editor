@@ -1,0 +1,9 @@
+{% extends 'index' %}
+{% block 'main' %}
+  {% for customer in contents.customers %}
+    <li class="">
+      <h2>{{ customer.name }}</h2>
+      <a href="/en/clients/{{ customer._permalink }}"><img src="{{ customer.logo["url"] }}" width="134" height="74" alt="{{customer.name}}"></a>
+    </li>
+  {% endfor %}
+{% endblock %}

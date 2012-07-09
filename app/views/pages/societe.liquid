@@ -1,4 +1,4 @@
-{% extends 'index' %}
+{% extends 'layout' %}
 {% block 'main' %}
 <div id="content" role="main">
   <div id="banner">
@@ -8,11 +8,11 @@
         <div class="bannerExtend bannerRight"></div>
         <div class="row-fluid bannerContent">
           <div class="span5 imageContent">
-            <img src="/images/images/banner/fr/thecompagny.png" alt=""/>
+            <img src="{{ 'images/banner/fr/thecompagny.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
             <article class="text">
-              {% editable_long_text 'Block header', :hint => 'Respecter le html !', priority: 100 %}
+              {% editable_long_text 'Block header ', :hint => 'Respecter le html !', priority: 100 %}
               <header class="hd">
                 <h2 class="title02">Des experts métiers se prennent au jeu <br/>du service online !</h2>
 
@@ -89,7 +89,7 @@
         <div class="xtraPaddingL">
           <aside class="ourScores">
             <header>
-              <h3 class="title02">Nos scores</h3>
+              <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Nos scores{% endeditable_short_text %}</h3>
             </header>
             <div class="bd">
               <p class="subTitle02">En quelques chiffres</p>
@@ -104,21 +104,21 @@
                 <li class="clearfix">
                   <div class="score">{% editable_short_text 'Ligne 2 chiffre', priority: 6 %}3{% endeditable_short_text %}</div>
                   <p class="desc">
-                    {% editable_short_text 'Ligne 1 texte', priority: 5 %}
+                    {% editable_short_text 'Ligne 2 texte', priority: 5 %}
                     Nombre d’années de développement de la solution CRM 360°{% endeditable_short_text %}
                   </p>
                 </li>
                 <li class="clearfix">
                   <div class="score">{% editable_short_text 'Ligne 3 chiffre', priority: 4 %}100{% endeditable_short_text %}</div>
                   <p class="desc">
-                    {% editable_short_text 'Ligne 1 texte', priority: 3 %}
+                    {% editable_short_text 'Ligne 3 texte', priority: 3 %}
                     Nombre d’années d’expériences cumulées{% endeditable_short_text %}
                   </p>
                 </li>
                 <li class="clearfix">
                   <div class="score">{% editable_short_text 'Ligne 4 chiffre', priority: 2 %}12{% endeditable_short_text %}</div>
                   <p class="desc">
-                    {% editable_short_text 'Ligne 1 texte', priority: 1 %}
+                    {% editable_short_text 'Ligne 4 texte', priority: 1 %}
                     Nombre de claviers usés pour développer CRM 360°{% endeditable_short_text %}
                   </p>
                 </li>
@@ -135,63 +135,70 @@
     <div class="center">
       <div class="row-fluid">
         <div class="span7">
+          {% block 'CRM360' %}
           <section class="crm360Solution">
             <header class="hd">
-              <h3 class="title02"><img src="/images/images/crm360.png" alt="CRM360°"/></h3>
+              <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h3>
 
-              <p class="subTitle02">Une solution GRC simple et efficace</p>
+              <p class="subTitle02">
+                {% editable_short_text 'Titre', priority: 11 %}Une solution GRC simple et efficace{% endeditable_short_text %}
+              </p>
             </header>
             <div class="bd">
               <ul class="row-fluid solutionItems">
                 <li class="span4 easy">
                   <span class="icon"></span>
-                  <h4 class="title01">Simple</h4>
+                  <h4 class="title01">{% editable_short_text 'Col1 - Titre', priority: 10 %}Simple{% endeditable_short_text %}</h4>
 
-                  <p>Profitez de nos 25 années d’expérience du CRM et découvrez un outil conçu pour
-                    être simple à utiliser.</p>
+                  {% editable_long_text 'Col1 - Texte', priority: 9 %}<p>Profitez de nos 25 années d’expérience du CRM et découvrez un outil conçu pour être simple à utiliser.</p>{% endeditable_long_text %}
                 </li>
                 <li class="span4 clickNPlay">
                   <span class="icon"></span>
 
-                  <h4 class="title01">Click 'n Play</h4>
+                  <h4 class="title01">{% editable_short_text 'Col2 - Titre', priority: 8 %}Click 'n Play{% endeditable_short_text %}</h4>
 
-                  <p>Pas d’installation, tout est dans le "cloud" !<br/>
-                    Vous vous connectez et ça fonctionne !</p>
+                  {% editable_long_text 'Col2 - Texte', priority: 7 %}<p>Pas d’installation, tout est dans le "cloud" !<br/>
+                    Vous vous connectez et ça fonctionne !</p>{% endeditable_long_text %}
                 </li>
                 <li class="span4 payPerUse">
                   <span class="icon"></span>
-                  <h4 class="title01">Pay per Use</h4>
+                  <h4 class="title01">{% editable_short_text 'Col3 - Titre', priority: 6 %}Pay per Use{% endeditable_short_text %}</h4>
 
-                  <p>Pas d’acquisition de licence ! Vous ne payez qu’à la consommation, sans
-                    engagement et<br/>
-                    à partir de <strong>35€ par mois</strong></p>
+                  {% editable_long_text 'Col3 - Texte', priority: 7 %}<p>Pas d’acquisition de licence ! Vous ne payez qu’à la consommation, sans engagement et<br/>
+                  à partir de <strong>35€ par mois</strong></p>{% endeditable_long_text %}
+
                 </li>
               </ul>
             </div>
             <div class="ft more">
-              <a href="#" class="btn btn01"><span>Découvrir CRM360°</span></a>
+              <a href="/crm360" class="btn btn01"><span>Découvrir CRM360°</span></a>
               </footer>
             </div>
           </section>
+          {% endblock %}
         </div>
         <div class="span5">
+          {% block 'Salle de jeu' %}
           <article class="box boxIntsetShadow">
             <header>
-              <h3 class="title02">Notre salle de jeu</h3>
+              <h3 class="title02">{% editable_short_text 'Titre', priority: 8 %}Notre salle de jeu{% endeditable_short_text %}</h3>
 
-              <p class="subTitle02">Un lieu de travail et de détente</p>
+              <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 7 %}Un lieu de travail et de détente{% endeditable_short_text %}</p>
             </header>
             <div class="bd">
               <div class="slideShowOneImage">
-                <img src="/images/images/desk.jpg" alt=""/>
+                <img src="{% editable_file 'Photo 800x282', priority: 6 %}{{ 'images/desk.jpg' | theme_image_url }}{% endeditable_file %}" alt=""/>
               </div>
-              <p>C'est ici que l'on vous recevra !</p>
+
+              {% editable_long_text 'Texte sous image', priority: 5 %}<p>C'est ici que l'on vous recevra !</p>{% endeditable_long_text %}
+              
             </div>
             <div class="ft more">
-              <a href="#" title="" class="btn btn02"><span>Où nous trouver ?</span></a>
+              <a href="/contact" title="" class="btn btn02"><span>Où nous trouver ?</span></a>
             </div>
 
           </article>
+          {% endblock %}
         </div>
 
       </div>

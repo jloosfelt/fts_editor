@@ -1,20 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.seo_title }} | {{ site.name }}</title>
-    {% seo_metadata %}
-  </head>
-  <body>
-    <a href="/">Version FR</a>
-    <ul id="main-nav">
-    <h1>VERSION EN</h1>
-      <li id='home' class="{% if page.fullpath == 'index' %} active {% endif %} link"><a href="/">Home</a></li>
-      {% nav 'site', depth: 1, no_wrapper: true, exclude: nil, icon: true, active_class: active %}
-    </ul>
-  
-    {% block 'main' %}
-    <p>Lorem ipsum....</p>
-    {% endblock %}
-  </body>
-</html>
+{% extends 'layout' %}
+{% block 'main' %}
+<div id="content" role="main">
+<div id="banner">
+  <div class="inner">
+    <div class="center bannerInside">
+      <div class="bannerExtend bannerLeft"></div>
+      <div class="bannerExtend bannerRight"></div>
+
+      <div id="bannerCarousel" class="carousel slide">
+
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="active item">
+            <div class="row-fluid bannerContent">
+
+              <article class="span5 bannerText">
+                <p class="intro">Take control of your business</p>
+
+                <h2 class="title"><img src="{{ 'images/banner/en/simple.png' | theme_image_url }}"
+                                       alt="simple"/></h2>
+
+                <p class="desc">Increase your scores<br/>
+                  with user-friendly,<br/>
+                  effective and high performance<br/>
+                  marketing tools</p>
+              </article>
+              <div class="span7">
+                <img style="position: relative;left:-57px;top:-69px" src="{{ 'images/banner/increase-scores.png' | theme_image_url }}"
+                     alt=""/>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row-fluid bannerContent">
+
+              <article class="span5 bannerText">
+                <p class="intro">Take control of your business</p>
+
+                <h2 class="title"><img src="{{ 'images/banner/en/24-7.png' | theme_image_url }}"
+                                       alt="24/7"/></h2>
+
+                <p class="desc">Keep in touch<br/>
+                  with your customers<br/>
+                  24 hours a day, 7 days a week.<br/>
+                  Business round the clock !</p>
+              </article>
+              <div class="span7">
+                <img style="position: relative;left:-115px" src="{{ 'images/banner/keep-contact.png' | theme_image_url }}" alt=""/>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row-fluid bannerContent">
+
+              <article class="span5 bannerText">
+                <p class="intro">Take control of your business</p>
+
+                <h2 class="title"><img src="{{ 'images/banner/en/in-the-cloud.png' | theme_image_url }}" alt="In the Cloud"/></h2>
+
+                <p class="desc">Log on from everywhere !<br/>
+                  Online solutions<br/>
+                  available anytime,<br/>
+                  anywhere.</p>
+              </article>
+              <div class="span7">
+                <img style="left: -76px;position: relative;" src="{{ 'images/banner/cloud.png' | theme_image_url }}"
+                     alt="cloud"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel nav -->
+        <ul class="paginationBullet">
+          <li><a data-to="1" href="#">1</a></li>
+          <li><a data-to="2" href="#">2</a></li>
+          <li><a data-to="3" href="#">3</a></li>
+        </ul>
+        <!--<a class="carousel-control left" href="#bannerCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#bannerCarousel" data-slide="next">&rsaquo;</a>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div id="mainContent" class="center">
+  <div class="row-fluid">
+    <article class="span5 aboutFollowSun">
+      <div class="box boxOutsetShadow">
+        <div class="hd">
+          <h2 class="title02">follow the sun</h2>
+
+          <p class="subTitle01">play live business</p>
+        </div>
+        <div class="bd">
+          <figure>
+            <img src="{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}" alt=""/>
+            <figcaption>Created in 2011, Follow The Sun is an online service provider which converts highly
+              professional know-how into an online standard service offer, easily affordable.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="ft">
+          <div class="more">
+            <a class="btn btn03" href="#" title=""><span>See the team</span></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <section class="ourCustomers span7">
+      <div class="xtraPaddingL">
+        <article>
+          <header>
+            <h2 class="title02">They got hooked</h2>
+          </header>
+          <ul class="customersList row-fluid">
+            <li class="span3"><img src="{{ 'images/clients/bonduelle.png' | theme_image_url }}" alt="bonduelle"/></li>
+            <li class="span3"><img src="{{ 'images/clients/adictiz.png' | theme_image_url }}" alt="adictiz"/></li>
+            <li class="span3"><img src="{{ 'images/clients/hubToYou.png' | theme_image_url }}" alt="Hub to you"/></li>
+            <li class="span3"><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo"/></li>
+          </ul>
+          <div class="more">
+            <a class="btn btn02" href="#" title=""><span>See all of our customers</span></a>
+          </div>
+        </article>
+        <article class="customerExperience">
+          <header>
+            <h3 class="title02">And they loved it!</h3>
+          </header>
+          <div class="bd">
+            <blockquote>
+              « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
+              conatibus,
+              Luscus quidam curator urbis subito visus, eosque ut heiulans baiolorum praecentor ad
+              expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus
+              exustus est. Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis
+              egere
+              ».
+            </blockquote>
+            <p>
+              <strong>Isabelle Dupon</strong><br/>
+              <span class="job">Directrice Marketing Okaïdi</span>
+            </p>
+          </div>
+        </article>
+        <div class="more">
+          <a class="btn btn02" href="#" title=""><span>Testimonies</span></a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<div id="bottomContent">
+  <div class="center">
+    <div class="row-fluid">
+      <div class="span7">
+        <article>
+          <header>
+            <h3 class="title02">Newtwork</h3>
+
+            <p class="subTitle02">Our talented partners</p>
+          </header>
+          <div class="bd txtC">
+            <div class="crm360">
+              <a href="#" class="txtR item1 color01">Technical</a>
+              <a href="#" class="txtC item2">Consumers</a>
+              <a href="#" class="txtC item3 color01">Commercial</a>
+              <a href="#" class="txtC item4">Consumers</a>
+              <a href="#" class="txtL item5 color01">Integrator</a>
+            </div>
+            <p class="txtL">
+              In order to enrich your experience and offer you an all-included and fitted CRM offer,
+              Follow The Sun works with a diversified partners ecosystem.
+            </p>
+          </div>
+          <div class="more">
+            <a class="btn btn03" href="#" title=""><span>Become a partner</span></a>
+          </div>
+        </article>
+      </div>
+      <article class="span5">
+        <div class="xtraPaddingL">
+          <div class="box boxIntsetShadow boxPush">
+            <header class="hd">
+              <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h3>
+
+              <p class="subTitle02">A simple and effective CRM solution</p>
+            </header>
+            <div class="bd">
+              <figure>
+                <img src="{{ 'images/crm360Ipad.png' | theme_image_url }}" alt=""/>
+                <figcaption>
+                  CRM360° is an exclusive Customer Relationship Management service offer operating in
+                  mode SAAS (Software As A Service) and DAAS (Data As A Service).
+                  CRM360° includes the following functionalities: Data flows Integration, Data Quality
+                  Management, Campaign Management and Business Intelligence.
+                </figcaption>
+              </figure>
+            </div>
+            <footer class="ft more">
+              <a class="btn btn02" href="#" title=""><span>Read more</span></a>
+            </footer>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

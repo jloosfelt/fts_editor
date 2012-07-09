@@ -1,14 +1,114 @@
-{% extends 'index' %}
+{% extends 'layout' %}
 {% block 'main' %}
-  <p>The team</p>
-  <ul>
-  {% for team_member in contents.team_members %}
-    <li class="">
-      <h2>{{ team_member.name }}</h2>
-      <img src="{{ team_member.photo["url"] }}" width="134" height="74" alt="{{team_member.name}}">
-      <p>{{team_member.description}}</p>
-      <a href="{{team_member.linked_in_url}}">Linked in</a>
-    </li>
-  {% endfor %}
-  </ul>
+<div id="content" role="main" class="page-team">
+  <div id="banner">
+    <div class="inner">
+      <div class="center bannerInside">
+        <div class="bannerExtend bannerLeft"></div>
+        <div class="bannerExtend bannerRight"></div>
+        <div class="row-fluid bannerContent">
+          <div class="span5 imageContent">
+            <img src="{{ 'images/banner/team.png' | theme_image_url }}" alt=""/>
+          </div>
+          <div class="span7 textContent">
+            {% block 'Bandeau' %}
+            <article class="text">
+              <header class="hd">
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}One work team, several know-hows{% endeditable_short_text %}</h2>
+
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}1OO years of experience{% endeditable_short_text %}</p>
+              </header>
+              <div class="bd">
+                {% editable_long_text 'Texte', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
+                <p>
+                  Follow The Sun reunites talented people who share the same passion: high technology,
+                  marketing and human interest.
+                </p>
+                <ul>
+                  <li><strong>François-Xavier Ousselin</strong> : CEO and co-founder, 20 years of
+                    experience
+                  </li>
+                  <li><strong>Olivier Piettre</strong> : General Manager and co-founder, 25 years of
+                    experience
+                  </li>
+                  <li><strong>Nicolas Destroye</strong> : Chief Architect and co-founder, 9 years of
+                    experience
+                  </li>
+                  <li><strong>Olivier Guillouzouic</strong> : Partner Account Manager, 11 years of
+                    experience
+                  </li>
+                  <li><strong>François Delattre</strong> : Service Management Manager, 9 years of
+                    experience
+                  </li>
+                  <li><strong>But also Saro, Mathieu, Bruno and Frédéric</strong>, 26 years of
+                    accumulated experience
+                  </li>
+                </ul>
+                {% endeditable_long_text %}
+              </div>
+
+            </article>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mainContent" class="center">
+    <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}You will certainly meet them{% endeditable_short_text %}</h2>
+
+    <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}In the news{% endeditable_short_text %}</p>
+    <section class="teamProfil">
+      <ul id="teamTabs" class="tabsBlock">
+        {% for team_member in contents.team_members %}
+          <li class="{% if forloop.first %}first{% elsif forloop.last %}last{% endif %}">
+            <a href="#item{{forloop.index}}"><img src="{{ team_member.photo["url"] }}" alt="{{team_member.name}}"/></a>
+            <span class="after"></span>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="tab-content box boxOutsetShadow">
+        {% for team_member in contents.team_members %}
+        <article class="tab-pane" id="item{{forloop.index}}">
+          <header class="hd clearfix">
+            <h4 class="title">{{team_member.name}}</h4>
+            {% if team_member.linked_in_url %}
+            <a class="linkedin" href="{{team_member.linked_in_url}}"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
+            {% endif %}
+          </header>
+          <div class="bd">
+            {{team_member.description}}
+          </div>
+          <div class="more ft">
+            <a href="/contact?title=Message pour {{team_member.name}}" class="btn btn02"><span>Contacter {{team_member.shortname}}</span></a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <div id="bottomContent">
+    {% block 'Block nous rejoindre' %}
+    <div class="center">
+      <div class="joinUs">
+        <div class="hd">
+          <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Join us !{% endeditable_short_text %}</h3>
+          <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Come live an amazing experience !{% endeditable_short_text %}</p>
+        </div>
+        <div class="bd">
+          {% editable_long_text 'Description', priority: 8 %}
+          <p>Follow The Sun is an adventure to share! You have talent, an urge or a professional experience to
+            share? Contact us and send us your resume and your covering letter.</p>
+          {% endeditable_long_text %}
+        </div>
+        <div class="ft more">
+          <a href="/en/recrutement" class="btn btn02"><span>Consult offers</span></a>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+</div>
+
 {% endblock %}
