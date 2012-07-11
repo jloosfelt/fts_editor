@@ -1,13 +1,13 @@
-- ! 'Bonduelle':
-    _permalink: bonduelle
-    logo: /samples/customers_logos/bonduelle.jpg
-    category: client
+- ! 'Cabesto':
+    _permalink: cabesto
+    logo: /samples/customers_logos/cabesto.png
+    # category: client
     translations:
       en:
         name: "Bonduelle EN"
     # testimonials: ["item-4", "item-3"]
-- ! 'Adictiz':
-    _permalink: adictiz
-    logo: /samples/customers_logos/adictiz.jpg
-    category: partenaire
+- ! 'Oxelo':
+    _permalink: oxelo
+    logo: /samples/customers_logos/oxelo.png
+    # category: partenaire
     # testimonials: ["item-1", "item-2"]

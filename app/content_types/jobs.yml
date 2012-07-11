@@ -1,0 +1,19 @@
+name: Jobs
+description: Jobs list
+slug: jobs
+label_field_name: :name
+fields:
+- name:
+    label: Nom du poste
+    type: string
+    required: true
+    localized: true
+- description:
+    label: Description
+    type: text
+    hint: Utiliser h3 pour les sous-titres
+    required: true
+    localized: true
+
+public_submission_enabled: false
+order_by: name

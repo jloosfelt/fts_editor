@@ -7,23 +7,24 @@
       <div class="bannerExtend bannerLeft"></div>
       <div class="bannerExtend bannerRight"></div>
 
+      {% block 'Slider' %}
       <div id="bannerCarousel" class="carousel slide">
-
         <!-- Carousel items -->
         <div class="carousel-inner">
           <div class="active item">
             <div class="row-fluid bannerContent">
 
               <article class="span5 bannerText">
-                <p class="intro">Take control of your business</p>
+                <p class="intro">{% editable_short_text 'Volet 1 titre', priority: 11 %}Take control of your business{% endeditable_short_text %}</p>
 
                 <h2 class="title"><img src="{{ 'images/banner/en/simple.png' | theme_image_url }}"
                                        alt="simple"/></h2>
-
+                {% editable_long_text 'Volet n°1 texte', hint: 'Encadrer le texte par la balise <p class="desc">', priority: 10 %}
                 <p class="desc">Increase your scores<br/>
                   with user-friendly,<br/>
                   effective and high performance<br/>
                   marketing tools</p>
+                  {% endeditable_long_text %}
               </article>
               <div class="span7">
                 <img style="position: relative;left:-57px;top:-69px" src="{{ 'images/banner/increase-scores.png' | theme_image_url }}"
@@ -35,15 +36,16 @@
             <div class="row-fluid bannerContent">
 
               <article class="span5 bannerText">
-                <p class="intro">Take control of your business</p>
+                <p class="intro">{% editable_short_text 'Volet 2 titre', priority: 9 %}Take control of your business{% endeditable_short_text %}</p>
 
                 <h2 class="title"><img src="{{ 'images/banner/en/24-7.png' | theme_image_url }}"
                                        alt="24/7"/></h2>
-
+                {% editable_long_text 'Volet n°2', hint: 'Encadrer le texte par la balise <p class="desc">', priority: 8 %}
                 <p class="desc">Keep in touch<br/>
                   with your customers<br/>
                   24 hours a day, 7 days a week.<br/>
                   Business round the clock !</p>
+                {% endeditable_long_text %}
               </article>
               <div class="span7">
                 <img style="position: relative;left:-115px" src="{{ 'images/banner/keep-contact.png' | theme_image_url }}" alt=""/>
@@ -54,14 +56,15 @@
             <div class="row-fluid bannerContent">
 
               <article class="span5 bannerText">
-                <p class="intro">Take control of your business</p>
+                <p class="intro">{% editable_short_text 'Volet 3 titre', priority: 7 %}Take control of your business{% endeditable_short_text %}</p>
 
                 <h2 class="title"><img src="{{ 'images/banner/en/in-the-cloud.png' | theme_image_url }}" alt="In the Cloud"/></h2>
-
+                {% editable_long_text 'Volet n°3', hint: 'Encadrer le texte par la balise <p class="desc">', priority: 6 %}
                 <p class="desc">Log on from everywhere !<br/>
                   Online solutions<br/>
                   available anytime,<br/>
                   anywhere.</p>
+                {% endeditable_long_text %}
               </article>
               <div class="span7">
                 <img style="left: -76px;position: relative;" src="{{ 'images/banner/cloud.png' | theme_image_url }}"
@@ -79,23 +82,24 @@
         <!--<a class="carousel-control left" href="#bannerCarousel" data-slide="prev">&lsaquo;</a>
           <a class="carousel-control right" href="#bannerCarousel" data-slide="next">&rsaquo;</a>-->
       </div>
+      {% endblock %}
     </div>
   </div>
 </div>
 <div id="mainContent" class="center">
   <div class="row-fluid">
+    {% block 'block_societe' %}
     <article class="span5 aboutFollowSun">
       <div class="box boxOutsetShadow">
         <div class="hd">
-          <h2 class="title02">follow the sun</h2>
-
-          <p class="subTitle01">play live business</p>
+          <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}follow the sun{% endeditable_short_text %}</h2>
+          <p class="subTitle01">{% editable_short_text 'Sous-titre', priority: 9 %}play live business{% endeditable_short_text %}</p>
         </div>
         <div class="bd">
           <figure>
-            <img src="{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}" alt=""/>
-            <figcaption>Created in 2011, Follow The Sun is an online service provider which converts highly
-              professional know-how into an online standard service offer, easily affordable.
+            <img src="{% editable_file 'photo', hint: 'Photo au format 325x236', priority: 8 %}{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}{% endeditable_file %}" alt=""/>
+            <figcaption>{% editable_short_text 'Texte sous la photo', hint: 'Texte sous la photo', priority: 8 %}Created in 2011, Follow The Sun is an online service provider which converts highly
+              professional know-how into an online standard service offer, easily affordable.{% endeditable_short_text %}
             </figcaption>
           </figure>
         </div>
@@ -106,17 +110,17 @@
         </div>
       </div>
     </article>
+    {% endblock %}
     <section class="ourCustomers span7">
       <div class="xtraPaddingL">
         <article>
           <header>
-            <h2 class="title02">They got hooked</h2>
+            <h2 class="title02">{% editable_short_text 'Titre du block liste logos' %}They got hooked{% endeditable_short_text %}</h2>
           </header>
           <ul class="customersList row-fluid">
-            <li class="span3"><img src="{{ 'images/clients/bonduelle.png' | theme_image_url }}" alt="bonduelle"/></li>
-            <li class="span3"><img src="{{ 'images/clients/adictiz.png' | theme_image_url }}" alt="adictiz"/></li>
-            <li class="span3"><img src="{{ 'images/clients/hubToYou.png' | theme_image_url }}" alt="Hub to you"/></li>
-            <li class="span3"><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo"/></li>
+            {% for customer in contents.customers limit:3 %}
+            <li class="span4"><img src="{{customer.logo['url']}}" alt="{{customer.name}}" /></li>
+            {% endfor %}
           </ul>
           <div class="more">
             <a class="btn btn02" href="#" title=""><span>See all of our customers</span></a>
@@ -124,23 +128,19 @@
         </article>
         <article class="customerExperience">
           <header>
-            <h3 class="title02">And they loved it!</h3>
+            <h3 class="title02">{% editable_short_text 'Titre du block témoignage client' %}... and they loved it!{% endeditable_short_text %}</h3>
           </header>
+          {% for testimony in contents.testimonials limit:1 %}
           <div class="bd">
             <blockquote>
-              « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-              conatibus,
-              Luscus quidam curator urbis subito visus, eosque ut heiulans baiolorum praecentor ad
-              expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus
-              exustus est. Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis
-              egere
-              ».
+              « {{testimony.description}} »
             </blockquote>
             <p>
-              <strong>Isabelle Dupon</strong><br/>
-              <span class="job">Directrice Marketing Okaïdi</span>
+              <strong>{{ testimony.author }}</strong><br/>
+              <span class="job">{{ testimony.company }}</span>
             </p>
           </div>
+          {% endfor %}
         </article>
         <div class="more">
           <a class="btn btn02" href="#" title=""><span>Testimonies</span></a>
@@ -153,54 +153,63 @@
   <div class="center">
     <div class="row-fluid">
       <div class="span7">
+        {% block 'Bloc Réseau' %}
+
         <article>
           <header>
-            <h3 class="title02">Newtwork</h3>
-
-            <p class="subTitle02">Our talented partners</p>
+            <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Newtwork{% endeditable_short_text %}</h3>
+            <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Our talented partners{% endeditable_short_text %}</p>
           </header>
           <div class="bd txtC">
+            {% editable_long_text 'Texte', hint: 'Respecter la syntaxe html', priority: 8 %}
+                
             <div class="crm360">
-              <a href="#" class="txtR item1 color01">Technical</a>
-              <a href="#" class="txtC item2">Consumers</a>
-              <a href="#" class="txtC item3 color01">Commercial</a>
-              <a href="#" class="txtC item4">Consumers</a>
-              <a href="#" class="txtL item5 color01">Integrator</a>
+              <a href="/en/equipe" class="txtR item1 color01">Technical</a>
+              <a href="/en/clients" class="txtC item2">Consumers</a>
+              <a href="/en/equipe" class="txtC item3 color01">Commercial</a>
+              <a href="/en/clients" class="txtC item4">Consumers</a>
+              <a href="/en/equipe" class="txtL item5 color01">Integrator</a>
             </div>
             <p class="txtL">
               In order to enrich your experience and offer you an all-included and fitted CRM offer,
               Follow The Sun works with a diversified partners ecosystem.
             </p>
+            {% endeditable_long_text %}
           </div>
           <div class="more">
-            <a class="btn btn03" href="#" title=""><span>Become a partner</span></a>
+            <a class="btn btn03" href="/en/contact?title=Become a partner" title=""><span>Become a partner</span></a>
           </div>
         </article>
+        {% endblock %}
       </div>
       <article class="span5">
+        {% block 'Block crm360' %}
         <div class="xtraPaddingL">
           <div class="box boxIntsetShadow boxPush">
             <header class="hd">
-              <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h3>
+              <h3 class="title02"><img src="{% editable_file 'Logo du produit', priority: 11 %}{{ 'images/crm360.png' | theme_image_url }}{% endeditable_file %}" alt="CRM360°"/></h3>
 
-              <p class="subTitle02">A simple and effective CRM solution</p>
+              <p class="subTitle02">{% editable_short_text 'Titre', priority: 10 %}A simple and effective CRM solution{% endeditable_short_text %}</p>
             </header>
             <div class="bd">
               <figure>
                 <img src="{{ 'images/crm360Ipad.png' | theme_image_url }}" alt=""/>
                 <figcaption>
+                  {% editable_short_text 'Texte', priority: 8 %}
                   CRM360° is an exclusive Customer Relationship Management service offer operating in
                   mode SAAS (Software As A Service) and DAAS (Data As A Service).
                   CRM360° includes the following functionalities: Data flows Integration, Data Quality
                   Management, Campaign Management and Business Intelligence.
+                  {% endeditable_short_text %}
                 </figcaption>
               </figure>
             </div>
             <footer class="ft more">
-              <a class="btn btn02" href="#" title=""><span>Read more</span></a>
+              <a class="btn btn02" href="/en/crm360" title=""><span>Read more</span></a>
             </footer>
           </div>
         </div>
+        {% endblock %}
       </article>
     </div>
   </div>

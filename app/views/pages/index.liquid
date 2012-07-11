@@ -128,10 +128,9 @@
                 <h2 class="title02">{% editable_short_text 'Titre du block liste logos' %}Ils se sont pris au jeu{% endeditable_short_text %}</h2>
               </header>
               <ul class="customersList row-fluid">
-                <li class="span3"><img src="{{ 'images/clients/bonduelle.png' | theme_image_url }}" alt="bonduelle" /></li>
-                <li class="span3"><img src="{{ 'images/clients/adictiz.png' | theme_image_url }}" alt="adictiz"/></li>
-                <li class="span3"><img src="{{ 'images/clients/hubToYou.png' | theme_image_url }}" alt="Hub to you" /></li>
-                <li class="span3"><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo" /></li>
+                {% for customer in contents.customers limit:3 %}
+                <li class="span4"><img src="{{customer.logo['url']}}" alt="{{customer.name}}" /></li>
+                {% endfor %}
               </ul>
               <div class="more">
                 <a class="btn btn02" href="/clients" title=""><span>Voir tous nos clients</span></a>
@@ -194,7 +193,7 @@
             {% endblock %}
           </div>
           <article class="span5">
-            {% block 'block_reseau' %}
+            {% block 'Block crm360' %}
             <div class="xtraPaddingL">
               <div class="box boxIntsetShadow boxPush">
                 <header class="hd">

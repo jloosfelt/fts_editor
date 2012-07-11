@@ -102,20 +102,24 @@
         </article>
       </div>
       <div class="span7">
+        {% block 'Colonne droite' %}
         <div class="xtraPaddingL">
-          <h2 class="title02">Ou rendez-nous visite !</h2>
+          <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Ou rendez-nous visite !{% endeditable_short_text %}</h2>
 
-          <p class="subTitle02">Notre aire de jeu</p>
+          <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 10 %}Notre aire de jeu{% endeditable_short_text %}</p>
 
           <div class="contactInfo">
+            {% editable_long_text 'Adresse', priority: 8 %}
             <p>4, rue Nationale<br/>59100 Roubaix</p>
 
             <p class="tel">Tel +33 3 20 69 17 17<br/>
               Fax +33 3 20 69 17 18</p>
 
             <p>contact@fts-services.com</p>
+            {% endeditable_long_text %}
           </div>
           <div class="itinerary">
+            {% editable_long_text 'Itinéraire', priority: 7, hint: 'Respecter le html !' %}
             <p class="subTitle02">Comment venir ?</p>
             <ul id="itineraryTabs" class="nav tabsBlock01">
               <li><a href="#byTrain">En train</a></li>
@@ -143,8 +147,10 @@
                 </ul>
               </div>
             </div>
+            {% endeditable_long_text %}
           </div>
         </div>
+        {% endblock %}
       </div>
     </div>
   </div>

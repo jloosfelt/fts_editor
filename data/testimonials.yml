@@ -7,16 +7,26 @@
         Ne nécessitant pas de projet informatique, pas plus que de coûteuses licences, CRM360° est néanmoins adaptable à l’immense majorité des besoins clients.
     author: Mathieu Beseme
     company: Gérant Hub To You
+    type: partner
 # customer: "hub-to-you"
-- "Item #2":
-    _permalink: item-2
-    :description: Expedita nulla aspernatur rem consequatur. Ex repellat autem rerum et. Quasi saepe laboriosam dolorem recusandae rem sit et.
-    customer: "adictiz"
-- "Item #3":
-    _permalink: item-3
-    :description: Eveniet rerum cum et. Esse aspernatur dolores qui corporis. Fuga aut optio placeat alias ullam. Est earum qui autem ipsum numquam officia. Commodi omnis non reiciendis amet.
-    customer: "bonduelle"
-- "Item #4":
-    _permalink: item-4
-    :description: Molestias dolor blanditiis aut. Et ut laudantium quasi harum. Numquam harum placeat quaerat reprehenderit consequatur optio fugiat. Inventore nemo error rerum corporis eum beatae. Repellendus et similique animi provident nulla cupiditate officia.
-    customer: "bonduelle"
+- "lorem1":
+    _permalink: lorem1
+    description: |-
+        Lorem ipsum amet cupidatat nulla eiusmod laboris cillum qui. Lorem ipsum laboris qui sit enim dolor consectetur sint dolor esse minim in sunt exercitation est voluptate. 
+    author: Amet Nulla
+    company: Gérant Laboris
+    type: client
+- "lorem2":
+    _permalink: lorem2
+    description: |-
+        Lorem ipsum amet cupidatat nulla eiusmod laboris cillum qui. Lorem ipsum laboris qui sit enim dolor consectetur sint dolor esse minim in sunt exercitation est voluptate. 
+    author: Amet Nulla
+    company: Gérant Laboris
+    type: client
+- "lorem3":
+    _permalink: lorem3
+    description: |-
+        Lorem ipsum amet cupidatat nulla eiusmod laboris cillum qui. Lorem ipsum laboris qui sit enim dolor consectetur sint dolor esse minim in sunt exercitation est voluptate. 
+    author: Amet Nulla
+    company: Gérant Laboris
+    type: client

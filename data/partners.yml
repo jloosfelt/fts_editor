@@ -1,0 +1,74 @@
+- ! 'Hub To You':
+    _permalink: hub-to-you
+    logo: /samples/partners_logos/hub-to-you.png
+    type: Intégrateur
+    gold: true
+- ! 'Mx Data':
+    _permalink: mx-data
+    logo: /samples/partners_logos/mx-data.png
+    type: Agence
+    gold: true
+
+- ! 'Experian Cheetahmail':
+    _permalink: experian-cheetahmail
+    logo: /samples/partners_logos/experian-cheetahmail.png
+    gold: true
+    type: Intégrateur
+
+- ! 'Generix':
+    _permalink: generix
+    logo: /samples/partners_logos/generix.png
+    type: Technologique
+    gold: true
+    
+- ! 'Rouge Interactif':
+    _permalink: rouge-interactif
+    type: Agence
+    gold: false
+    
+- ! 'TDA':
+    _permalink: TDA
+    type: Agence
+    gold: false
+    
+- ! 'Lemonthink':
+    _permalink: lemonthink
+    type: Agence
+    gold: false
+    
+- ! 'Touche Etoile':
+    _permalink: touche-etoile
+    type: Intégrateur
+    gold: false
+    
+- ! 'Mediaperformances':
+    _permalink: mediaperformances
+    type: Intégrateur
+    gold: false
+        
+- ! 'Numsight':
+    _permalink: numsight
+    type: Intégrateur
+    gold: false
+    
+- ! 'Devatics':
+    _permalink: devatics
+    type: Intégrateur
+    gold: false
+    
+- ! 'Windcor Nixdorf':
+    _permalink: windcor-nixdorf
+    type: Technologique
+    gold: false
+    
+- ! 'Adictiz':
+    _permalink: adictiz
+    type: Technologique
+    gold: false
+    
+- ! 'Improveeze':
+    _permalink: improveeze
+    type: Technologique
+    gold: false
+    
+

@@ -1,0 +1,40 @@
+name: job_applications
+slug: job_applications
+fields:
+- position:
+    label: Poste
+    required: true
+    type: string
+    hint: Le poste concerné
+- description:
+    label: Message
+    type: text
+    hint: Fill the text here
+- firstname:
+    label: Prénom
+    required: true
+    type: string
+- lastname:
+    label: Nom
+    required: true
+    type: string
+- email:
+    label: Email
+    required: false
+    type: string
+- phone:
+    label: Téléphone
+    required: false
+    type: string
+- cv:
+    label: Curriculum Vitae
+    required: false
+    type: file
+- cover_letter:
+    label: Lettre de motivation
+    required: false
+    type: file
+label_field_name: :position
+description: Fill the text here
+public_submission_enabled: true
+order_by: manually

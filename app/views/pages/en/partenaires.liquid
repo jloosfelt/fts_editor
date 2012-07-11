@@ -11,25 +11,29 @@
             <img src="{{ 'images/banner/en/crm360.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
+            {% block 'Bandeau-en' %}
             <article class="text">
               <header class="hd">
-                <h2 class="title02">Our partners are connected<br/>
-                  in order to increase your experience</h2>
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}Our partners are connected<br/>
+                  in order to increase your experience{% endeditable_short_text %}</h2>
 
-                <p class="subTitle02">A wide and varied ecosystem</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}A wide and varied ecosystem{% endeditable_short_text %}</p>
               </header>
               <div class="bd">
+                {% editable_long_text 'Texte bandeau', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
+                
                 <p>
                   Because your satisfaction is in the heart of Follow The Sun preoccupations and in
                   order to find the offer best suited to your needs, it has chosen to work with many
                   talented partners. Their interlinked knowledge combined with that of Follow The Sun
-                  will offer you considerable amount of possibilities.
+                  will offer you considerable amount of possibilities.<br />
                   For example, Follow The Sun and ECM inter connexion enables e-mails shipment and a
                   customer behavior analyze.
                 </p>
+                {% endeditable_long_text %}
               </div>
-
             </article>
+            {% endblock %}
           </div>
         </div>
       </div>
@@ -41,51 +45,57 @@
         <div class="xtraPaddingL">
           <article>
             <header>
-              <h2 class="title02">Our partners</h2>
+              <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Our partners{% endeditable_short_text %}</h2>
 
-              <p class="subTitle02">They’re in!</p>
+              <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}They’re in!{% endeditable_short_text %}</p>
             </header>
+            {% editable_long_text 'Description', priority: 8 %}
             <p>Follow The Sun works with an ecosystem of talented and varied partners</p>
+            {% endeditable_long_text %}
             <ul class="customersList row-fluid">
-              <li class="span3"><img src="{{ 'images/partners/hubToYou.png' | theme_image_url }}" alt="Hub to you"></li>
-              <li class="span3"><img src="{{ 'images/partners/mix-data.png' | theme_image_url }}" alt="Mix Data"></li>
-              <li class="span3"><img src="{{ 'images/partners/experian-cheetahmail.png' | theme_image_url }}" alt="Experian Cheetahmail"></li>
-              <li class="span3"><img src="{{ 'images/partners/generix.png' | theme_image_url }}" alt="Generix"></li>
+              {% with_scope gold:true %}
+              {% for partner in contents.partners limit:4 %}
+                {% if partner.logo['url'] %}
+                  <li class="span3"><img src="{{ partner.logo['url'] }}" alt="{{partner.name}}"></li>
+                {% endif %}
+              {% endfor %}
+              {% endwith_scope %}
             </ul>
             <div class="more">&nbsp;</div>
           </article>
           <article class="otherPartners">
-            <p class="subTitle02">But also...</p>
+            <p class="subTitle02">{% editable_short_text 'Sous-Titre 2', priority: 7 %}But also...{% endeditable_short_text %}</p>
 
             <div class="bd">
               <ul class="row-fluid titleColList">
                 <li class="span4">
                   <h4 class="title">Agency</h4>
                   <ul>
-                    <li>Rouge Interactif</li>
-                    <li>TDA</li>
-                    <li>Lemonthink</li>
-                    <li>MxData</li>
+                    {% with_scope type:'Agence' %}
+                      {% for partner in contents.partners %}
+                        <li>{{partner.name}}</li>
+                      {% endfor %}
+                    {% endwith_scope %}
                   </ul>
                 </li>
                 <li class="span4">
                   <h4 class="title">Integrator</h4>
                   <ul>
-                    <li>Touche Etoile</li>
-                    <li>Mediaperformances</li>
-                    <li>Experian Cheetahmail</li>
-                    <li>Numsight</li>
-                    <li>Devatics</li>
-                    <li>Hub To You</li>
+                    {% with_scope type:'Intégrateur' %}
+                      {% for partner in contents.partners %}
+                        <li>{{partner.name}}</li>
+                      {% endfor %}
+                    {% endwith_scope %}
                   </ul>
                 </li>
                 <li class="span4">
                   <h4 class="title">Technological</h4>
                   <ul>
-                    <li>Windcor Nixdorf</li>
-                    <li>Adictiz</li>
-                    <li>Generix</li>
-                    <li>mproveeze</li>
+                    {% with_scope type:'Technologique' %}
+                      {% for partner in contents.partners %}
+                        <li>{{partner.name}}</li>
+                      {% endfor %}
+                    {% endwith_scope %}
                   </ul>
                 </li>
               </ul>
@@ -97,64 +107,50 @@
         <div class="xtraPaddingL">
           <article class="box boxIntsetShadow boxArrow">
             <header>
-              <h3 class="title02">They talk about us</h3>
+              <h3 class="title02">{% editable_short_text 'Témoignage - titre', priority: 10 %}They talk about us{% endeditable_short_text %}</h3>
             </header>
             <div class="bd">
+              {% with_scope type:partner %}
+              {% for testimony in contents.testimonials %}
               <article class="blockArticle">
-                <blockquote>«
-                  Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis
-                  egere conatibus, Luscus quidam curator urbis subito visus ».
+                <blockquote>
+                  {{testimony.description}}
                 </blockquote>
                 <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
+                  <strong>{{testimony.author}}</strong><br/>
+                  <span class="job">{{testimony.company}}</span>
                 </p>
               </article>
-              <article class="blockArticle">
-                <blockquote>«
-                  Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis
-                  egere conatibus, Luscus quidam curator urbis subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </article>
-              <article class="blockArticle last">
-                <blockquote>«
-                  Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis
-                  egere conatibus, Luscus quidam curator urbis subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </article>
+              {% endfor %}
+              {% endwith_scope %}
             </div>
-
           </article>
         </div>
       </div>
     </div>
   </div>
   <div id="bottomContent">
+    {% block 'Bas de page' %}
     <div class="center">
       <section class="becomePartner">
         <header class="hd">
-          <h3 class="title02">Become a partner !</h3>
+          <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Become a partner!{% endeditable_short_text %}</h3>
 
-          <p class="subTitle02">Seize the opportunity! Give it a try!</p>
+          <p class="subTitle02">{% editable_short_text 'Sous-titre', priority: 9 %}Seize the opportunity! Give it a try!{% endeditable_short_text %}</p>
         </header>
         <div class="bd">
+          {% editable_long_text 'Description' %}
           <p>If you are passionate about marketing or more particularly about customer relationship, if you
             want to speed up your business, if you need our help or if we simply share the same values:
             please contact us!</p>
+          {% endeditable_long_text %}
         </div>
         <div class="ft more">
           <a href="/contact?title=Become a partner" class="btn btn01"><span>Become a partner</span></a>
         </div>
       </section>
     </div>
+    {% endblock %}
   </div>
 </div>
 

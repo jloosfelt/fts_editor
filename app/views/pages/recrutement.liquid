@@ -11,21 +11,25 @@
             <img src="{{ 'images/banner/team.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
+            {% block 'Bandeau' %}
             <article class="text">
               <header class="hd">
-                <h2 class="title02">Rejoignez l’équipe !</h2>
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}Rejoignez l’équipe !{% endeditable_short_text %}</h2>
 
-                <p class="subTitle02">Entrez dans le jeu</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}Entrez dans le jeu{% endeditable_short_text %}</p>
               </header>
               <div class="bd">
+                {% editable_long_text 'Texte bandeau', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
                 <p>
                   Follow The Sun est une aventure qui se partage ! Vous avez du talent, de l’envie et
                   une expérience professionnelle à partager ?<br/>
                   Contactez-nous et envoyez-nous votre CV et votre lettre de motivation.
                 </p>
+                {% endeditable_long_text %}
               </div>
 
             </article>
+            {% endblock %}
           </div>
         </div>
       </div>
@@ -37,29 +41,21 @@
         <div class="xtraPaddingL">
           <article>
             <header>
-              <h2 class="title02">Nous proposons actuellement</h2>
+              <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Nous proposons actuellement{% endeditable_short_text %}</h2>
 
-              <p class="subTitle02">En quête de nouveaux talents</p>
+              <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}En quête de nouveaux talents{% endeditable_short_text %}</p>
             </header>
             <div class="bd">
+              {% for job in contents.jobs %}
               <section class="toggle">
                 <div class="toggleHead">
-                  <div class="inner">Chef de projet</div>
+                  <div class="inner">{{job.name}}</div>
                 </div>
                 <div class="toggleBody">
-                  <h3>Incenderat autem</h3>
-                  <p>test contenu test contenutest contenu test contenu</p>
-
-                  <h3>Incenderat autem</h3>
-                  <p>test contenu test contenutest contenu test contenu</p>
+                  {{job.description}}
                 </div>
               </section>
-              <section class="toggle">
-                <div class="toggleHead">
-                  <div class="inner">Partner Account Manager</div>
-                </div>
-                <div class="toggleBody"><p>test contenu test contenutest contenu test contenu</p></div>
-              </section>
+              {% endfor %}
             </div>
           </article>
         </div>
@@ -72,45 +68,51 @@
 
               <p class="subTitle02">Merci de remplir le formulaire ci-dessous.</p>
             </header>
-            <form class="form errorForm" action="#" method="post" enctype="multipart/form-data">
+            <form class="form errorForm" action="{{contents.job_applications.api.create}}.html" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="success_callback" value="/recrutement?action=success" />
+            <input type="hidden" name="error_callback" value="/recrutement?action=failure" />
+
               <div class="bd">
-                <p class="errorField">
+                <p {% if job_application.errors["firstname"] %}class="errorField"{% endif %}>
                   <label for="firstName">Prénom*</label>
-                  <span class="field fieldInputText"><input id="firstName" class="inputText" type="text" value=""/></span>
+                  <span class="field fieldInputText"><input id="firstName" name="content[firstname]" class="inputText" type="text" value=""/></span>
                 </p>
-                <p>
+                <p {% if job_application.errors["lastname"] %}class="errorField"{% endif %}>
                   <label for="lastName">Nom*</label>
-                  <span class="field fieldInputText"><input id="lastName" class="inputText" type="text" value=""/></span>
+                  <span class="field fieldInputText"><input id="lastName" name="content[lastname]" class="inputText" type="text" value=""/></span>
                 </p>
-                <p>
+                <p {% if job_application.errors["email"] %}class="errorField"{% endif %}>
                   <label for="email">Email</label>
-                  <span class="field fieldInputText"><input id="email" class="inputText" type="email" value=""/></span>
+                  <span class="field fieldInputText"><input id="email" name="content[email]" class="inputText" type="email" value=""/></span>
                 </p>
-                <p>
+                <p {% if job_application.errors["phone"] %}class="errorField"{% endif %}>
                   <label for="phoneNumber">Téléphone</label>
-                  <span class="field fieldInputText"><input id="phoneNumber" class="inputText" type="tel" value=""/></span>
+                  <span class="field fieldInputText"><input id="phoneNumber" name="content[phone]" class="inputText" type="tel" value=""/></span>
                 </p>
                 <p>
                   <label>CV</label>
-                  <span class="field"><input type="file"/></span>
+                  <span class="field"><input type="file" name="content[cv]" /></span>
                 </p>
                 <p>
                   <label>Lettre de motivation</label>
-                  <span class="field"><input type="file"/></span>
+                  <span class="field"><input type="file" name="content[cover_letter]" /></span>
                 </p>
                 <p>
                   <label>Poste</label>
                   <span class="field fieldInputSelect">
                     <select class="inputSelect">
-                      <option>Chef de projet</option>
-                      <option>Partner Account Manager</option>
+                      {% for job in contents.jobs %}
+                      <option>{{job.name}}</option>
+                      {% endfor %}
                       <option>Candidature spontannée</option>
                     </select>
                   </span>
                 </p>
 
               </div>
-              <p class="errorMessage">Message d'erreur</p>
+              {% if job_applications.errors %}
+              <p class="errorMessage">Veuillez corriger les champs en rouge</p>
+              {% endif %}
               <div class="ft more">
                 <span href="#" class="btn btn01"><input type="submit" value="Envoyer"/></span>
               </div>

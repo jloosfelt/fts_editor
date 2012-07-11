@@ -11,13 +11,15 @@
             <img src="{{ 'images/banner/customer.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
+            {% block 'Bandeau' %}
             <article class="text">
               <header class="hd">
-                <h2 class="title02">Ils se sont pris au jeu</h2>
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}Ils se sont pris au jeu{% endeditable_short_text %}</h2>
 
-                <p class="subTitle02">Les participants</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}Ils se sont pris au jeu{% endeditable_short_text %}
               </header>
               <div class="bd">
+                {% editable_long_text 'Texte bandeau', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
                 <p>
                   Follow The Sun s’adresse aux entreprises enseignes ou marques désireuses de
                   développer une stratégie de Gestion de la Relation Client et s’accompagnant de la
@@ -29,86 +31,61 @@
                   L’entreprise Follow The Sun entretient des relations suivies et dynamiques avec ses
                   clients par l’intermédiaire de son écosystème de partenaires.
                 </p>
+                {% endeditable_long_text %}
               </div>
             </article>
+            {% endblock %}
           </div>
         </div>
       </div>
     </div>
   </div>
   <div id="mainContent" class="center">
-    <h2 class="title02">Nos Clients</h2>
+    <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Nos Clients{% endeditable_short_text %}</h2>
 
-    <p class="subTitle02">Les joueurs</p>
+    <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Les joueurs{% endeditable_short_text %}</p>
+
     <ul class="customersBloc">
-      <li><img src="{{ 'images/clients/cabesto.png' | theme_image_url }}" alt="cabesto"/></li>
-      <li><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo"/></li>
-
+      {% for customer in contents.customers %}
+        <li><img src="{{ customer.logo['url'] }}" alt="{{customer.name}}"/></li>
+      {% endfor %}
     </ul>
 
   </div>
   <div id="bottomContent">
+    {% block 'Témoignages clients' %}
     <div class="center">
       <div class="customersQuotation">
         <div class="hd">
-          <h3 class="title02">Ils en parlent mieux que nous</h3>
+          <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Ils en parlent mieux que nous{% endeditable_short_text %}</h3>
 
-          <p class="subTitle02">Expériences</p>
+          <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Expériences{% endeditable_short_text %}</p>
         </div>
         <div class="bd">
           <ul class="row-fluid quotationList">
-            <li class="span4 boxArrow">
-              <div class="xtraPaddingL">
-                <blockquote>
-                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
-                  ad
-                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
-                  subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </div>
-            </li>
-            <li class="span4">
-              <div class="xtraPaddingL">
-                <blockquote>
-                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
-                  ad
-                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
-                  subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </div>
-            </li>
-            <li class="span4">
-              <div class="xtraPaddingL">
-                <blockquote>
-                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
-                  ad
-                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
-                  subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </div>
-            </li>
+            {% with_scope type:client %}
+              {% for testimony in contents.testimonials limit:3 %}
+                <li class="span4 {% if forloop.first %}boxArrow{% endif %}">
+                  <div class="xtraPaddingL">
+                    <blockquote>
+                      « {{testimony.description}} ».
+                    </blockquote>
+                    <p>
+                      <strong>{{testimony.author}}</strong><br/>
+                      <span class="job">{{testimony.company}}</span>
+                    </p>
+                  </div>
+                </li>
+              {% endfor %}
+            {% endwith_scope %}
           </ul>
         </div>
         <div class="ft more">
-          <a href="#" class="btn btn03"><span>Nous contacter</span></a>
+          <a href="/contact?title=Client" class="btn btn03"><span>Nous contacter</span></a>
         </div>
       </div>
     </div>
+    {% endblock %}
   </div>
 </div>
 

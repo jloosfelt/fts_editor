@@ -40,73 +40,46 @@
 
     <p class="subTitle02">Players</p>
     <ul class="customersBloc">
-      <li><img src="{{ 'images/clients/cabesto.png' | theme_image_url }}" alt="cabesto"/></li>
-      <li><img src="{{ 'images/clients/oxelo.png' | theme_image_url }}" alt="oxelo"/></li>
+      {% for customer in contents.customers %}
+        <li><img src="{{ customer.logo['url'] }}" alt="{{customer.name}}"/></li>
+      {% endfor %}
     </ul>
 
   </div>
   <div id="bottomContent">
+    {% block 'Témoignages clients' %}
+
     <div class="center">
       <div class="customersQuotation">
         <div class="hd">
-          <h3 class="title02">They talk about us</h3>
-
-          <p class="subTitle02">Experiences</p>
+          <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}They talk about us{% endeditable_short_text %}</h3>
+          <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Experiences{% endeditable_short_text %}</p>
         </div>
         <div class="bd">
           <ul class="row-fluid quotationList">
-            <li class="span4 boxArrow">
-              <div class="xtraPaddingL">
-                <blockquote>
-                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
-                  ad
-                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
-                  subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </div>
-            </li>
-            <li class="span4">
-              <div class="xtraPaddingL">
-                <blockquote>
-                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
-                  ad
-                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
-                  subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </div>
-            </li>
-            <li class="span4">
-              <div class="xtraPaddingL">
-                <blockquote>
-                  « Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere
-                  conatibus, Luscus quidam curator urbis subito visus. Incenderat autem audaces usque
-                  ad
-                  insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis
-                  subito visus ».
-                </blockquote>
-                <p>
-                  <strong>Isabelle Dupont</strong><br/>
-                  <span class="job">Directrice Marketing Okaïdi</span>
-                </p>
-              </div>
-            </li>
+            {% with_scope type:client %}
+              {% for testimony in contents.testimonials limit:3 %}
+                <li class="span4 {% if forloop.first %}boxArrow{% endif %}">
+                  <div class="xtraPaddingL">
+                    <blockquote>
+                      « {{testimony.description}} ».
+                    </blockquote>
+                    <p>
+                      <strong>{{testimony.author}}</strong><br/>
+                      <span class="job">{{testimony.company}}</span>
+                    </p>
+                  </div>
+                </li>
+              {% endfor %}
+            {% endwith_scope %}
           </ul>
         </div>
         <div class="ft more">
-          <a href="#" class="btn btn03"><span>Contact us</span></a>
+          <a href="/en/contact?title=Client" class="btn btn03"><span>Contact us</span></a>
         </div>
       </div>
     </div>
+    {% endblock %}
   </div>
 </div>
 {% endblock %}

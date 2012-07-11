@@ -23,6 +23,7 @@ fields:
     type: text
     label: "Texte de présentation"
     required: true
+    localized: true
 - linked_in_url:
     hint: "URL de linked in"
     type: string

@@ -11,14 +11,16 @@
             <img src="{{ 'images/banner/fr/crm360.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
+            {% block 'Bandeau' %}
             <article class="text">
               <header class="hd">
-                <h2 class="title02">Des partenaires connectés<br/>
-                  pour démultiplier l’expérience</h2>
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}Des partenaires connectés<br/>
+                  pour démultiplier l’expérience{% endeditable_short_text %}</h2>
 
-                <p class="subTitle02">Un écosystème riche et varié</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}Un écosystème riche et varié{% endeditable_short_text %}</p>
               </header>
               <div class="bd">
+                {% editable_long_text 'Texte bandeau', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
                 <p>
                   Ayant à cœur de vous satisfaire au mieux et de vous proposer une offre toujours plus
                   riche et adaptée à vos besoins, l’entreprise Follow The Sun s’entoure d’un
@@ -32,9 +34,11 @@
                   exemple, l’interconnexion entre CRM360° et ECM permet des échanges d’envois
                   d’e-mails et une analyse des comportements de vos clients.
                 </p>
+                {% endeditable_long_text %}
               </div>
 
             </article>
+            {% endblock %}
           </div>
         </div>
       </div>
@@ -46,51 +50,58 @@
         <div class="xtraPaddingL">
           <article>
             <header>
-              <h2 class="title02">Nos partenaires</h2>
+              <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Nos partenaires{% endeditable_short_text %}</h2>
 
-              <p class="subTitle02">Ils sont déjà de la partie</p>
+              <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Sur le devant de la scène.{% endeditable_short_text %}</p>
             </header>
-            <p>Follow The Sun s'entoure d'un écosystème de partenaires diversifiés</p>
+            {% editable_long_text 'Description', priority: 8 %}
+              <p>Follow The Sun s'entoure d'un écosystème de partenaires diversifiés</p>
+            {% endeditable_long_text %}
             <ul class="customersList row-fluid">
-              <li class="span3"><img src="{{ 'images/partners/hubToYou.png' | theme_image_url }}" alt="Hub to you"></li>
-              <li class="span3"><img src="{{ 'images/partners/mix-data.png' | theme_image_url }}" alt="Mix Data"></li>
-              <li class="span3"><img src="{{ 'images/partners/experian-cheetahmail.png' | theme_image_url }}" alt="Experian Cheetahmail"></li>
-              <li class="span3"><img src="{{ 'images/partners/generix.png' | theme_image_url }}" alt="Generix"></li>
+              {% with_scope gold:true %}
+              {% for partner in contents.partners limit:4 %}
+                {% if partner.logo['url'] %}
+                  <li class="span3"><img src="{{ partner.logo['url'] }}" alt="{{partner.name}}"></li>
+                {% endif %}
+              {% endfor %}
+              {% endwith_scope %}
             </ul>
             <div class="more">&nbsp;</div>
           </article>
           <article class="otherPartners">
-            <p class="subTitle02">Mais aussi...</p>
+            <p class="subTitle02">{% editable_short_text 'Sous-Titre 2', priority: 7 %}Mais aussi...{% endeditable_short_text %}</p>
 
             <div class="bd">
+
               <ul class="row-fluid titleColList">
                 <li class="span4">
                   <h4 class="title">Agence</h4>
                   <ul>
-                    <li>Rouge Interactif</li>
-                    <li>TDA</li>
-                    <li>Lemonthink</li>
-                    <li>MxData</li>
+                    {% with_scope type:'Agence' %}
+                      {% for partner in contents.partners %}
+                        <li>{{partner.name}}</li>
+                      {% endfor %}
+                    {% endwith_scope %}
                   </ul>
                 </li>
                 <li class="span4">
                   <h4 class="title">Intégrateur</h4>
                   <ul>
-                    <li>Touche Etoile</li>
-                    <li>Mediaperformances</li>
-                    <li>Experian Cheetahmail</li>
-                    <li>Numsight</li>
-                    <li>Devatics</li>
-                    <li>Hub To You</li>
+                    {% with_scope type:'Intégrateur' %}
+                      {% for partner in contents.partners %}
+                        <li>{{partner.name}}</li>
+                      {% endfor %}
+                    {% endwith_scope %}
                   </ul>
                 </li>
                 <li class="span4">
                   <h4 class="title">Technologique</h4>
                   <ul>
-                    <li>Windcor Nixdorf</li>
-                    <li>Adictiz</li>
-                    <li>Generix</li>
-                    <li>Improveeze</li>
+                    {% with_scope type:'Technologique' %}
+                      {% for partner in contents.partners %}
+                        <li>{{partner.name}}</li>
+                      {% endfor %}
+                    {% endwith_scope %}
                   </ul>
                 </li>
               </ul>
@@ -102,47 +113,51 @@
         <div class="xtraPaddingL">
           <article class="box boxIntsetShadow boxArrow">
             <header>
-              <h3 class="title02">Ils en parlent mieux que nous</h3>
+              <h3 class="title02">{% editable_short_text 'Témoignage - titre', priority: 10 %}Ils en parlent mieux que nous{% endeditable_short_text %}</h3>
             </header>
             <div class="bd">
+              {% with_scope type:partner %}
+              {% for testimony in contents.testimonials %}
               <article class="blockArticle">
-                <blockquote>« A l’heure où le contexte marketing est à la relation client, CRM360° nous permet de passer du marketing de masse au marketing ciblé interactif et collaboratif.<br />
-CRM360°, la solution CRM B2C de Follow The Sun, est une solution ouverte que l’on peut facilement interfacer avec des services complémentaires de gestion de programmes de fidélité, d’offres commerciales, de géolocalisation… <br />
-Elle nous permet par exemple d’accompagner nos clients dans la réalisation et l’animation de leur application mobile CRM. La solution CRM360° couplée à nos services Hub To You va au-delà de la simple gestion de campagne, elle gère aussi l’ensemble des sources de données clients en amont pour donner accès à une fiche client unique et dynamique très appréciée des commerçants. Cette fiche client peut-être alors exposée sur tout support digital tel qu'une tablette ou un smartphone pour un vendeur. Ayant accès à l’historique d’achat, de fidélité et de contact de leurs clients, les enseignes peuvent désormais apporter plus facilement à leur client de la reconnaissance tout en étant force de proposition directement sur le point de vente.<br />
-
-Ne nécessitant pas de projet informatique, pas plus que de coûteuses licences, CRM360° est néanmoins adaptable à l’immense majorité des besoins clients. ».
+                <blockquote>
+                  {{testimony.description}}
                 </blockquote>
                 <p>
-                  <strong>Mathieu Beseme</strong><br/>
-                  <span class="job">Gérant Hub To You</span>
+                  <strong>{{testimony.author}}</strong><br/>
+                  <span class="job">{{testimony.company}}</span>
                 </p>
               </article>
+              {% endfor %}
+              {% endwith_scope %}
             </div>
-
           </article>
         </div>
       </div>
     </div>
   </div>
   <div id="bottomContent">
+    {% block 'Bas de page' %}
     <div class="center">
       <section class="becomePartner">
         <header class="hd">
-          <h3 class="title02">Devenez partenaire !</h3>
+          <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Devenez partenaire !{% endeditable_short_text %}</h3>
 
-          <p class="subTitle02">Venez tentez l'expérience !</p>
+          <p class="subTitle02">{% editable_short_text 'Sous-titre', priority: 9 %}Venez tentez l'expérience !{% endeditable_short_text %}</p>
         </header>
         <div class="bd">
+          {% editable_long_text 'Description' %}
           <p>Si, comme nous, vous êtes passionnés par le marketing et plus particulièrement par la relation
             client, si vous souhaitez accélérer votre business,
             si vous avez besoin de nous ou simplement si nous partageons les mêmes valeurs : contactez-nous
             !</p>
+          {% endeditable_long_text %}
         </div>
         <div class="ft more">
-          <a href="#" class="btn btn01"><span>Devenir partenaire</span></a>
+          <a href="/contact?title=Devenir partenaire" class="btn btn01"><span>Devenir partenaire</span></a>
         </div>
       </section>
     </div>
+    {% endblock %}
   </div>
 </div>
 

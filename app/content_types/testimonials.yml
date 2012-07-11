@@ -2,7 +2,7 @@ name: testimonials
 slug: testimonials
 fields:
 - title:
-    label: Title
+    label: Titre
     required: true
     type: string
     hint: Fill the text here
@@ -10,6 +10,7 @@ fields:
     label: Description
     type: text
     hint: Fill the text here
+    localized: true
 - author:
     label: Auteur
     type: string
@@ -17,7 +18,13 @@ fields:
 - company:
     label: Fonction
     type: string
+    localized: true
     hint: Société ou Fonction de la personne
+- type:
+    label: Type
+    type: select
+    select_options: ['client', 'partner']
+    required: true
 
 # - customer:
 #     label: "Client"

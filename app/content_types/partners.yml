@@ -1,18 +1,26 @@
-name: Customers
-description: Customers list
-slug: customers
+name: Partners
+description: Parners list
+slug: partners
 label_field_name: :name
 fields:
 - name:
     label: Name
     type: string
-    hint: The customer name
+    hint: The partner name
     required: true
 - logo:
-    hint: "The logo (614X264)"
+    hint: "Logo (hauteur 49px)"
     type: file
     label: Logo
-    required: true
+    required: false
+- type:
+    required: false
+    type: select
+    select_options: ['Agence', 'Intégrateur', 'Technologique']
+- gold:
+    required: false
+    type: boolean
+
 # - category:
 #     type: select
 #     label: "Catégorie"

@@ -107,49 +107,62 @@
         </article>
       </div>
       <div class="span7">
+        {% block 'Colonne droite' %}
         <div class="xtraPaddingL">
-          <h2 class="title02">Pay us a visit !</h2>
 
-          <p class="subTitle02">Our playground</p>
+          <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Pay us a visit !{% endeditable_short_text %}</h2>
+
+          <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 10 %}Our playground{% endeditable_short_text %}</p>
 
           <div class="contactInfo">
+            {% editable_long_text 'Adresse', priority: 8 %}
             <p>4, rue Nationale<br/>59100 Roubaix</p>
 
             <p class="tel">Tel +33 3 20 69 17 17<br/>
               Fax +33 3 20 69 17 18</p>
 
             <p>contact@fts-services.com</p>
+            {% endeditable_long_text %}
           </div>
+
           <div class="itinerary">
+            {% editable_long_text 'Itinéraires ', priority: 7, hint: 'Respecter le html !' %}
             <p class="subTitle02">How to come ?</p>
             <ul id="itineraryTabs" class="nav tabsBlock01">
               <li><a href="#byTrain">By train</a></li>
               <li><a href="#byMetro">By subway</a></li>
               <li><a href="#byTram">By tramway</a></li>
             </ul>
+            {% endeditable_long_text %}
             <div class="tab-content">
               <div class="tab-pane active" id="byTrain">
+                {% editable_long_text 'Itinéraires Tab 1', priority: 6, hint: 'Respecter le html !' %}
                 <ul class="list01">
                   <li>Train Station Roubaix</li>
                   <li>Descendez l'avenue Jean-Baptiste Lebas en direction de la mairie, la rue Nationale sera à 450 m sur votre droite. Vous y serez en 6 minutes à pieds !</li>
                 </ul>
+                {% endeditable_long_text %}
               </div>
               <div class="tab-pane active" id="byMetro">
+                {% editable_long_text 'Itinéraires Tab 2', priority: 5, hint: 'Respecter le html !' %}
                 <ul class="list01">
                   <li>Metro station Roubaix Grand Place</li>
                   <li>L'arrêt de métro Grand Place se trouve sur la ligne 2. Remontez l'avenue Jean-Baptiste Lebas en direction de la gare, la rue Nationale sera à 400 m sur votre gauche. Vous y serez en 5 minutes à pieds !</li>
                 </ul>
-
+                {% endeditable_long_text %}
               </div>
               <div class="tab-pane active" id="byTram">
+                {% editable_long_text 'Itinéraires Tab 3', priority: 4, hint: 'Respecter le html !' %}
                 <ul class="list01">
                   <li>Tram stop Roubaix Eurotéléport</li>
                   <li>L'arrêt de tramway Eurotéléport se trouve sur la ligne R. Rejoignez la Grand Place par la rue Pierre Motte puis remontez l'avenue Jean-Baptiste Lebas en direction de la gare. La rue Nationale se trouvera à 400 m de la Grand Place et vous accèderez à nos en locaux en 15 minutes à pieds !</li>
                 </ul>
+                {% endeditable_long_text %}
               </div>
             </div>
           </div>
         </div>
+        {% endblock %}
       </div>
     </div>
   </div>
