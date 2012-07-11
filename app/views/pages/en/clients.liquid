@@ -11,13 +11,15 @@
             <img src="{{ 'images/banner/customer.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
+            {% block 'Bandeau-en' %}
             <article class="text">
               <header class="hd">
-                <h2 class="title02">They got caught into the game</h2>
+                <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}They got caught into the game{% endeditable_short_text %}</h2>
 
-                <p class="subTitle02">Participants</p>
+                <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 90 %}Participants{% endeditable_short_text %}
               </header>
               <div class="bd">
+                {% editable_long_text 'Texte bandeau', hint: 'Utiliser les balises p, ul/li, strong, a sans classe.', priority: 80 %}
                 <p>
                   Follow The Sun is meant for brands or shop companies who want to develop their CRM
                   strategy with a multichannel database creation. The solution is adapted to all the
@@ -28,8 +30,10 @@
                   Follow The Sun keeps follow-up and dynamic relationships with its consumers via its
                   partner ecosystem.
                 </p>
+                {% endeditable_long_text %}
               </div>
             </article>
+            {% endblock %}
           </div>
         </div>
       </div>
