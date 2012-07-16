@@ -1,4 +1,4 @@
-name: Customers
+name: "Clients"
 description: Customers list
 slug: customers
 label_field_name: :name
