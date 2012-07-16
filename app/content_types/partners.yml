@@ -1,4 +1,4 @@
-name: Partners
+name: "Partenaires"
 description: Parners list
 slug: partners
 label_field_name: :name
@@ -13,11 +13,13 @@ fields:
     type: file
     label: Logo
     required: false
-- type:
-    required: false
-    type: select
-    select_options: ['Agence', 'Intégrateur', 'Technologique']
+- category:
+    label: Catégorie
+    required: true
+    type: string
+    hint: "Choisir parmis 'Agence', 'Intégrateur', 'Technologique'"
 - gold:
+    label: Mise en avant
     required: false
     type: boolean
 

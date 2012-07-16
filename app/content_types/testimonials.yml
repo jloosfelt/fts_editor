@@ -1,4 +1,4 @@
-name: testimonials
+name: "Témoignages"
 slug: testimonials
 fields:
 - title:
@@ -11,19 +11,22 @@ fields:
     type: text
     hint: Fill the text here
     localized: true
+    required: true
 - author:
     label: Auteur
     type: string
+    required: true
     hint: Nom de la personne
 - company:
-    label: Fonction
+    label: Fonction/Société
     type: string
+    required: true
     localized: true
     hint: Société ou Fonction de la personne
-- type:
-    label: Type
-    type: select
-    select_options: ['client', 'partner']
+- category:
+    label: Catégorie
+    type: string
+    hint: "'partner' ou 'customer'"
     required: true
 
 # - customer:

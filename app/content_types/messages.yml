@@ -1,4 +1,4 @@
-name: messages
+name: "Messages"
 slug: messages
 fields:
 - title:
@@ -38,8 +38,9 @@ fields:
     label: Téléphone
     required: false
     type: string
-
+raw_item_template: "{{entry.firstname}} {{entry.lastname}} ({{entry.company}}): {{entry.title}}"
 label_field_name: :title
-description: Fill the text here
+description: "Liste des contacts effectués depuis le site"
 public_submission_enabled: true
-order_by: manually
+order_by: updated_at
+order_direction: desc

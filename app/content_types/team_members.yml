@@ -1,4 +1,4 @@
-name: "Team Members"
+name: "Equipe"
 description: Team members list
 slug: team_members
 label_field_name: :name

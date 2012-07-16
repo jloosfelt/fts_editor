@@ -1,74 +1,74 @@
 - ! 'Hub To You':
     _permalink: hub-to-you
     logo: /samples/partners_logos/hub-to-you.png
-    type: Intégrateur
+    category: Intégrateur
     gold: true
 - ! 'Mx Data':
     _permalink: mx-data
     logo: /samples/partners_logos/mx-data.png
-    type: Agence
+    category: Agence
     gold: true
 
 - ! 'Experian Cheetahmail':
     _permalink: experian-cheetahmail
     logo: /samples/partners_logos/experian-cheetahmail.png
     gold: true
-    type: Intégrateur
+    category: Intégrateur
 
 - ! 'Generix':
     _permalink: generix
     logo: /samples/partners_logos/generix.png
-    type: Technologique
+    category: Technologique
     gold: true
     
 - ! 'Rouge Interactif':
     _permalink: rouge-interactif
-    type: Agence
+    category: Agence
     gold: false
     
 - ! 'TDA':
     _permalink: TDA
-    type: Agence
+    category: Agence
     gold: false
     
 - ! 'Lemonthink':
     _permalink: lemonthink
-    type: Agence
+    category: Agence
     gold: false
     
 - ! 'Touche Etoile':
     _permalink: touche-etoile
-    type: Intégrateur
+    category: Intégrateur
     gold: false
     
 - ! 'Mediaperformances':
     _permalink: mediaperformances
-    type: Intégrateur
+    category: Intégrateur
     gold: false
         
 - ! 'Numsight':
     _permalink: numsight
-    type: Intégrateur
+    category: Intégrateur
     gold: false
     
 - ! 'Devatics':
     _permalink: devatics
-    type: Intégrateur
+    category: Intégrateur
     gold: false
     
 - ! 'Windcor Nixdorf':
     _permalink: windcor-nixdorf
-    type: Technologique
+    category: Technologique
     gold: false
     
 - ! 'Adictiz':
     _permalink: adictiz
-    type: Technologique
+    category: Technologique
     gold: false
     
 - ! 'Improveeze':
     _permalink: improveeze
-    type: Technologique
+    category: Technologique
     gold: false
     
 
