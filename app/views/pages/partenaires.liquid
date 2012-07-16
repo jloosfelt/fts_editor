@@ -77,7 +77,7 @@
                 <li class="span4">
                   <h4 class="title">Agence</h4>
                   <ul>
-                    {% with_scope type:'Agence' %}
+                    {% with_scope category: 'Agence' %}
                       {% for partner in contents.partners %}
                         <li>{{partner.name}}</li>
                       {% endfor %}
@@ -87,7 +87,7 @@
                 <li class="span4">
                   <h4 class="title">Intégrateur</h4>
                   <ul>
-                    {% with_scope type:'Intégrateur' %}
+                    {% with_scope category: 'Intégrateur' %}
                       {% for partner in contents.partners %}
                         <li>{{partner.name}}</li>
                       {% endfor %}
@@ -97,7 +97,7 @@
                 <li class="span4">
                   <h4 class="title">Technologique</h4>
                   <ul>
-                    {% with_scope type:'Technologique' %}
+                    {% with_scope category: 'Technologique' %}
                       {% for partner in contents.partners %}
                         <li>{{partner.name}}</li>
                       {% endfor %}
@@ -116,7 +116,7 @@
               <h3 class="title02">{% editable_short_text 'Témoignage - titre', priority: 10 %}Ils en parlent mieux que nous{% endeditable_short_text %}</h3>
             </header>
             <div class="bd">
-              {% with_scope type:partner %}
+              {% with_scope category: 'partner' %}
               {% for testimony in contents.testimonials %}
               <article class="blockArticle">
                 <blockquote>

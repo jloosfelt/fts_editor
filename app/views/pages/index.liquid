@@ -140,6 +140,7 @@
               <header>
                 <h3 class="title02">{% editable_short_text 'Titre du block témoignage client' %}... et sont ravis de l'expérience{% endeditable_short_text %}</h3>
               </header>
+              {% with_scope category: 'customer' %}
               {% for testimony in contents.testimonials limit:1 %}
               <div class="bd">
                 <blockquote>
@@ -151,6 +152,7 @@
                 </p>
               </div>
               {% endfor %}
+              {% endwith_scope%}
             </article>
             <div class="more">
               <a class="btn btn02" href="/clients" title=""><span>Lire les témoignages</span></a>
