@@ -68,10 +68,15 @@
 
               <p class="subTitle02">Merci de remplir le formulaire ci-dessous.</p>
             </header>
+            {% block 'Success message' %}
+            {% endblock %}
+            {% if job_application.errors %}
+            {{job_application.errors}}
+                <div class="alert alert-error">Veuillez corriger les champs en rouge</div>
+            {% endif %}
             <form class="form errorForm" action="{{contents.job_applications.api.create}}.html" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="success_callback" value="/recrutement?action=success" />
+            <input type="hidden" name="success_callback" value="/recrutement_success" />
             <input type="hidden" name="error_callback" value="/recrutement?action=failure" />
-
               <div class="bd">
                 <p {% if job_application.errors["firstname"] %}class="errorField"{% endif %}>
                   <label for="firstName">Prénom*</label>
@@ -82,7 +87,7 @@
                   <span class="field fieldInputText"><input id="lastName" name="content[lastname]" class="inputText" type="text" value=""/></span>
                 </p>
                 <p {% if job_application.errors["email"] %}class="errorField"{% endif %}>
-                  <label for="email">Email</label>
+                  <label for="email">Email*</label>
                   <span class="field fieldInputText"><input id="email" name="content[email]" class="inputText" type="email" value=""/></span>
                 </p>
                 <p {% if job_application.errors["phone"] %}class="errorField"{% endif %}>
@@ -100,7 +105,7 @@
                 <p>
                   <label>Poste</label>
                   <span class="field fieldInputSelect">
-                    <select class="inputSelect">
+                    <select class="inputSelect" name="content[position]">
                       {% for job in contents.jobs %}
                       <option>{{job.name}}</option>
                       {% endfor %}
@@ -108,11 +113,14 @@
                     </select>
                   </span>
                 </p>
-
+                <p {% if job_application.errors["description"] %}class="errorField"{% endif %}>
+                  <label for="description">Message</label>
+                  <span class="largeInput fieldInputText">
+                    <textarea id="description" name="content[description]" />{{job_application.description}}</textarea>
+                  </span>
+                </p>
               </div>
-              {% if job_applications.errors %}
-              <p class="errorMessage">Veuillez corriger les champs en rouge</p>
-              {% endif %}
+              
               <div class="ft more">
                 <span href="#" class="btn btn01"><input type="submit" value="Envoyer"/></span>
               </div>

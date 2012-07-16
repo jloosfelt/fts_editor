@@ -46,7 +46,7 @@ site:
   - "recrutement":
       title: "Recrutement"
       meta_keywords: "Recrutement"
-      meta_description: "Recrutement"
+      meta_description: "Follow The Sun recrute"
       published: true
       seo_title: "Recrutement"
       listed: true
@@ -56,7 +56,22 @@ site:
           title: "Recruitment"
           seo_title: "Recruitment"
           meta_keywords: "Recruitment"
-          meta_description: "Recruitment"
+          meta_description: "Follow the sun hires!"
+  - "recrutement_success":
+      title: "Recrutement"
+      meta_keywords: "Recrutement"
+      meta_description: "Follow The Sun Candidature bien reçue"
+      published: true
+      seo_title: "Recrutement"
+      listed: true
+      translations:
+        en:
+          slug: "recruitment"
+          title: "Recruitment"
+          seo_title: "Recruitment"
+          meta_keywords: "Recruitment"
+          meta_description: "Follow the sun hires!"
+
   - "crm360":
       title: "crm360"
       meta_keywords: "crm360"
@@ -125,11 +140,24 @@ site:
       published: true
       seo_title: "Contact"
       title: "Contact"
-      listed: false
+      listed: true
       translations:
         en:
           title: "Contact"
           seo_title: "Contact"
+          meta_keywords: "Contact"
+          meta_description: "Contact"
+  - "contact_success":
+      meta_keywords: "Contact"
+      meta_description: "Contact - votre message a bien été envoyé"
+      published: true
+      seo_title: "Contact - votre message a bien été envoyé"
+      title: "Contact (succès)"
+      listed: false
+      translations:
+        en:
+          title: "Contact"
+          seo_title: "Contact - Your message has been sent"
           meta_keywords: "Contact"
           meta_description: "Contact"
   - "mentionslegales":

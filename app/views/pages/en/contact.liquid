@@ -23,11 +23,11 @@
             <p class="subTitle02">If you want to contact us for any question or comment you may have: write
               to the Follow The Sun team!</p>
           </header>
-          {% if params['action'] == "success" %}
-            {% assign message=nil %}
-            <p>
-              Votre message a bien été envoyé.
-            </p>
+          {% block 'Success message' %}
+          {% endblock %}
+          
+          {% if message.errors %}
+              <div class="alert alert-error">Please correct the red fields</div>
           {% endif %}
           <form class="form errorForm" action="{{contents.messages.api.create}}.html" method="post" enctype="multipart/form-data">
             <input type="hidden" name="success_callback" value="/en/contact?action=success" />
@@ -36,9 +36,9 @@
             {% if params["title"] %}
               {% assign title = params["title"] %}
             {% endif %}
-            {% if title == "" %}
+            {% unless title %}
               {% assign title = "Contact from the site" %}
-            {% endif %}
+            {% endunless %}
             <input type="hidden" name="content[title]" value="{{title}}" />
             <div class="bd">
               <p {% if message.errors["firstname"] %}class="errorField"{% endif %}>
@@ -72,6 +72,8 @@
                       <option>France</option>
                       <option>Belgium</option>
                       <option>England</option>
+                      <option>USA</option>
+                      <option>Other</option>
                     </select>
                   </span>
               </p>
@@ -96,9 +98,6 @@
                 </span>
               </p>
             </div>
-            {% if message.errors %}
-              <p class="errorMessage">Please correct the red fields !</p>
-            {% endif %}
 
             <div class="ft more">
               <span href="#" class="btn btn03"><input type="submit" value="Send"/></span>

@@ -24,16 +24,22 @@
               nous faire part de vos remarques alors
               contactez l’équipe Follow The Sun.</p>
           </header>
+          {% block 'Success message' %}
+          {% endblock %}
+          {% if message.errors %}
+              <div class="alert alert-error">Veuillez corriger les champs en rouge</div>
+          {% endif %}
+
           <form class="form errorForm" action="{{contents.messages.api.create}}.html" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="success_callback" value="/contact?action=success" />
+            <input type="hidden" name="success_callback" value="/contact_success" />
             <input type="hidden" name="error_callback" value="/contact?action=failure" />
             {% assign title = message.title %}
             {% if params["title"] %}
               {% assign title = params["title"] %}
             {% endif %}
-            {% if title %}
+            {% unless title %}
               {% assign title = "Contact depuis le site" %}
-            {% endif %}
+            {% endunless %}
             <input type="hidden" name="content[title]" value="{{title}}" />
             <div class="bd">
               <p {% if message.errors["firstname"] %}class="errorField"{% endif %}>
@@ -67,6 +73,8 @@
                       <option>France</option>
                       <option>Belgique</option>
                       <option>Angleterre</option>
+                      <option>USA</option>
+                      <option>Other</option>
                     </select>
                   </span>
               </p>
@@ -87,13 +95,10 @@
               <p {% if message.errors["description"] %}class="errorField"{% endif %}>
                 <label for="message">Message</label>
                 <span class="largeInput fieldInputText">
-                  <textarea id="message" value="{{message.description}}" name="content[description]"></textarea>
+                  <textarea id="message" name="content[description]">{{message.description}}</textarea>
                 </span>
               </p>
             </div>
-            {% if message.errors %}
-              <p class="errorMessage">Veuillez corriger les champs en rouge</p>
-            {% endif %}
 
             <div class="ft more">
               <span href="#" class="btn btn03"><input type="submit" value="Envoyer"/></span>
