@@ -69,7 +69,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
             <ul id="navigation" class="clearfix">
               <li class="home {% if page.fullpath == 'societe' %}active{% endif %}"><a href="/societe"><span class="icon"></span><span
                   class="text">follow the sun</span></a></li>
-              <li class="team {% if page.fullpath == 'equipe' %}active{% endif %}"><a href="/equipe"><span class="icon"></span><span class="text">Equipe</span></a></li>
+              <li class="team {% if page.fullpath == 'equipe' or page.fullpath == 'recrutement' %}active{% endif %}"><a href="/equipe"><span class="icon"></span><span class="text">Equipe</span></a></li>
               <li class="products {% if page.fullpath == 'crm360' %}active{% endif %}"><a href="/crm360"><span class="icon"></span><span
                   class="text">Produits</span></a></li>
               <li class="partners {% if page.fullpath == 'partenaires' %}active{% endif %}"><a href="/partenaires"><span class="icon"></span><span
@@ -128,12 +128,12 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
           <ul class="row-fluid bd">
             <li class="span12">
               <ul class="footer-items partnersList">
-                <li><a href="http://www.gouvernement.fr"><img src="{{ 'images/partners/republiqueFrancaise.png' | theme_image_url }}" alt="République Française" /></a></li>
-                <li><a href="http://www.nordpasdecalais.fr"><img src="{{ 'images/partners/nordpasdecalais.png' | theme_image_url }}" alt="Nord-Pas-De-Calais" /></a></li>
-                <li class="lastItem"><a href="#"><img src="{{ 'images/partners/eto.png' | theme_image_url }}" alt="ETO" /></a></li>
+                <li><a target="_blank" href="http://www.caissedesdepots.fr/activites/investissements-davenir/le-fonds-national-pour-la-societe-numerique-fsn-infrastructures.html"><img src="{{ 'images/partners/republiqueFrancaise.png' | theme_image_url }}" alt="République Française" /></a></li>
+                <li><a target="_blank" href="http://www.picom.fr"><img src="{{ 'images/partners/nordpasdecalais.png' | theme_image_url }}" alt="Picom Nord-Pas-De-Calais" /></a></li>
+                <li class="lastItem"><a target="_blank" href="http://www.eto.fr"><img src="{{ 'images/partners/eto.png' | theme_image_url }}" alt="ETO" /></a></li>
 
-                <li class="lastLine"><a href="http://www.runiso.com"><img src="{{ 'images/partners/runiso.png' | theme_image_url }}" alt="Runiso" /></a></li>
-                <li class="lastItem lastLine"><a href="http://www.microsoft.com/fr-fr/"><img src="{{ 'images/partners/microsoft.png' | theme_image_url }}" alt="Microsoft" /></a></li>
+                <li class="lastLine"><a target="_blank" href="http://www.runiso.com"><img src="{{ 'images/partners/runiso.png' | theme_image_url }}" alt="Runiso" /></a></li>
+                <li class="lastItem lastLine"><a target="_blank" href="http://www.microsoft.com/bizspark/"><img src="{{ 'images/partners/microsoft.png' | theme_image_url }}" alt="Microsoft" /></a></li>
               </ul>
             </li>
           </ul>

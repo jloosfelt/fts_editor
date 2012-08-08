@@ -74,7 +74,7 @@
           <header class="hd clearfix">
             <h4 class="title">{{team_member.name}}</h4>
             {% if team_member.linked_in_url %}
-            <a class="linkedin" href="{{team_member.linked_in_url}}"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
+            <a target="_blank" class="linkedin" href="{{team_member.linked_in_url}}"><img src="{{ 'icons/linkedin.png' | theme_image_url }}" alt="linkedin"/></a>
             {% endif %}
           </header>
           <div class="bd">

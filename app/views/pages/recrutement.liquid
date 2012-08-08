@@ -71,7 +71,6 @@
             {% block 'Success message' %}
             {% endblock %}
             {% if job_application.errors %}
-            {{job_application.errors}}
                 <div class="alert alert-error">Veuillez corriger les champs en rouge</div>
             {% endif %}
             <form class="form errorForm" action="{{contents.job_applications.api.create}}.html" method="post" enctype="multipart/form-data">

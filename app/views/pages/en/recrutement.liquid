@@ -71,7 +71,6 @@
             {% block 'Success message' %}
             {% endblock %}
             {% if job_application.errors %}
-            {{job_application.errors}}
                 <div class="alert alert-error">Please correct the red fields.</div>
             {% endif %}
             <form class="form errorForm" action="{{contents.job_applications.api.create}}.html" method="post" enctype="multipart/form-data">
@@ -80,19 +79,19 @@
               <div class="bd">
                 <p {% if job_application.errors["firstname"] %}class="errorField"{% endif %}>
                   <label for="firstName">Firstname*</label>
-                  <span class="field fieldInputText"><input id="firstName" name="content[firstname]" class="inputText" type="text" value=""/></span>
+                  <span class="field fieldInputText"><input id="firstName" name="content[firstname]" class="inputText" type="text" value="{{job_application.firstname}}"/></span>
                 </p>
                 <p {% if job_application.errors["lastname"] %}class="errorField"{% endif %}>
                   <label for="lastName">Lastname*</label>
-                  <span class="field fieldInputText"><input id="lastName" name="content[lastname]" class="inputText" type="text" value=""/></span>
+                  <span class="field fieldInputText"><input id="lastName" name="content[lastname]" class="inputText" type="text" value="{{job_application.lastname}}"/></span>
                 </p>
                 <p {% if job_application.errors["email"] %}class="errorField"{% endif %}>
                   <label for="email">Email*</label>
-                  <span class="field fieldInputText"><input id="email" name="content[email]" class="inputText" type="email" value=""/></span>
+                  <span class="field fieldInputText"><input id="email" name="content[email]" class="inputText" type="email" value="{{job_application.email}}"/></span>
                 </p>
                 <p {% if job_application.errors["phone"] %}class="errorField"{% endif %}>
                   <label for="phoneNumber">Phone</label>
-                  <span class="field fieldInputText"><input id="phoneNumber" name="content[phone]" class="inputText" type="tel" value=""/></span> 
+                  <span class="field fieldInputText"><input id="phoneNumber" name="content[phone]" class="inputText" type="tel" value="{{job_application.phone}}"/></span> 
                 </p>
                 <p>
                   <label>CV</label>
