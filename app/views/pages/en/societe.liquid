@@ -165,7 +165,6 @@
             </div>
             <div class="ft more">
               <a href="/en/crm360" class="btn btn01"><span>Discover CRM360°</span></a>
-              </footer>
             </div>
           </section>
           {% endblock %}
@@ -181,7 +180,8 @@
             </header>
             <div class="bd">
               <div class="slideShowOneImage">
-                <img src="{% editable_file 'Photo 800x282', priority: 6 %}{{ 'images/desk.jpg' | theme_image_url }}{% endeditable_file %}" alt=""/>
+                {% capture desk_url %}{% editable_file 'Photo 800x282', priority: 6 %}{{ 'images/desk.jpg' | theme_image_url }}{% endeditable_file %}{% endcapture %}
+                {{ desk_url | image_tag }}
               </div>
 
               {% editable_long_text 'Texte sous image', priority: 5 %}<p>We will welcome you here !</p>{% endeditable_long_text %}
