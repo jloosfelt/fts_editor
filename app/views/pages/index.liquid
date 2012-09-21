@@ -6,6 +6,7 @@
         <div class="center bannerInside">
           <div class="bannerExtend bannerLeft"></div>
           <div class="bannerExtend bannerRight"></div>
+
           {% block 'Slider' %}
           <div id="bannerCarousel" class="carousel slide">
             <!-- Carousel items -->
@@ -106,7 +107,8 @@
             </div>
             <div class="bd">
               <figure>
-                <img src="{% editable_file 'photo', hint: 'Photo au format 325x236', priority: 8 %}{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}{% endeditable_file %}" alt="" />
+                {% capture photo_bureaux_url %}{% editable_file 'Photo des bureaux', priority: 10 %}/images/images/team-follow-the-sun.jpg{% endeditable_file %}{% endcapture %}
+                {{ photo_bureaux_url | image_tag }}
                 <figcaption>{% editable_short_text 'Texte sous la photo', hint: 'Texte sous la photo', priority: 8 %}Créé en 2011 à Lille-Métropole, Follow The Sun
                   est un éditeur qui transforme des savoir-faire métier
                   en offres de services en ligne simples, fiables, sécurisées et interconnectables.{% endeditable_short_text %}
@@ -199,7 +201,7 @@
             <div class="xtraPaddingL">
               <div class="box boxIntsetShadow boxPush">
                 <header class="hd">
-                  <h3 class="title02"><img src="{% editable_file 'Logo du produit', priority: 11 %}{{ 'images/crm360.png' | theme_image_url }}{% endeditable_file %}" alt="CRM360°" /></h3>
+                  <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°" /></h3>
 
                   <p class="subTitle02">{% editable_short_text 'Titre', priority: 10 %}Une solution GRC simple et efficace{% endeditable_short_text %}</p>
                 </header>

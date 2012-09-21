@@ -97,7 +97,8 @@
         </div>
         <div class="bd">
           <figure>
-            <img src="{% editable_file 'photo', hint: 'Photo au format 325x236', priority: 8 %}{{ 'images/team-follow-the-sun.jpg' | theme_image_url }}{% endeditable_file %}" alt=""/>
+            {% capture photo_bureaux_url %}{% editable_file 'Photo des bureaux', hint: 'Format 325x236', priority: 8 %}/images/images/team-follow-the-sun.jpg{% endeditable_file %}{% endcapture %}
+                {{ photo_bureaux_url | image_tag }}
             <figcaption>{% editable_short_text 'Texte sous la photo', hint: 'Texte sous la photo', priority: 8 %}Created in 2011, Follow The Sun is an online service provider which converts highly
               professional know-how into an online standard service offer, easily affordable.{% endeditable_short_text %}
             </figcaption>
@@ -157,7 +158,7 @@
 
         <article>
           <header>
-            <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Newtwork{% endeditable_short_text %}</h3>
+            <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Network{% endeditable_short_text %}</h3>
             <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Our talented partners{% endeditable_short_text %}</p>
           </header>
           <div class="bd txtC">
@@ -187,7 +188,7 @@
         <div class="xtraPaddingL">
           <div class="box boxIntsetShadow boxPush">
             <header class="hd">
-              <h3 class="title02"><img src="{% editable_file 'Logo du produit', priority: 11 %}{{ 'images/crm360.png' | theme_image_url }}{% endeditable_file %}" alt="CRM360°"/></h3>
+              <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h3>
 
               <p class="subTitle02">{% editable_short_text 'Titre', priority: 10 %}A simple and effective CRM solution{% endeditable_short_text %}</p>
             </header>

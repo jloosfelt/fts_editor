@@ -11,7 +11,7 @@
             <img src="{{ 'images/banner/customer.png' | theme_image_url }}" alt=""/>
           </div>
           <div class="span7 textContent">
-            {% block 'Bandeau-en' %}
+            {% block 'Bandeau' %}
             <article class="text">
               <header class="hd">
                 <h2 class="title02">{% editable_short_text 'Titre', priority: 100 %}They got caught into the game{% endeditable_short_text %}</h2>
@@ -40,9 +40,9 @@
     </div>
   </div>
   <div id="mainContent" class="center">
-    <h2 class="title02">Our consumers</h2>
+    <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Our consumers{% endeditable_short_text %}</h2>
 
-    <p class="subTitle02">Players</p>
+    <p class="subTitle02">{% editable_short_text 'Sous-Titre', priority: 9 %}Players{% endeditable_short_text %}</p>
     <ul class="customersBloc">
       {% for customer in contents.customers %}
         <li><img src="{{ customer.logo['url'] }}" alt="{{customer.name}}"/></li>

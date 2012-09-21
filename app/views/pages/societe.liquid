@@ -84,7 +84,7 @@
         </div>
       </section>
       {% endblock %}
-      {% block 'Colonne droite' %}
+      {% block 'Chiffres clés' %}
       <div class="span5">
         <div class="xtraPaddingL">
           <aside class="ourScores">
@@ -186,11 +186,11 @@
             </header>
             <div class="bd">
               <div class="slideShowOneImage">
-                {% capture desk_url %}{% editable_file 'Photo 800x282', priority: 6 %}{{ 'images/desk.jpg' | theme_image_url }}{% endeditable_file %}{% endcapture %}
+                {% capture desk_url %}{% editable_file 'Photo 800x282', priority: 6 %}/images/images/desk.jpg{% endeditable_file %}{% endcapture %}
                 {{ desk_url | image_tag }}                
               </div>
 
-              {% editable_long_text 'Texte sous image', priority: 5 %}<p>C'est ici que l'on vous recevra !</p>{% endeditable_long_text %}
+              {% editable_long_text 'Légende photo', priority: 5 %}<p>C'est ici que l'on vous recevra !</p>{% endeditable_long_text %}
               
             </div>
             <div class="ft more">

@@ -12,7 +12,7 @@
           </div>
           <div class="span7 textContent">
             <article class="text">
-              {% editable_long_text 'Block header', :hint => 'Respecter le html !', priority: 100 %}
+              {% editable_long_text 'Bandeau', :hint => 'Respecter le html !', priority: 100 %}
               <header class="hd">
                 <h2 class="title02">Experts get hooked into the online service game!</h2>
 
@@ -43,85 +43,85 @@
   <div id="mainContent" class="center">
     <div class="row-fluid">
       {% block 'Colonne gauche' %}
-      <section class="span7 enterprisePhilosophy">
-        <header>
-          <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Game rules{% endeditable_short_text %}</h2>
+        <section class="span7 enterprisePhilosophy">
+          <header>
+            <h2 class="title02">{% editable_short_text 'Titre', priority: 10 %}Game rules{% endeditable_short_text %}</h2>
 
-          <p class="subTitle02">{% editable_short_text 'Sous-titre', priority: 9 %}The company value and philosophy{% endeditable_short_text %}</p>
-        </header>
-        <div class="bd">
-          {% editable_long_text 'Texte', hint: 'Utiliser <ul class="list01"> pour les listes à puces' %}
-          <ul class="list01">
-            <li>
-              Follow The Sun markets its offers together with its partners ecosystem.
-            </li>
-            <li>
-              Follow The Sun commits to the quality and availability of the hosted services relying on Runiso, notarized PCI/DSS.
-            </li>
-            <li>
-              Follow The Sun implements its fast expansion strategy all around the world, thanks to an optimum quality/price rate.
-            </li>
-            <li>
-              Follow The Sun respects the following values :
-              <ul>
-                <li>- Open and honest sales promise</li>
-                <li>- Technological and economic innovations</li>
-                <li>- Team work involvement and commitment to partners and customers</li>
-                <li>- Associates autonomy and self-reliance towards its environment</li>
-                <li>- Aiming towards excellence</li>
-              </ul>
-            </li>
-          </ul>
-          {% endeditable_long_text %}
-        </div>
-        <div class="ft more">
-          <a href="/en/clients" class="btn btn03"><span>Read testimonies</span></a>
-        </div>
-      </section>
+            <p class="subTitle02">{% editable_short_text 'Sous-titre', priority: 9 %}The company value and philosophy{% endeditable_short_text %}</p>
+          </header>
+          <div class="bd">
+            {% editable_long_text 'Texte', hint: 'Utiliser <ul class="list01"> pour les listes à puces' %}
+            <ul class="list01">
+              <li>
+                Follow The Sun markets its offers together with its partners ecosystem.
+              </li>
+              <li>
+                Follow The Sun commits to the quality and availability of the hosted services relying on Runiso, notarized PCI/DSS.
+              </li>
+              <li>
+                Follow The Sun implements its fast expansion strategy all around the world, thanks to an optimum quality/price rate.
+              </li>
+              <li>
+                Follow The Sun respects the following values :
+                <ul>
+                  <li>- Open and honest sales promise</li>
+                  <li>- Technological and economic innovations</li>
+                  <li>- Team work involvement and commitment to partners and customers</li>
+                  <li>- Associates autonomy and self-reliance towards its environment</li>
+                  <li>- Aiming towards excellence</li>
+                </ul>
+              </li>
+            </ul>
+            {% endeditable_long_text %}
+          </div>
+          <div class="ft more">
+            <a href="/en/clients" class="btn btn03"><span>Read testimonies</span></a>
+          </div>
+        </section>
       {% endblock %}
-      {% block 'Colonne droite' %}
-      <div class="span5">
-        <div class="xtraPaddingL">
-          <aside class="ourScores">
-            <header>
-              <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Our scores{% endeditable_short_text %}</h3>
-            </header>
-            <div class="bd">
-              <p class="subTitle02">A few figures</p>
-              <ul class="blockList">
-                <li class="clearfix">
-                  <div class="score">{% editable_short_text 'Ligne 1 chiffre', priority: 8 %}68{% endeditable_short_text %}</div>
-                  <p class="desc">
-                    {% editable_short_text 'Ligne 1 texte', priority: 7 %}
-                    Talented partners connected to Follow The Sun{% endeditable_short_text %}
-                  </p>
-                </li>
-                <li class="clearfix">
-                  <div class="score">{% editable_short_text 'Ligne 2 chiffre', priority: 6 %}3{% endeditable_short_text %}</div>
-                  <p class="desc">
-                    {% editable_short_text 'Ligne 2 texte', priority: 5 %}
-                    Years to develop the CRM360° solution{% endeditable_short_text %}
-                  </p>
-                </li>
-                <li class="clearfix">
-                  <div class="score">{% editable_short_text 'Ligne 3 chiffre', priority: 4 %}100{% endeditable_short_text %}</div>
-                  <p class="desc">
-                    {% editable_short_text 'Ligne 3 texte', priority: 3 %}
-                    Years of accumulated experiences{% endeditable_short_text %}
-                  </p>
-                </li>
-                <li class="clearfix">
-                  <div class="score">{% editable_short_text 'Ligne 4 chiffre', priority: 2 %}12{% endeditable_short_text %}</div>
-                  <p class="desc">
-                    {% editable_short_text 'Ligne 4 texte', priority: 1 %}
-                    12 Keyboards worn out to develop CRM360°{% endeditable_short_text %}
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </aside>
+      {% block 'Chiffres clés' %}
+        <div class="span5">
+          <div class="xtraPaddingL">
+            <aside class="ourScores">
+              <header>
+                <h3 class="title02">{% editable_short_text 'Titre', priority: 10 %}Our scores{% endeditable_short_text %}</h3>
+              </header>
+              <div class="bd">
+                <p class="subTitle02">A few figures</p>
+                <ul class="blockList">
+                  <li class="clearfix">
+                    <div class="score">{% editable_short_text 'Ligne 1 chiffre', priority: 8 %}68{% endeditable_short_text %}</div>
+                    <p class="desc">
+                      {% editable_short_text 'Ligne 1 texte', priority: 7 %}
+                      Talented partners connected to Follow The Sun{% endeditable_short_text %}
+                    </p>
+                  </li>
+                  <li class="clearfix">
+                    <div class="score">{% editable_short_text 'Ligne 2 chiffre', priority: 6 %}3{% endeditable_short_text %}</div>
+                    <p class="desc">
+                      {% editable_short_text 'Ligne 2 texte', priority: 5 %}
+                      Years to develop the CRM360° solution{% endeditable_short_text %}
+                    </p>
+                  </li>
+                  <li class="clearfix">
+                    <div class="score">{% editable_short_text 'Ligne 3 chiffre', priority: 4 %}100{% endeditable_short_text %}</div>
+                    <p class="desc">
+                      {% editable_short_text 'Ligne 3 texte', priority: 3 %}
+                      Years of accumulated experiences{% endeditable_short_text %}
+                    </p>
+                  </li>
+                  <li class="clearfix">
+                    <div class="score">{% editable_short_text 'Ligne 4 chiffre', priority: 2 %}12{% endeditable_short_text %}</div>
+                    <p class="desc">
+                      {% editable_short_text 'Ligne 4 texte', priority: 1 %}
+                      12 Keyboards worn out to develop CRM360°{% endeditable_short_text %}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
         </div>
-      </div>
       {% endblock %}
     </div>
   </div>
@@ -129,7 +129,7 @@
     <div class="center">
       <div class="row-fluid">
         <div class="span7">
-          {% block 'CRM360-en' %}
+          {% block 'CRM360' %}
           <section class="crm360Solution">
             <header class="hd">
               <h3 class="title02"><img src="{{ 'images/crm360.png' | theme_image_url }}" alt="CRM360°"/></h3>
@@ -180,11 +180,12 @@
             </header>
             <div class="bd">
               <div class="slideShowOneImage">
-                {% capture desk_url %}{% editable_file 'Photo 800x282', priority: 6 %}{{ 'images/desk.jpg' | theme_image_url }}{% endeditable_file %}{% endcapture %}
-                {{ desk_url | image_tag }}
+                {% capture desk_url %}{% editable_file 'Photo 800x282', priority: 6 %}/images/desk.jpg{% endeditable_file %}{% endcapture %}
+                {% if desk_url != "" %}{{ desk_url | image_tag }}{% else %}{{ '/images/desk.jpg' | theme_image_tag }}{% endif %}
+
               </div>
 
-              {% editable_long_text 'Texte sous image', priority: 5 %}<p>We will welcome you here !</p>{% endeditable_long_text %}
+              {% editable_long_text 'Légende photo', priority: 5 %}<p>We will welcome you here !</p>{% endeditable_long_text %}
               
             </div>
             <div class="ft more">
