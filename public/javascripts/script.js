@@ -87,7 +87,8 @@ $(document).ready(function() {
      */
 
     $('.carousel').carousel({
-        interval: false
+        interval: 4000,
+        pause: 'hover'
     });
 
     // set active class for the first bullet
