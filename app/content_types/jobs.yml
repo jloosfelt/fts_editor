@@ -11,9 +11,9 @@ fields:
 - description:
     label: Description
     type: text
-    hint: Utiliser h3 pour les sous-titres
+    hint: Utiliser h3 pour les sous-titres et ul.list01 pour les listes
     required: true
     localized: true
 
 public_submission_enabled: false
-order_by: name
+order_by: manually
