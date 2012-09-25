@@ -1,32 +1,18 @@
 - "Hub To You":
-    _permalink: hub-to-you
+    _permalink: temoignage-partenaire-hub-to-you
     description: |-
-        A l’heure où le contexte marketing est à la relation client, CRM360° nous permet de passer du marketing de masse au marketing ciblé interactif et collaboratif.<br />
-        CRM360°, la solution CRM B2C de Follow The Sun, est une solution ouverte que l’on peut facilement interfacer avec des services complémentaires de gestion de programmes de fidélité, d’offres commerciales, de géolocalisation… <br />
-        Elle nous permet par exemple d’accompagner nos clients dans la réalisation et l’animation de leur application mobile CRM. La solution CRM360° couplée à nos services Hub To You va au-delà de la simple gestion de campagne, elle gère aussi l’ensemble des sources de données clients en amont pour donner accès à une fiche client unique et dynamique très appréciée des commerçants. Cette fiche client peut-être alors exposée sur tout support digital tel qu'une tablette ou un smartphone pour un vendeur. Ayant accès à l’historique d’achat, de fidélité et de contact de leurs clients, les enseignes peuvent désormais apporter plus facilement à leur client de la reconnaissance tout en étant force de proposition directement sur le point de vente. 
-        Ne nécessitant pas de projet informatique, pas plus que de coûteuses licences, CRM360° est néanmoins adaptable à l’immense majorité des besoins clients.
+        A l’heure où le contexte marketing est à la relation client, CRM360° nous permet de passer directement au marketing ciblé interactif et collaboratif.
+        <br />
+        CRM360°, la solution CRM B2C de Follow The Sun, est une solution que l’on peut facilement interfacer avec des services experts complémentaires :  gestion de programmes de fidélité, d’offres commerciales,  géolocalisation… 
+        <br />
+        La solution CRM360° couplée à nos services Hub To You, nous permet d’aller au-delà de la simple gestion de campagne : elle gère aussi l’ensemble des sources de données en amont pour donner accès à une fiche consommateur unique sur tous les supports digitaux mobiles très appréciée des commerçants (tablette ou smartphone). Les enseignes peuvent désormais apporter plus facilement à leur client de la reconnaissance tout en étant force de proposition directement sur le point de vente. Ne nécessitant pas de projet informatique, pas plus que de coûteuses licences, CRM360° est néanmoins adaptable à l’immense majorité des besoins clients.
     author: Mathieu Beseme
     company: Gérant Hub To You
     category: partner
-# customer: "hub-to-you"
-- "lorem1":
-    _permalink: lorem1
+- "Cabesto":
+    _permalink: temoignage-client-cabesto
     description: |-
-        Lorem ipsum amet cupidatat nulla eiusmod laboris cillum qui. Lorem ipsum laboris qui sit enim dolor consectetur sint dolor esse minim in sunt exercitation est voluptate. 
-    author: Amet Nulla
-    company: Gérant Laboris
-    category: customer
-- "lorem2":
-    _permalink: lorem2
-    description: |-
-        Lorem ipsum amet cupidatat nulla eiusmod laboris cillum qui. Lorem ipsum laboris qui sit enim dolor consectetur sint dolor esse minim in sunt exercitation est voluptate. 
-    author: Amet Nulla
-    company: Gérant Laboris
-    category: customer
-- "lorem3":
-    _permalink: lorem3
-    description: |-
-        Lorem ipsum amet cupidatat nulla eiusmod laboris cillum qui. Lorem ipsum laboris qui sit enim dolor consectetur sint dolor esse minim in sunt exercitation est voluptate. 
-    author: Amet Nulla
-    company: Gérant Laboris
+        Facile d’accès et d’utilisation la solution CRM 360 de la société Follow The Sun n’a nécessité que 2 semaines pour être mise en ligne. Les équipes de FTS nous ont permis de franchir aisément cette première étape dans notre connaissance client et gagner des parts de marché.
+    author: Frédéric Duprez
+    company: PDG Cabesto
     category: customer

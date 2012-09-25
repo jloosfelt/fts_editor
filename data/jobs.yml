@@ -1,5 +1,21 @@
-- ! 'Exemple de poste':
+- ! 'Ingénieur Business Intelligence (BI)':
     description: |-
-        <h3>Lorem ipsum deserunt proident deserunt laboris Excepteur ea ad eiusmod Ut. </h3>
-        <p>Lorem ipsum in velit ut ea Ut cupidatat et eiusmod ut esse dolore anim aliqua consectetur id. Lorem ipsum in laboris reprehenderit nulla sit nulla laboris sunt voluptate exercitation id deserunt. Lorem ipsum nulla in sint consequat enim velit consequat in fugiat incididunt amet ea non nulla officia deserunt. Lorem ipsum sed quis exercitation laborum ex sed cillum. Lorem ipsum mollit id eiusmod et anim sunt dolore non incididunt. Lorem ipsum ut eu aute proident cupidatat in. Lorem ipsum nisi adipisicing dolore aliquip nulla consectetur non amet do voluptate elit qui mollit. Lorem ipsum laboris laborum quis exercitation Ut dolore Ut. Lorem ipsum dolor dolore adipisicing reprehenderit nostrud elit ut Excepteur do nulla ea cillum. Lorem ipsum dolor tempor id pariatur anim laborum in dolore Ut et velit dolor labore commodo eu. </p>
-        <ul><li>Test</li></ul>
+        <h3>Profil </h3>
+        <p>Diplomé d'une école d'ingénieur, vous justifiez d'au moins 2 années d'experience dans la Business Intelligence. Vous êtes dynamique, autonome et rigoureux</p>
+        <h3>Mission </h3>
+        <p>Au sein de l'équipe Follow The Sun, vous serez responsable de l'étude, la réalisation et la maintenance du portail decisionnel de la solution CRM360, c'est à dire : </p>
+        <ul class="list01">
+        <li>Modelisation du datawarehouse</li>
+        <li>Modelisation du Cube OLAP</li>
+        <li>Modelisation des flux de données</li>
+        <li>Modélisaton et réalisation des rapport pré-formattés</li>
+        </ul>
+        <p></p>
+        <h3>Technologies utilisées </h3>
+        <p>La suite BI de microsoft : </p>
+        <ul class="list01">
+        <li>Microsoft SQL SERVER</li>
+        <li>Microsoft SQL SERVER Analysis Services</li>
+        <li>Microsoft SQL SERVER Reporting Services </li>
+        <li>Microsoft SQL SERVER Intégration Services</li>
+        </ul>
