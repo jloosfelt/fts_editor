@@ -48,10 +48,10 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
     <div class="center">
       <div class="clearfix">
         <span class="followTheSunDesc">{% editable_short_text 'Top header title', priority: 100 %}Follow the Sun - Solution business et CRM en mode SAAS{% endeditable_short_text %}</span>
-        <div class="dropdownMenu languages" style="display: none">
-          <a class="current" href="#"><img src="{{ 'icons/flag/france.png' | theme_image_url }}" class="flag" />Français</a>
+        <div class="dropdownMenu languages">
+          <a class="current" href="{{ page.fullpath }}"><img src="{{ 'icons/flag/france.png' | theme_image_url }}" class="flag" />Français</a>
           <ul class="dataList">
-            <li><a href="/en" title="English"><img class="flag" src="{{ 'icons/flag/england.png' | theme_image_url }}" />English</a></li>
+            <li><a href="/en/{{ page.fullpath }}" title="English"><img class="flag" src="{{ 'icons/flag/england.png' | theme_image_url }}" />English</a></li>
           </ul>
         </div>
       </div>
@@ -147,7 +147,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                 <div class="footer-items">
                   {% editable_long_text 'Footer - coordonnées', hint: 'Adresse : <p class="address"> ; Téléphone : <p class="contact">' %}
                   <p class="address">
-                    4, rue Nationale<br/>
+                    62, avenue Jean Lebas<br/>
                     59100 Roubaix
                   </p>
                   <p class="contact">

@@ -51,7 +51,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
         <div class="dropdownMenu languages">
           <a class="current" href="#"><img src="{{ 'icons/flag/england.png' | theme_image_url }}" class="flag" />English</a>
           <ul class="dataList">
-            <li><a href="/" title="Français"><img class="flag" src="{{ 'icons/flag/france.png' | theme_image_url }}" />Français</a></li>
+            <li><a href="/{{ page.slug }}" title="Français"><img class="flag" src="{{ 'icons/flag/france.png' | theme_image_url }}" />Français</a></li>
           </ul>
         </div>
       </div>
@@ -71,7 +71,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
               <li class="team {% if page.fullpath == 'equipe' or page.fullpath == 'recrutement' %}active{% endif %}"><a href="/en/equipe"><span class="icon"></span><span class="text">Team</span></a></li>
               <li class="products {% if page.fullpath == 'crm360' %}active{% endif %}"><a href="/en/crm360"><span class="icon"></span><span
                   class="text">Products</span></a></li>
-              <li class="partners {% if page.fullpath == 'index' %}partenaires{% endif %}"><a href="/en/partenaires"><span class="icon"></span><span
+              <li class="partners {% if page.fullpath == 'partenaires' %}active{% endif %}"><a href="/en/partenaires"><span class="icon"></span><span
                   class="text">Partners</span></a></li>
               <li class="customers {% if page.fullpath == 'clients' %}active{% endif %}"><a href="/en/clients"><span class="icon"></span><span
                   class="text">Consumers</span></a></li>
@@ -147,7 +147,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
                 <div class="footer-items">
                   {% editable_long_text 'Footer - coordonnées', hint: 'Adresse : <p class="address"> ; Téléphone : <p class="contact">' %}
                   <p class="address">
-                    4, rue Nationale<br/>
+                    62, avenue Jean Lebas<br/>
                     59100 Roubaix
                   </p>
                   <p class="contact">
