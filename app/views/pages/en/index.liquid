@@ -97,8 +97,9 @@
         </div>
         <div class="bd">
           <figure>
-            {% capture photo_bureaux_url %}{% editable_file 'Photo des bureaux', hint: 'Format 325x236', priority: 8 %}/images/images/team-follow-the-sun.jpg{% endeditable_file %}{% endcapture %}
-                {{ photo_bureaux_url | image_tag }}
+            {% capture team_url %}{% editable_file 'Photo des bureaux', priority: 10 %}{% endeditable_file %}{% endcapture %}
+            {% if team_url != "" %}{{ team_url | image_tag }}{% else %}{{ 'images/team-follow-the-sun.jpg' | theme_image_tag }}{% endif %}
+
             <figcaption>{% editable_short_text 'Texte sous la photo', hint: 'Texte sous la photo', priority: 8 %}Created in 2011, Follow The Sun is an online service provider which converts highly
               professional know-how into an online standard service offer, easily affordable.{% endeditable_short_text %}
             </figcaption>

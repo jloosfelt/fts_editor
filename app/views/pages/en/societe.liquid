@@ -180,8 +180,8 @@
             </header>
             <div class="bd">
               <div class="slideShowOneImage">
-                {% capture desk_url %}{% editable_file 'Photo 800x282', priority: 6 %}/images/desk.jpg{% endeditable_file %}{% endcapture %}
-                {% if desk_url != "" %}{{ desk_url | image_tag }}{% else %}{{ '/images/desk.jpg' | theme_image_tag }}{% endif %}
+                {% capture desk_url %}{% editable_file 'Photo 800x282', priority: 10 %}{% endeditable_file %}{% endcapture %}
+                {% if desk_url != "" %}{{ desk_url | image_tag }}{% else %}{{ 'images/desk.jpg' | theme_image_tag }}{% endif %}
 
               </div>
 

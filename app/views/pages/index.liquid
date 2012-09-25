@@ -107,8 +107,8 @@
             </div>
             <div class="bd">
               <figure>
-                {% capture photo_bureaux_url %}{% editable_file 'Photo des bureaux', priority: 10 %}/images/images/team-follow-the-sun.jpg{% endeditable_file %}{% endcapture %}
-                {{ photo_bureaux_url | image_tag }}
+                {% capture team_url %}{% editable_file 'Photo des bureaux', priority: 10 %}{% endeditable_file %}{% endcapture %}
+                {% if team_url != "" %}{{ team_url | image_tag }}{% else %}{{ 'images/team-follow-the-sun.jpg' | theme_image_tag }}{% endif %}
                 <figcaption>{% editable_short_text 'Texte sous la photo', hint: 'Texte sous la photo', priority: 8 %}Créé en 2011 à Lille-Métropole, Follow The Sun
                   est un éditeur qui transforme des savoir-faire métier
                   en offres de services en ligne simples, fiables, sécurisées et interconnectables.{% endeditable_short_text %}
