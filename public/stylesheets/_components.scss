@@ -3,8 +3,12 @@
    ========================================================================== */
 
 @media screen and (max-width: 480px) {
-    html {
-        min-width:1000px;
+    html{
+        min-width: 1000px;} 
+    }
+@media screen and (min-width: 768px) and (max-width: 1024px) { 
+    html{
+        min-width: 1000px;
     }
 }
 
