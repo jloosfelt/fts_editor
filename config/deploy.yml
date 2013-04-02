@@ -1,5 +1,5 @@
 development:
-  host: fts.fts.dev
+  host: www.fts.dev
   email: jloosfelt@gmail.com
   password: tagada1
 staging:
@@ -7,6 +7,6 @@ staging:
   email: john@doe.net
   password: easyone
 production:
-  host: followthesun.followthesun.loosfelt.com
+  host: www.fts.loosfelt.com
   email: jloosfelt@gmail.com
   password: tagada1
